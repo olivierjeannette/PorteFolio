@@ -116,11 +116,13 @@ export function StaggerContainer({
 interface StaggerItemProps {
   children: React.ReactNode
   className?: string
+  id?: string
 }
 
-export function StaggerItem({ children, className }: StaggerItemProps) {
+export function StaggerItem({ children, className, id }: StaggerItemProps) {
   return (
     <motion.div
+      id={id}
       variants={{
         hidden: { opacity: 0, y: 20 },
         visible: {
