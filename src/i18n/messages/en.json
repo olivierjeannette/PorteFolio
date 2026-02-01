@@ -83,7 +83,6 @@
           "paramedic": "Combat Paramedic (Special Forces)",
           "civilFirst": "Civilian First Responder",
           "militaryFirst": "Military First Aid Instructor",
-          "crossfitL2": "CrossFit Level 2 Trainer",
           "crossfitL1": "CrossFit Level 1 Trainer"
         }
       }
@@ -195,10 +194,6 @@
       }
     },
     "educations": {
-      "crossfit-l2": {
-        "title": "CrossFit Level 2 Trainer",
-        "institution": "CrossFit Inc."
-      },
       "crossfit-l1": {
         "title": "CrossFit Level 1 Trainer",
         "institution": "CrossFit Inc."

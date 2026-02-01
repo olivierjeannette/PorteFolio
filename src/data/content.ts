@@ -184,7 +184,6 @@ export const skillCategories: SkillCategory[] = [
       {
         titleKey: 'fitness',
         items: [
-          { key: 'crossfitL2', level: 90 },
           { key: 'crossfitL1', level: 90 },
           { key: 'nutritionCoaching', level: 75 },
         ],
@@ -394,17 +393,9 @@ export interface Education {
 }
 
 // Education IDs for i18n lookup
-export const educationIds = ['crossfit-l2', 'crossfit-l1', 'bpjeps', 'pilates', 'sf-training', 'psc-pse', 'sc-combat', 'staps', 'bac'] as const
+export const educationIds = ['crossfit-l1', 'bpjeps', 'pilates', 'sf-training', 'psc-pse', 'sc-combat', 'staps', 'bac'] as const
 
 export const education: Education[] = [
-  {
-    id: 'crossfit-l2',
-    title: 'CrossFit Level 2 Trainer',
-    institution: 'CrossFit Inc.',
-    year: '2021',
-    pdfUrl: '/diplomes/crossfit-l2.pdf',
-    category: 'fitness',
-  },
   {
     id: 'crossfit-l1',
     title: 'CrossFit Level 1 Trainer',
