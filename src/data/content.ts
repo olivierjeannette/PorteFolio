@@ -10,8 +10,7 @@ export const personalInfo = {
   location: 'France → Calgary, Alberta, Canada',
   email: 'olive.jackson22@gmail.com',
   whatsapp: '+33616875437',
-  linkedin: 'https://linkedin.com/in/olivier-jeannette',
-  github: 'https://github.com/olivier-jeannette',
+  instagram: 'https://instagram.com/jackson.skali',
 
   // Bio courte pour le hero
   tagline: 'I build systems that run themselves.',

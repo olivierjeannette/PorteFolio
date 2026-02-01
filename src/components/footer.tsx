@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ArrowUpRight, MessageCircle } from 'lucide-react'
+import { Instagram, Mail, ArrowUpRight, MessageCircle } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { personalInfo } from '@/data/content'
 
@@ -16,10 +16,9 @@ const navItems = [
 ]
 
 const socialLinks = [
-  { name: 'GitHub', href: personalInfo.github, icon: Github },
-  { name: 'LinkedIn', href: personalInfo.linkedin, icon: Linkedin },
   { name: 'WhatsApp', href: `https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`, icon: MessageCircle },
   { name: 'Email', href: `mailto:${personalInfo.email}`, icon: Mail },
+  { name: 'Instagram', href: personalInfo.instagram, icon: Instagram },
 ]
 
 export function Footer() {
