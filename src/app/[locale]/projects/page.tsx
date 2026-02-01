@@ -1,21 +1,37 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, Github, ExternalLink, X } from 'lucide-react'
+import { ExternalLink, Github, X, Filter } from 'lucide-react'
+import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from '@/components/animations'
 import { projects, type Project } from '@/data/content'
 import { cn } from '@/lib/utils'
 
-export default function ProjetsPage() {
+type Category = 'all' | 'web' | 'app' | 'automation'
+
+export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [activeCategory, setActiveCategory] = useState<Category>('all')
+  const locale = useLocale()
+  const t = useTranslations('projects')
+
+  const categories: { key: Category; label: string }[] = [
+    { key: 'all', label: locale === 'en' ? 'All' : 'Tous' },
+    { key: 'web', label: locale === 'en' ? 'Websites' : 'Sites Web' },
+    { key: 'app', label: locale === 'en' ? 'Applications' : 'Applications' },
+    { key: 'automation', label: 'Automation' },
+  ]
+
+  const filteredProjects = activeCategory === 'all'
+    ? projects
+    : projects.filter((p) => p.category === activeCategory)
 
   return (
     <div className="min-h-screen pt-32 pb-20">
       <div className="container-custom">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12">
           <FadeIn>
             <span className="inline-block text-sm font-medium text-accent-600 dark:text-accent-400 uppercase tracking-wider mb-4">
               Portfolio
@@ -23,38 +39,60 @@ export default function ProjetsPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-display font-bold text-display-sm md:text-display-md text-surface-900 dark:text-surface-50 mb-6">
-              Mes <span className="text-gradient">projets</span>
+              {locale === 'en' ? 'My' : 'Mes'} <span className="text-gradient">{locale === 'en' ? 'Projects' : 'Projets'}</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-lg text-surface-600 dark:text-surface-400">
-              Une sélection de projets qui illustrent mon approche : résoudre des problèmes réels 
-              avec des solutions techniques élégantes et efficaces.
+              {locale === 'en'
+                ? 'A selection of projects showcasing my approach: solving real problems with elegant, effective technical solutions.'
+                : 'Une sélection de projets qui illustrent mon approche : résoudre des problèmes réels avec des solutions techniques élégantes et efficaces.'}
             </p>
           </FadeIn>
         </div>
 
+        {/* Category Filter */}
+        <FadeIn delay={0.3}>
+          <div className="flex items-center gap-2 mb-8 flex-wrap">
+            <Filter className="w-4 h-4 text-surface-500" />
+            {categories.map((cat) => (
+              <button
+                key={cat.key}
+                onClick={() => setActiveCategory(cat.key)}
+                className={cn(
+                  'px-4 py-2 rounded-lg text-sm font-medium transition-all',
+                  activeCategory === cat.key
+                    ? 'bg-accent-500 text-white'
+                    : 'bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400 hover:bg-surface-200 dark:hover:bg-surface-700'
+                )}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </FadeIn>
+
         {/* Projects Grid */}
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8" staggerDelay={0.1}>
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <StaggerItem key={project.id} id={project.id}>
               <HoverCard>
-                <article 
+                <article
                   className="group h-full rounded-2xl overflow-hidden bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 card-hover cursor-pointer"
                   onClick={() => setSelectedProject(project)}
                 >
                   {/* Image */}
                   <div className="relative aspect-video bg-surface-200 dark:bg-surface-700 overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent-500/20 to-accent-600/10">
-                      <span className="font-display font-semibold text-xl text-surface-500 dark:text-surface-400">
+                      <span className="font-display font-semibold text-xl text-surface-500 dark:text-surface-400 text-center px-4">
                         {project.title}
                       </span>
                     </div>
-                    
+
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-accent-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-4 py-2 rounded-lg bg-white/90 dark:bg-surface-900/90 text-sm font-medium text-surface-900 dark:text-surface-100">
-                        Voir les détails
+                        {locale === 'en' ? 'View details' : 'Voir les détails'}
                       </span>
                     </div>
                   </div>
@@ -71,7 +109,7 @@ export default function ProjetsPage() {
                     <h2 className="font-display font-semibold text-xl text-surface-900 dark:text-surface-100 mb-2 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                       {project.title}
                     </h2>
-                    
+
                     <p className="text-surface-600 dark:text-surface-400 mb-4 line-clamp-2">
                       {project.description}
                     </p>
@@ -107,6 +145,15 @@ export default function ProjetsPage() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+
+        {/* Empty state */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-surface-500 dark:text-surface-500">
+              {locale === 'en' ? 'No projects in this category yet.' : 'Pas de projets dans cette catégorie pour le moment.'}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Project Detail Modal */}
@@ -171,7 +218,7 @@ export default function ProjetsPage() {
                           className="btn-primary"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          Voir le site
+                          {t('viewLive')}
                         </a>
                       )}
                       {selectedProject.githubUrl && (
@@ -182,7 +229,7 @@ export default function ProjetsPage() {
                           className="btn-secondary"
                         >
                           <Github className="w-4 h-4" />
-                          Code
+                          {t('viewCode')}
                         </a>
                       )}
                     </div>
@@ -204,7 +251,7 @@ export default function ProjetsPage() {
                   {/* Description */}
                   <div className="mb-8">
                     <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-4">
-                      Description
+                      {locale === 'en' ? 'Description' : 'Description'}
                     </h3>
                     <p className="text-surface-600 dark:text-surface-400 leading-relaxed">
                       {selectedProject.longDescription}
@@ -214,7 +261,7 @@ export default function ProjetsPage() {
                   {/* Stack */}
                   <div>
                     <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-4">
-                      Technologies utilisées
+                      {t('stack')}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.stack.map((tech) => (

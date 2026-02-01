@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "title": "Olivier Jeannette | Ops Architect & AI-Augmented Builder",
+    "description": "Ancien Paramedic des Forces Spéciales devenu entrepreneur tech. Je construis des systèmes qui tournent seuls. Disponible pour des opportunités à Calgary, Alberta."
+  },
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "cv": "CV",
+    "diplomas": "Diplômes",
+    "military": "Armée",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Disponible pour opportunités en Alberta, Canada",
+    "tagline": "Je construis des systèmes qui tournent seuls.",
+    "cta": {
+      "projects": "Voir mes projets",
+      "cv": "Télécharger CV"
+    },
+    "scroll": "Défiler"
+  },
+  "about": {
+    "label": "À propos",
+    "title": "Builder par nature,",
+    "titleAccent": "entrepreneur par choix",
+    "bio": [
+      "Ancien Paramedic des Forces Spéciales avec expérience médicale de combat, j'ai transitionné vers l'entrepreneuriat en fondant et développant une salle CrossFit/HYROX en France jusqu'à 120K€ de CA annuel. Je n'ai pas juste géré—j'ai construit chaque système from scratch.",
+      "Ma force : connecter les pièces. Backend, frontend, infrastructure, IA—je ne code pas \"pur\", je construis des systèmes qui fonctionnent. Chaque projet est une opportunité d'éliminer la friction et de créer de la valeur durable. J'ai remplacé 3K€/an de SaaS par des solutions custom que j'ai construites moi-même.",
+      "Actuellement en relocalisation vers Calgary, Alberta. Je cherche des opportunités où mon profil hybride tech/business/opérations peut avoir un impact réel. Les environnements haute intensité sont là où j'excelle."
+    ],
+    "stats": {
+      "revenue": "CA Annuel",
+      "years": "Années GM",
+      "saved": "SaaS Remplacé"
+    },
+    "yearsExp": "ans d'expérience"
+  },
+  "skills": {
+    "label": "Compétences",
+    "title": "Ce que",
+    "titleAccent": "j'apporte",
+    "categories": {
+      "dev": {
+        "title": "Développement & Tech",
+        "items": {
+          "aiCoding": "Dev Augmenté par IA (Claude Code)",
+          "apiMcp": "Intégration API & Serveurs MCP",
+          "frontend": "Frontend (React, Next.js, HTML/CSS)",
+          "backend": "Backend (Supabase, Neon, PostgreSQL)",
+          "deployment": "Déploiement (Vercel, Netlify, VPS)",
+          "automation": "Automatisation (Make, N8N, Zapier)",
+          "tools": "Outils Dev (VS Code, GitHub, Discord, Notion)"
+        }
+      },
+      "business": {
+        "title": "Business & Stratégie",
+        "items": {
+          "marketing": "Marketing Digital & SEO",
+          "ads": "Publicité Payante (Meta, Google Ads)",
+          "sales": "Vente & Négociation",
+          "funnels": "Tunnels de Vente & Conversion",
+          "processOpt": "Optimisation des Process",
+          "audit": "Audit & Analyse Business",
+          "events": "Événementiel & Team Building"
+        }
+      },
+      "leadership": {
+        "title": "Leadership & Soft Skills",
+        "items": {
+          "autonomy": "Autonomie Totale & Initiative",
+          "adaptability": "Adaptabilité & Débrouillardise",
+          "stress": "Gestion du Stress (Testé au combat)",
+          "problemSolving": "Résolution de Problèmes",
+          "decision": "Prise de Décision Sous Pression",
+          "systems": "Pensée Systémique"
+        }
+      },
+      "health": {
+        "title": "Santé & Urgences",
+        "items": {
+          "paramedic": "Paramedic Combat (Forces Spéciales)",
+          "civilFirst": "Secouriste Civil",
+          "militaryFirst": "Instructeur Secourisme Militaire",
+          "crossfitL2": "CrossFit Level 2 Trainer",
+          "crossfitL1": "CrossFit Level 1 Trainer"
+        }
+      }
+    }
+  },
+  "projects": {
+    "label": "Projets",
+    "title": "Travaux",
+    "titleAccent": "récents",
+    "viewAll": "Voir tous les projets",
+    "viewLive": "Voir le site",
+    "viewCode": "Voir le code",
+    "stack": "Technologies",
+    "metrics": "Résultats"
+  },
+  "cta": {
+    "title": "Prêt à travailler ensemble ?",
+    "description": "Je suis actuellement disponible pour des opportunités à Calgary, Alberta. Discutons de comment je peux apporter de la valeur à votre équipe.",
+    "contact": "Me contacter",
+    "viewCv": "Voir mon CV"
+  },
+  "cv": {
+    "title": "CV",
+    "download": "Télécharger PDF",
+    "print": "Imprimer",
+    "summary": {
+      "title": "Résumé Professionnel",
+      "content": "Architecte opérationnel avec un parcours unique combinant formation médicale des Forces Spéciales, entrepreneuriat et expertise technique. J'ai construit et développé une salle CrossFit/HYROX de zéro à 120K€ de CA annuel tout en développant des solutions logicielles sur mesure. Je cherche des opportunités en Alberta où je peux mettre à profit mon profil hybride tech/business pour optimiser l'excellence opérationnelle."
+    },
+    "experience": {
+      "title": "Expérience Professionnelle"
+    },
+    "education": {
+      "title": "Formation & Certifications"
+    },
+    "skills": {
+      "title": "Compétences Clés"
+    },
+    "languages": {
+      "title": "Langues",
+      "french": "Français",
+      "frenchLevel": "Natif",
+      "english": "Anglais",
+      "englishLevel": "Professionnel (B2/C1)"
+    }
+  },
+  "diplomas": {
+    "title": "Certifications & Diplômes",
+    "subtitle": "Certifications professionnelles et formations",
+    "view": "Voir",
+    "download": "Télécharger",
+    "addPlaceholder": "Plus de certifications à venir...",
+    "categories": {
+      "fitness": "Fitness & Coaching",
+      "medical": "Médical & Secourisme",
+      "tech": "Technique",
+      "business": "Business"
+    }
+  },
+  "military": {
+    "title": "Service Militaire",
+    "subtitle": "Armée de Terre - Forces Spéciales",
+    "service": {
+      "title": "État de Service",
+      "unit": "Unité",
+      "unitValue": "Forces Spéciales Françaises",
+      "role": "Fonction",
+      "roleValue": "Paramedic Combat",
+      "rank": "Grade",
+      "rankValue": "Militaire du Rang",
+      "period": "Période"
+    },
+    "skills": {
+      "title": "Compétences Acquises",
+      "items": [
+        "Soins Médicaux de Combat (TCCC)",
+        "Prise de Décision Sous Stress Intense",
+        "Opérations en Équipe en Environnement Hostile",
+        "Intervention d'Urgence & Triage",
+        "Résilience Physique & Mentale",
+        "Leadership Sous le Feu"
+      ]
+    },
+    "values": {
+      "title": "Valeurs que j'apporte",
+      "discipline": {
+        "title": "Discipline",
+        "description": "Éthique de travail militaire et attention aux détails"
+      },
+      "resilience": {
+        "title": "Résilience",
+        "description": "Capacité prouvée à performer sous pression extrême"
+      },
+      "leadership": {
+        "title": "Leadership",
+        "description": "Expérience de direction d'équipes en situations critiques"
+      },
+      "adaptability": {
+        "title": "Adaptabilité",
+        "description": "Réflexion rapide et résolution de problèmes en environnement imprévisible"
+      }
+    },
+    "medals": {
+      "title": "Décorations & Distinctions"
+    },
+    "diplomas": {
+      "title": "Certifications Militaires"
+    }
+  },
+  "contact": {
+    "title": "Me Contacter",
+    "subtitle": "Discutons de comment je peux contribuer à votre équipe",
+    "form": {
+      "name": "Votre Nom",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Votre Email",
+      "emailPlaceholder": "jean@entreprise.com",
+      "company": "Entreprise (Optionnel)",
+      "companyPlaceholder": "Votre Entreprise",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-moi de votre projet ou opportunité...",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé ! Je vous recontacte rapidement.",
+      "error": "Une erreur est survenue. Réessayez ou contactez-moi directement."
+    },
+    "or": "Ou contactez-moi directement",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "tagline": "Je construis des systèmes qui tournent seuls.",
+    "navigation": "Navigation",
+    "connect": "Contact",
+    "rights": "Tous droits réservés."
+  },
+  "common": {
+    "present": "Présent",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "back": "Retour"
+  }
+}

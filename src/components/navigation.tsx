@@ -2,19 +2,33 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, Monitor } from 'lucide-react'
+import { Menu, X, Sun, Moon, Monitor, Globe } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { useTranslations, useLocale } from 'next-intl'
 import { cn } from '@/lib/utils'
-import { navigation } from '@/data/content'
+import { locales, localeFlags, type Locale } from '@/i18n/config'
+
+const navItems = [
+  { key: 'home', href: '/' },
+  { key: 'projects', href: '/projects' },
+  { key: 'cv', href: '/cv' },
+  { key: 'diplomas', href: '/diplomas' },
+  { key: 'military', href: '/military' },
+  { key: 'contact', href: '/contact' },
+]
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [showLangMenu, setShowLangMenu] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
+  const locale = useLocale()
   const { theme, setTheme } = useTheme()
+  const t = useTranslations('nav')
 
   useEffect(() => {
     setMounted(true)
@@ -33,11 +47,24 @@ export function Navigation() {
     else setTheme('light')
   }
 
+  const switchLocale = (newLocale: Locale) => {
+    // Get the current path without locale prefix
+    const currentPath = pathname.replace(`/${locale}`, '') || '/'
+    router.push(`/${newLocale}${currentPath}`)
+    setShowLangMenu(false)
+  }
+
   const ThemeIcon = () => {
     if (!mounted) return <Monitor className="w-5 h-5" />
     if (theme === 'light') return <Sun className="w-5 h-5" />
     if (theme === 'dark') return <Moon className="w-5 h-5" />
     return <Monitor className="w-5 h-5" />
+  }
+
+  // Get the base path for comparison (remove locale prefix)
+  const getBasePath = (path: string) => {
+    const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/'
+    return pathWithoutLocale === path || pathWithoutLocale === `${path}/`
   }
 
   return (
@@ -48,9 +75,7 @@ export function Navigation() {
         transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-          isScrolled
-            ? 'py-3'
-            : 'py-5'
+          isScrolled ? 'py-3' : 'py-5'
         )}
       >
         <div className="container-custom">
@@ -63,32 +88,32 @@ export function Navigation() {
             )}
           >
             {/* Logo */}
-            <Link
-              href="/"
-              className="relative group"
-            >
+            <Link href={`/${locale}`} className="relative group">
               <span className="font-display font-bold text-xl tracking-tight">
                 <span className="text-gradient">O</span>
                 <span className="text-surface-900 dark:text-surface-100">livier</span>
+                <span className="text-surface-500 dark:text-surface-500 text-sm ml-1">
+                  J.
+                </span>
               </span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full" />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
-              {navigation.map((item) => (
+              {navItems.map((item) => (
                 <Link
-                  key={item.href}
-                  href={item.href}
+                  key={item.key}
+                  href={`/${locale}${item.href}`}
                   className={cn(
                     'relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200',
-                    pathname === item.href
+                    getBasePath(item.href)
                       ? 'text-accent-600 dark:text-accent-400'
                       : 'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-100'
                   )}
                 >
-                  {item.name}
-                  {pathname === item.href && (
+                  {t(item.key)}
+                  {getBasePath(item.href) && (
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute inset-0 bg-accent-500/10 dark:bg-accent-400/10 rounded-lg"
@@ -101,6 +126,49 @@ export function Navigation() {
 
             {/* Actions */}
             <div className="flex items-center gap-2">
+              {/* Language Switcher */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowLangMenu(!showLangMenu)}
+                  className={cn(
+                    'p-2.5 rounded-xl transition-all duration-200 flex items-center gap-1',
+                    'text-surface-600 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-100',
+                    'hover:bg-surface-100 dark:hover:bg-surface-800'
+                  )}
+                  aria-label="Switch language"
+                >
+                  <Globe className="w-4 h-4" />
+                  <span className="text-xs font-medium uppercase">{locale}</span>
+                </button>
+
+                <AnimatePresence>
+                  {showLangMenu && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute right-0 mt-2 py-2 w-32 rounded-xl bg-white dark:bg-surface-800 shadow-lg border border-surface-200 dark:border-surface-700"
+                    >
+                      {locales.map((loc) => (
+                        <button
+                          key={loc}
+                          onClick={() => switchLocale(loc)}
+                          className={cn(
+                            'w-full px-4 py-2 text-left text-sm flex items-center gap-2 transition-colors',
+                            locale === loc
+                              ? 'bg-accent-500/10 text-accent-600 dark:text-accent-400'
+                              : 'text-surface-600 hover:bg-surface-100 dark:text-surface-400 dark:hover:bg-surface-700'
+                          )}
+                        >
+                          <span>{localeFlags[loc]}</span>
+                          <span>{loc === 'en' ? 'English' : 'Français'}</span>
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* Theme Toggle */}
               <button
                 onClick={cycleTheme}
@@ -160,27 +228,53 @@ export function Navigation() {
             >
               <div className="flex flex-col h-full p-6 pt-24">
                 <div className="flex flex-col gap-2">
-                  {navigation.map((item, index) => (
+                  {navItems.map((item, index) => (
                     <motion.div
-                      key={item.href}
+                      key={item.key}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
                       <Link
-                        href={item.href}
+                        href={`/${locale}${item.href}`}
                         onClick={toggleMenu}
                         className={cn(
                           'flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-200',
-                          pathname === item.href
+                          getBasePath(item.href)
                             ? 'bg-accent-500/10 text-accent-600 dark:text-accent-400'
                             : 'text-surface-600 hover:bg-surface-100 dark:text-surface-400 dark:hover:bg-surface-800'
                         )}
                       >
-                        {item.name}
+                        {t(item.key)}
                       </Link>
                     </motion.div>
                   ))}
+                </div>
+
+                {/* Mobile Language Switcher */}
+                <div className="mt-8 pt-6 border-t border-surface-200 dark:border-surface-800">
+                  <p className="text-xs text-surface-500 mb-3 uppercase tracking-wider">
+                    Language
+                  </p>
+                  <div className="flex gap-2">
+                    {locales.map((loc) => (
+                      <button
+                        key={loc}
+                        onClick={() => {
+                          switchLocale(loc)
+                          toggleMenu()
+                        }}
+                        className={cn(
+                          'flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+                          locale === loc
+                            ? 'bg-accent-500 text-white'
+                            : 'bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400'
+                        )}
+                      >
+                        {localeFlags[loc]} {loc.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="mt-auto pt-6 border-t border-surface-200 dark:border-surface-800">

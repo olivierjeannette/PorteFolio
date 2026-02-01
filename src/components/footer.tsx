@@ -2,17 +2,31 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react'
-import { personalInfo, navigation } from '@/data/content'
+import { Github, Linkedin, Mail, ArrowUpRight, MessageCircle } from 'lucide-react'
+import { useTranslations, useLocale } from 'next-intl'
+import { personalInfo } from '@/data/content'
+
+const navItems = [
+  { key: 'home', href: '/' },
+  { key: 'projects', href: '/projects' },
+  { key: 'cv', href: '/cv' },
+  { key: 'diplomas', href: '/diplomas' },
+  { key: 'military', href: '/military' },
+  { key: 'contact', href: '/contact' },
+]
 
 const socialLinks = [
   { name: 'GitHub', href: personalInfo.github, icon: Github },
   { name: 'LinkedIn', href: personalInfo.linkedin, icon: Linkedin },
+  { name: 'WhatsApp', href: `https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`, icon: MessageCircle },
   { name: 'Email', href: `mailto:${personalInfo.email}`, icon: Mail },
 ]
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const locale = useLocale()
+  const t = useTranslations('footer')
+  const tNav = useTranslations('nav')
 
   return (
     <footer className="relative border-t border-surface-200 dark:border-surface-800">
@@ -23,14 +37,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
           <div className="md:col-span-5">
-            <Link href="/" className="inline-block">
+            <Link href={`/${locale}`} className="inline-block">
               <span className="font-display font-bold text-2xl tracking-tight">
                 <span className="text-gradient">O</span>
                 <span className="text-surface-900 dark:text-surface-100">livier</span>
+                <span className="text-surface-500 text-lg ml-1">Jeannette</span>
               </span>
             </Link>
             <p className="mt-4 text-surface-600 dark:text-surface-400 max-w-sm">
-              {personalInfo.tagline}
+              {t('tagline')}
             </p>
             <p className="mt-2 text-sm text-surface-500 dark:text-surface-500">
               {personalInfo.location}
@@ -40,16 +55,16 @@ export function Footer() {
           {/* Navigation */}
           <div className="md:col-span-3">
             <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-surface-500 dark:text-surface-500 mb-4">
-              Navigation
+              {t('navigation')}
             </h3>
             <ul className="space-y-3">
-              {navigation.map((item) => (
-                <li key={item.href}>
+              {navItems.map((item) => (
+                <li key={item.key}>
                   <Link
-                    href={item.href}
+                    href={`/${locale}${item.href}`}
                     className="text-surface-600 hover:text-accent-600 dark:text-surface-400 dark:hover:text-accent-400 transition-colors duration-200"
                   >
-                    {item.name}
+                    {tNav(item.key)}
                   </Link>
                 </li>
               ))}
@@ -59,7 +74,7 @@ export function Footer() {
           {/* Contact */}
           <div className="md:col-span-4">
             <h3 className="font-display font-semibold text-sm uppercase tracking-wider text-surface-500 dark:text-surface-500 mb-4">
-              Contact
+              {t('connect')}
             </h3>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -78,20 +93,20 @@ export function Footer() {
               ))}
             </div>
 
-            <a
-              href={`mailto:${personalInfo.email}`}
+            <Link
+              href={`/${locale}/contact`}
               className="inline-flex items-center gap-2 mt-6 text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300 font-medium transition-colors duration-200"
             >
-              Discutons ensemble
+              {locale === 'en' ? "Let's talk" : 'Discutons ensemble'}
               <ArrowUpRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-surface-200 dark:border-surface-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-surface-500 dark:text-surface-500">
-            © {currentYear} Olivier. Tous droits réservés.
+            © {currentYear} Olivier Jeannette. {t('rights')}
           </p>
           <p className="text-xs text-surface-400 dark:text-surface-600">
             Built with Next.js, Tailwind CSS & Framer Motion

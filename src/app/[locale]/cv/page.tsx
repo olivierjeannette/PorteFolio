@@ -1,50 +1,21 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Download, MapPin, Mail, Linkedin, Github, Globe, Calendar, Building2, GraduationCap } from 'lucide-react'
-import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations'
-import { personalInfo, experiences, education, skills } from '@/data/content'
+import { Download, Printer, MapPin, Mail, Linkedin, Github, Calendar, Building2, GraduationCap, Shield, MessageCircle } from 'lucide-react'
+import { useTranslations, useLocale } from 'next-intl'
+import { FadeIn, StaggerContainer, StaggerItem, Magnetic } from '@/components/animations'
+import { personalInfo, experiences, education, skills, militarySkills } from '@/data/content'
 import { cn } from '@/lib/utils'
 
-// Language toggle
-type Language = 'fr' | 'en'
-
 export default function CVPage() {
-  const [lang, setLang] = useState<Language>('fr')
+  const locale = useLocale()
+  const t = useTranslations('cv')
+  const cvRef = useRef<HTMLDivElement>(null)
 
-  const content = {
-    fr: {
-      title: 'Curriculum Vitae',
-      download: 'Télécharger PDF',
-      summary: 'Résumé Professionnel',
-      summaryText: `Entrepreneur et architecte opérationnel avec plus de 5 ans d'expérience en gestion d'entreprise et développement technique. Expert en automatisation des opérations, création d'applications métier et optimisation des processus. Recherche des opportunités à Calgary, Canada, où je peux apporter ma vision hybride tech/business.`,
-      experience: 'Expérience Professionnelle',
-      education: 'Formation & Certifications',
-      skills: 'Compétences',
-      languages: 'Langues',
-      langFr: 'Français',
-      langFrLevel: 'Natif',
-      langEn: 'Anglais',
-      langEnLevel: 'Professionnel (B2/C1)',
-    },
-    en: {
-      title: 'Resume',
-      download: 'Download PDF',
-      summary: 'Professional Summary',
-      summaryText: `Entrepreneur and Ops Architect with 5+ years of experience in business management and technical development. Expert in operations automation, custom business applications, and process optimization. Seeking opportunities in Calgary, Canada, where I can bring my hybrid tech/business perspective.`,
-      experience: 'Professional Experience',
-      education: 'Education & Certifications',
-      skills: 'Skills',
-      languages: 'Languages',
-      langFr: 'French',
-      langFrLevel: 'Native',
-      langEn: 'English',
-      langEnLevel: 'Professional (B2/C1)',
-    },
+  const handlePrint = () => {
+    window.print()
   }
-
-  const t = content[lang]
 
   return (
     <div className="min-h-screen pt-32 pb-20">
@@ -54,7 +25,7 @@ export default function CVPage() {
           <div>
             <FadeIn>
               <span className="inline-block text-sm font-medium text-accent-600 dark:text-accent-400 uppercase tracking-wider mb-4">
-                {t.title}
+                {t('title')}
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -72,54 +43,46 @@ export default function CVPage() {
 
           <FadeIn delay={0.3}>
             <div className="flex items-center gap-3">
-              {/* Language toggle */}
-              <div className="flex rounded-lg bg-surface-100 dark:bg-surface-800 p-1">
-                <button
-                  onClick={() => setLang('fr')}
-                  className={cn(
-                    'px-3 py-1.5 rounded-md text-sm font-medium transition-all',
-                    lang === 'fr'
-                      ? 'bg-white dark:bg-surface-700 text-surface-900 dark:text-surface-100 shadow-sm'
-                      : 'text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100'
-                  )}
-                >
-                  FR
-                </button>
-                <button
-                  onClick={() => setLang('en')}
-                  className={cn(
-                    'px-3 py-1.5 rounded-md text-sm font-medium transition-all',
-                    lang === 'en'
-                      ? 'bg-white dark:bg-surface-700 text-surface-900 dark:text-surface-100 shadow-sm'
-                      : 'text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100'
-                  )}
-                >
-                  EN
-                </button>
-              </div>
+              {/* Print button */}
+              <button
+                onClick={handlePrint}
+                className="btn-secondary print:hidden"
+              >
+                <Printer className="w-4 h-4" />
+                {t('print')}
+              </button>
 
               {/* Download button */}
-              <a href="/cv.pdf" download className="btn-primary">
+              <a href="/cv.pdf" download className="btn-primary print:hidden">
                 <Download className="w-4 h-4" />
-                {t.download}
+                {t('download')}
               </a>
             </div>
           </FadeIn>
         </div>
 
         {/* CV Content - Canadian format (no photo, no age) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div ref={cvRef} className="grid grid-cols-1 lg:grid-cols-12 gap-8 print:gap-4">
           {/* Main Content */}
-          <div className="lg:col-span-8 space-y-10">
+          <div className="lg:col-span-8 space-y-10 print:space-y-6">
             {/* Contact Info Bar */}
             <FadeIn>
-              <div className="flex flex-wrap gap-4 p-4 rounded-xl bg-surface-100 dark:bg-surface-800/50">
+              <div className="flex flex-wrap gap-4 p-4 rounded-xl bg-surface-100 dark:bg-surface-800/50 print:bg-gray-100 print:p-2">
                 <a
                   href={`mailto:${personalInfo.email}`}
                   className="flex items-center gap-2 text-sm text-surface-600 hover:text-accent-600 dark:text-surface-400 dark:hover:text-accent-400 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   {personalInfo.email}
+                </a>
+                <a
+                  href={`https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-surface-600 hover:text-accent-600 dark:text-surface-400 dark:hover:text-accent-400 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp
                 </a>
                 <span className="flex items-center gap-2 text-sm text-surface-600 dark:text-surface-400">
                   <MapPin className="w-4 h-4" />
@@ -134,15 +97,6 @@ export default function CVPage() {
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
-                <a
-                  href={personalInfo.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-surface-600 hover:text-accent-600 dark:text-surface-400 dark:hover:text-accent-400 transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  GitHub
-                </a>
               </div>
             </FadeIn>
 
@@ -151,10 +105,10 @@ export default function CVPage() {
               <section>
                 <h2 className="font-display font-semibold text-xl text-surface-900 dark:text-surface-100 mb-4 flex items-center gap-2">
                   <span className="w-8 h-0.5 bg-accent-500" />
-                  {t.summary}
+                  {t('summary.title')}
                 </h2>
                 <p className="text-surface-600 dark:text-surface-400 leading-relaxed">
-                  {t.summaryText}
+                  {t('summary.content')}
                 </p>
               </section>
             </FadeIn>
@@ -164,7 +118,7 @@ export default function CVPage() {
               <section>
                 <h2 className="font-display font-semibold text-xl text-surface-900 dark:text-surface-100 mb-6 flex items-center gap-2">
                   <span className="w-8 h-0.5 bg-accent-500" />
-                  {t.experience}
+                  {t('experience.title')}
                 </h2>
                 <StaggerContainer className="space-y-8" staggerDelay={0.1}>
                   {experiences.map((exp) => (
@@ -172,7 +126,7 @@ export default function CVPage() {
                       <div className="relative pl-6 border-l-2 border-surface-200 dark:border-surface-700">
                         {/* Timeline dot */}
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-500 border-4 border-surface-50 dark:border-surface-900" />
-                        
+
                         <div className="mb-2">
                           <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100">
                             {exp.title}
@@ -219,19 +173,48 @@ export default function CVPage() {
               </section>
             </FadeIn>
 
-            {/* Education */}
+            {/* Military Skills Section */}
             <FadeIn delay={0.3}>
               <section>
                 <h2 className="font-display font-semibold text-xl text-surface-900 dark:text-surface-100 mb-6 flex items-center gap-2">
                   <span className="w-8 h-0.5 bg-accent-500" />
-                  {t.education}
+                  <Shield className="w-5 h-5" />
+                  {locale === 'en' ? 'Military Training & Skills' : 'Formation & Compétences Militaires'}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {militarySkills.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 p-3 rounded-lg bg-surface-100 dark:bg-surface-800/50"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-red-500" />
+                      <span className="text-sm text-surface-700 dark:text-surface-300">{skill}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </FadeIn>
+
+            {/* Education */}
+            <FadeIn delay={0.4}>
+              <section id="skills">
+                <h2 className="font-display font-semibold text-xl text-surface-900 dark:text-surface-100 mb-6 flex items-center gap-2">
+                  <span className="w-8 h-0.5 bg-accent-500" />
+                  {t('education.title')}
                 </h2>
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.1}>
                   {education.map((edu) => (
                     <StaggerItem key={edu.id}>
                       <div className="p-4 rounded-xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
                         <div className="flex items-start gap-3">
-                          <div className="p-2 rounded-lg bg-accent-500/10 text-accent-600 dark:text-accent-400">
+                          <div className={cn(
+                            "p-2 rounded-lg",
+                            edu.category === 'military' && "bg-red-500/10 text-red-600 dark:text-red-400",
+                            edu.category === 'medical' && "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+                            edu.category === 'fitness' && "bg-green-500/10 text-green-600 dark:text-green-400",
+                            edu.category === 'tech' && "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+                            edu.category === 'business' && "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
+                          )}>
                             <GraduationCap className="w-5 h-5" />
                           </div>
                           <div>
@@ -252,12 +235,12 @@ export default function CVPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-4 space-y-8 print:space-y-4">
             {/* Skills */}
-            <FadeIn delay={0.4}>
-              <div className="p-6 rounded-2xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
+            <FadeIn delay={0.5}>
+              <div className="p-6 rounded-2xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700 print:p-4">
                 <h2 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-6">
-                  {t.skills}
+                  {t('skills.title')}
                 </h2>
 
                 <div className="space-y-6">
@@ -292,43 +275,54 @@ export default function CVPage() {
             </FadeIn>
 
             {/* Languages */}
-            <FadeIn delay={0.5}>
-              <div className="p-6 rounded-2xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
+            <FadeIn delay={0.6}>
+              <div className="p-6 rounded-2xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700 print:p-4">
                 <h2 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-4">
-                  {t.languages}
+                  {t('languages.title')}
                 </h2>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-surface-700 dark:text-surface-300">{t.langFr}</span>
-                    <span className="text-sm text-accent-600 dark:text-accent-400">{t.langFrLevel}</span>
+                    <span className="text-surface-700 dark:text-surface-300">{t('languages.french')}</span>
+                    <span className="text-sm text-accent-600 dark:text-accent-400">{t('languages.frenchLevel')}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-surface-700 dark:text-surface-300">{t.langEn}</span>
-                    <span className="text-sm text-accent-600 dark:text-accent-400">{t.langEnLevel}</span>
+                    <span className="text-surface-700 dark:text-surface-300">{t('languages.english')}</span>
+                    <span className="text-sm text-accent-600 dark:text-accent-400">{t('languages.englishLevel')}</span>
                   </div>
                 </div>
               </div>
             </FadeIn>
 
             {/* Download CTA */}
-            <FadeIn delay={0.6}>
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white">
+            <FadeIn delay={0.7}>
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white print:hidden">
                 <h3 className="font-display font-semibold text-lg mb-2">
-                  {lang === 'fr' ? 'Intéressé ?' : 'Interested?'}
+                  {locale === 'en' ? 'Interested?' : 'Intéressé ?'}
                 </h3>
                 <p className="text-white/80 text-sm mb-4">
-                  {lang === 'fr' 
-                    ? 'Téléchargez mon CV complet en PDF.'
-                    : 'Download my complete resume in PDF format.'}
+                  {locale === 'en'
+                    ? 'Download my complete resume in PDF format or contact me directly.'
+                    : 'Téléchargez mon CV complet en PDF ou contactez-moi directement.'}
                 </p>
-                <a
-                  href="/cv.pdf"
-                  download
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-accent-700 font-medium text-sm hover:bg-white/90 transition-colors"
-                >
-                  <Download className="w-4 h-4" />
-                  {t.download}
-                </a>
+                <div className="flex gap-2">
+                  <a
+                    href="/cv.pdf"
+                    download
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white text-accent-700 font-medium text-sm hover:bg-white/90 transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    PDF
+                  </a>
+                  <a
+                    href={`https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 text-white font-medium text-sm hover:bg-white/20 transition-colors"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </FadeIn>
           </div>

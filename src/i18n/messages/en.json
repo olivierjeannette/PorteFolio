@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "title": "Olivier Jeannette | Ops Architect & AI-Augmented Builder",
+    "description": "Former Special Forces Paramedic turned Tech Entrepreneur. I build systems that run themselves. Available for opportunities in Calgary, Alberta."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "cv": "Resume",
+    "diplomas": "Certifications",
+    "military": "Military",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Open to opportunities in Alberta, Canada",
+    "tagline": "I build systems that run themselves.",
+    "cta": {
+      "projects": "View My Work",
+      "cv": "Download Resume"
+    },
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About",
+    "title": "Builder by nature,",
+    "titleAccent": "entrepreneur by choice",
+    "bio": [
+      "Former Special Forces Paramedic with combat medical experience, I transitioned to entrepreneurship by founding and scaling a CrossFit/HYROX gym in France to €120K annual revenue. I didn't just manage—I built every system from scratch.",
+      "My superpower: connecting the dots. Backend, frontend, infrastructure, AI—I don't code \"pure\", I build systems that work. Every project is an opportunity to eliminate friction and create lasting value. I replaced €3K/year in SaaS tools with custom solutions I built myself.",
+      "Currently relocating to Calgary, Alberta. I'm looking for opportunities where my hybrid tech/business/operations profile can make a real impact. High-intensity environments are where I thrive."
+    ],
+    "stats": {
+      "revenue": "Annual Revenue",
+      "years": "Years as GM",
+      "saved": "SaaS Replaced"
+    },
+    "yearsExp": "years experience"
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "What I",
+    "titleAccent": "bring to the table",
+    "categories": {
+      "dev": {
+        "title": "Development & Tech",
+        "items": {
+          "aiCoding": "AI-Augmented Development (Claude Code)",
+          "apiMcp": "API Integration & MCP Servers",
+          "frontend": "Frontend (React, Next.js, HTML/CSS)",
+          "backend": "Backend (Supabase, Neon, PostgreSQL)",
+          "deployment": "Deployment (Vercel, Netlify, VPS)",
+          "automation": "Automation (Make, N8N, Zapier)",
+          "tools": "Dev Tools (VS Code, GitHub, Discord, Notion)"
+        }
+      },
+      "business": {
+        "title": "Business & Strategy",
+        "items": {
+          "marketing": "Digital Marketing & SEO",
+          "ads": "Paid Ads (Meta, Google Ads)",
+          "sales": "Sales & Negotiation",
+          "funnels": "Sales Funnels & Conversion",
+          "processOpt": "Process Optimization",
+          "audit": "Business Audit & Analysis",
+          "events": "Events & Team Building"
+        }
+      },
+      "leadership": {
+        "title": "Leadership & Soft Skills",
+        "items": {
+          "autonomy": "Full Autonomy & Initiative",
+          "adaptability": "Adaptability & Resourcefulness",
+          "stress": "Stress Management (Combat-tested)",
+          "problemSolving": "Problem Solving",
+          "decision": "Decision Making Under Pressure",
+          "systems": "Systems Thinking"
+        }
+      },
+      "health": {
+        "title": "Health & Emergency",
+        "items": {
+          "paramedic": "Combat Paramedic (Special Forces)",
+          "civilFirst": "Civilian First Responder",
+          "militaryFirst": "Military First Aid Instructor",
+          "crossfitL2": "CrossFit Level 2 Trainer",
+          "crossfitL1": "CrossFit Level 1 Trainer"
+        }
+      }
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Recent",
+    "titleAccent": "Work",
+    "viewAll": "View all projects",
+    "viewLive": "View Live",
+    "viewCode": "View Code",
+    "stack": "Stack",
+    "metrics": "Results"
+  },
+  "cta": {
+    "title": "Ready to work together?",
+    "description": "I'm currently open to opportunities in Calgary, Alberta. Let's discuss how I can bring value to your team.",
+    "contact": "Contact Me",
+    "viewCv": "View My Resume"
+  },
+  "cv": {
+    "title": "Resume",
+    "download": "Download PDF",
+    "print": "Print",
+    "summary": {
+      "title": "Professional Summary",
+      "content": "Operations architect with a unique background combining Special Forces medical training, entrepreneurship, and technical expertise. Built and scaled a CrossFit/HYROX gym from zero to €120K annual revenue while developing custom software solutions. Seeking opportunities in Alberta where I can leverage my hybrid tech/business profile to drive operational excellence."
+    },
+    "experience": {
+      "title": "Professional Experience"
+    },
+    "education": {
+      "title": "Education & Certifications"
+    },
+    "skills": {
+      "title": "Key Skills"
+    },
+    "languages": {
+      "title": "Languages",
+      "french": "French",
+      "frenchLevel": "Native",
+      "english": "English",
+      "englishLevel": "Professional (B2/C1)"
+    }
+  },
+  "diplomas": {
+    "title": "Certifications & Diplomas",
+    "subtitle": "Professional certifications and training credentials",
+    "view": "View",
+    "download": "Download",
+    "addPlaceholder": "More certifications coming soon...",
+    "categories": {
+      "fitness": "Fitness & Coaching",
+      "medical": "Medical & First Aid",
+      "tech": "Technical",
+      "business": "Business"
+    }
+  },
+  "military": {
+    "title": "Military Service",
+    "subtitle": "French Army - Special Forces",
+    "service": {
+      "title": "Service Record",
+      "unit": "Unit",
+      "unitValue": "French Special Forces",
+      "role": "Role",
+      "roleValue": "Combat Paramedic",
+      "rank": "Rank",
+      "rankValue": "Enlisted",
+      "period": "Period"
+    },
+    "skills": {
+      "title": "Skills Acquired",
+      "items": [
+        "Combat Medical Care (Tactical Combat Casualty Care)",
+        "High-Stress Decision Making",
+        "Team Operations in Hostile Environments",
+        "Emergency Response & Triage",
+        "Physical & Mental Resilience",
+        "Leadership Under Fire"
+      ]
+    },
+    "values": {
+      "title": "Values I Bring",
+      "discipline": {
+        "title": "Discipline",
+        "description": "Military-grade work ethic and attention to detail"
+      },
+      "resilience": {
+        "title": "Resilience",
+        "description": "Proven ability to perform under extreme pressure"
+      },
+      "leadership": {
+        "title": "Leadership",
+        "description": "Experience leading teams in critical situations"
+      },
+      "adaptability": {
+        "title": "Adaptability",
+        "description": "Quick thinking and problem-solving in unpredictable environments"
+      }
+    },
+    "medals": {
+      "title": "Decorations & Awards"
+    },
+    "diplomas": {
+      "title": "Military Certifications"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's discuss how I can contribute to your team",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "email": "Your Email",
+      "emailPlaceholder": "john@company.com",
+      "company": "Company (Optional)",
+      "companyPlaceholder": "Your Company",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or opportunity...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! I'll get back to you soon.",
+      "error": "Something went wrong. Please try again or contact me directly."
+    },
+    "or": "Or reach me directly",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "tagline": "Building systems that run themselves.",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "present": "Present",
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "back": "Back"
+  }
+}
