@@ -206,17 +206,39 @@
         "title": "Pilates Certification",
         "institution": "Pilates Training"
       },
+      "sc-combat-2": {
+        "title": "Combat First Aid Level 2 (SC2)",
+        "institution": "French Army - Special Forces"
+      },
+      "afgsu": {
+        "title": "AFGSU Level 1 & 2",
+        "institution": "French Army",
+        "description": "Emergency Care Training Certificate"
+      },
+      "pse": {
+        "title": "PSE Level 1 & 2",
+        "institution": "French Army",
+        "description": "Team First Aid"
+      },
+      "auxiliaire-ambulancier": {
+        "title": "Ambulance Assistant",
+        "institution": "French Army"
+      },
+      "cte-auxiliaire-sanitaire": {
+        "title": "Elementary Technical Certificate - Specialized Medical Auxiliary",
+        "institution": "French Army"
+      },
+      "brevet-para": {
+        "title": "Military Parachutist Badge",
+        "institution": "French Army - Airborne Troops"
+      },
+      "sc-combat-1": {
+        "title": "Combat First Aid Level 1 (SC1)",
+        "institution": "French Army"
+      },
       "sf-training": {
         "title": "Special Forces & Paratrooper Training",
         "institution": "French Army - 13ème RDP"
-      },
-      "psc-pse": {
-        "title": "PSC1 / PSE1 / PSE2 / AFGSU 1 & 2",
-        "institution": "French Army"
-      },
-      "sc-combat": {
-        "title": "Combat First Aid Level 1 & 2 (SC Combat)",
-        "institution": "French Army - Special Forces"
       },
       "staps": {
         "title": "First Year STAPS (Sports Science)",
@@ -256,13 +278,13 @@
     "service": {
       "title": "Service Record",
       "unit": "Unit",
-      "unitValue": "French Special Forces",
+      "unitValue": "13th Parachute Dragoon Regiment (13 RDP)",
       "role": "Role",
       "roleValue": "Combat Paramedic",
       "rank": "Rank",
       "rankValue": "Enlisted",
       "period": "Period",
-      "periodValue": "Classified"
+      "periodValue": "2011 - 2018"
     },
     "combatParamedic": {
       "title": "Combat Paramedic",

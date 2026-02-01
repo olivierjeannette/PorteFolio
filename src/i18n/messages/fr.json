@@ -206,17 +206,39 @@
         "title": "Certification Pilates",
         "institution": "Formation Pilates"
       },
+      "sc-combat-2": {
+        "title": "Sauvetage au Combat Niveau 2 (SC2)",
+        "institution": "Armée de Terre - Forces Spéciales"
+      },
+      "afgsu": {
+        "title": "AFGSU Niveau 1 & 2",
+        "institution": "Armée de Terre",
+        "description": "Attestation de Formation aux Gestes et Soins d'Urgence"
+      },
+      "pse": {
+        "title": "PSE Niveau 1 & 2",
+        "institution": "Armée de Terre",
+        "description": "Premiers Secours en Équipe"
+      },
+      "auxiliaire-ambulancier": {
+        "title": "Auxiliaire Ambulancier",
+        "institution": "Armée de Terre"
+      },
+      "cte-auxiliaire-sanitaire": {
+        "title": "Certificat Technique Élémentaire - Auxiliaire Sanitaire Spécialisé",
+        "institution": "Armée de Terre"
+      },
+      "brevet-para": {
+        "title": "Brevet Militaire de Parachutisme",
+        "institution": "Armée de Terre - Troupes Aéroportées"
+      },
+      "sc-combat-1": {
+        "title": "Sauvetage au Combat Niveau 1 (SC1)",
+        "institution": "Armée de Terre"
+      },
       "sf-training": {
         "title": "Formation Forces Spéciales & Parachutiste",
         "institution": "Armée de Terre - 13ème RDP"
-      },
-      "psc-pse": {
-        "title": "PSC1 / PSE1 / PSE2 / AFGSU 1 & 2",
-        "institution": "Armée de Terre"
-      },
-      "sc-combat": {
-        "title": "SC Combat Niveau 1 & 2",
-        "institution": "Armée de Terre - Forces Spéciales"
       },
       "staps": {
         "title": "Première année STAPS",
@@ -256,13 +278,13 @@
     "service": {
       "title": "État de Service",
       "unit": "Unité",
-      "unitValue": "Forces Spéciales Françaises",
+      "unitValue": "13ème Régiment de Dragons Parachutistes (13 RDP)",
       "role": "Fonction",
       "roleValue": "Paramedic Combat",
       "rank": "Grade",
       "rankValue": "Militaire du Rang",
       "period": "Période",
-      "periodValue": "Classifié"
+      "periodValue": "2011 - 2018"
     },
     "combatParamedic": {
       "title": "Paramedic Combat",

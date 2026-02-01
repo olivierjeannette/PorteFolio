@@ -393,9 +393,24 @@ export interface Education {
 }
 
 // Education IDs for i18n lookup
-export const educationIds = ['crossfit-l1', 'bpjeps', 'pilates', 'sf-training', 'psc-pse', 'sc-combat', 'staps', 'bac'] as const
+export const educationIds = [
+  'crossfit-l1',
+  'bpjeps',
+  'pilates',
+  'sc-combat-2',
+  'afgsu',
+  'pse',
+  'auxiliaire-ambulancier',
+  'cte-auxiliaire-sanitaire',
+  'brevet-para',
+  'sc-combat-1',
+  'sf-training',
+  'staps',
+  'bac'
+] as const
 
 export const education: Education[] = [
+  // === CERTIFICATIONS FITNESS ===
   {
     id: 'crossfit-l1',
     title: 'CrossFit Level 1 Trainer',
@@ -418,6 +433,58 @@ export const education: Education[] = [
     year: '2019',
     category: 'fitness',
   },
+  // === CERTIFICATIONS MILITAIRES (triées par année) ===
+  {
+    id: 'sc-combat-2',
+    title: 'Sauvetage au Combat Niveau 2 (SC2)',
+    institution: 'Armée de Terre - Forces Spéciales',
+    year: '2015',
+    category: 'military',
+  },
+  {
+    id: 'afgsu',
+    title: 'AFGSU Niveau 1 & 2',
+    institution: 'Armée de Terre',
+    year: '2014',
+    description: 'Attestation de Formation aux Gestes et Soins d\'Urgence',
+    category: 'medical',
+  },
+  {
+    id: 'pse',
+    title: 'PSE Niveau 1 & 2',
+    institution: 'Armée de Terre',
+    year: '2013',
+    description: 'Premiers Secours en Équipe',
+    category: 'medical',
+  },
+  {
+    id: 'auxiliaire-ambulancier',
+    title: 'Auxiliaire Ambulancier',
+    institution: 'Armée de Terre',
+    year: '2013',
+    category: 'medical',
+  },
+  {
+    id: 'cte-auxiliaire-sanitaire',
+    title: 'Certificat Technique Élémentaire - Auxiliaire Sanitaire Spécialisé',
+    institution: 'Armée de Terre',
+    year: '2013',
+    category: 'military',
+  },
+  {
+    id: 'brevet-para',
+    title: 'Brevet Militaire de Parachutisme',
+    institution: 'Armée de Terre - Troupes Aéroportées',
+    year: '2011',
+    category: 'military',
+  },
+  {
+    id: 'sc-combat-1',
+    title: 'Sauvetage au Combat Niveau 1 (SC1)',
+    institution: 'Armée de Terre',
+    year: '2011',
+    category: 'military',
+  },
   {
     id: 'sf-training',
     title: 'Special Forces & Paratrooper Training',
@@ -425,20 +492,7 @@ export const education: Education[] = [
     year: '2011 - 2018',
     category: 'military',
   },
-  {
-    id: 'psc-pse',
-    title: 'PSC1 / PSE1 / PSE2 / AFGSU 1 & 2',
-    institution: 'French Army',
-    year: '2011 - 2018',
-    category: 'medical',
-  },
-  {
-    id: 'sc-combat',
-    title: 'Combat First Aid Level 1 & 2',
-    institution: 'French Army - Special Forces',
-    year: '2011 - 2018',
-    category: 'military',
-  },
+  // === ÉTUDES ===
   {
     id: 'staps',
     title: 'First Year STAPS (Sports Science)',
