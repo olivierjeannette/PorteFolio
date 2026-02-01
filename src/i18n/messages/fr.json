@@ -148,6 +148,103 @@
     "interested": {
       "title": "Intéressé ?",
       "description": "Téléchargez mon CV complet en PDF ou contactez-moi directement."
+    },
+    "experiences": {
+      "laskali": {
+        "title": "Fondateur & Gérant",
+        "company": "La Skàli - CrossFit/HYROX",
+        "description": [
+          "Création et développement d'une salle CrossFit/HYROX de 0 à 120K€ de CA annuel",
+          "Gestion complète du P&L : budgétisation, stratégie tarifaire, optimisation des coûts",
+          "Développement de solutions logicielles sur mesure remplaçant 3K€/an de SaaS",
+          "Management d'équipe : recrutement, formation, planning des coachs",
+          "Marketing digital : SEO, Meta Ads, stratégie de contenu - Top 3 Google \"CrossFit Laval\"",
+          "Organisation d'événements : compétitions, workshops, événements communautaires"
+        ]
+      },
+      "coach-auto": {
+        "title": "Coach Sportif - Auto-entrepreneur",
+        "company": "Auto-entrepreneur",
+        "description": [
+          "Coaching personnel et petits groupes",
+          "Stratégies d'acquisition et fidélisation clients",
+          "Conception de programmes d'entraînement personnalisés"
+        ]
+      },
+      "coach-stagiaire": {
+        "title": "Coach Sportif Stagiaire - BPJEPS AF",
+        "company": "Wakeup Form Laval",
+        "description": [
+          "Formation BPJEPS AF en alternance (option Haltérophilie/Musculation)",
+          "Cours collectifs et coaching individuel",
+          "Suivi des adhérents et conception de programmes"
+        ]
+      },
+      "coach-benevole": {
+        "title": "Coach Cross-Training Bénévole",
+        "company": "Wakeup Form Laval",
+        "description": [
+          "Coach cross-training bénévole pendant la découverte du milieu du fitness",
+          "Animation de cours collectifs et coaching technique"
+        ]
+      },
+      "military": {
+        "title": "Opérateur Forces Spéciales - Paramedic Combat",
+        "company": "13ème RDP - Armée de Terre",
+        "description": [
+          "Paramedic Combat au sein d'une unité des Forces Spéciales françaises",
+          "Multiples déploiements en Afrique et Moyen-Orient",
+          "Responsable pharmacie d'équipe et logistique médicale",
+          "Spécialiste TCCC (Tactical Combat Casualty Care)",
+          "Prise de décision sous stress intense en environnement hostile"
+        ]
+      },
+      "surveillant": {
+        "title": "Surveillant Scolaire",
+        "company": "Lycée/Collège Font-Romeu",
+        "description": [
+          "Surveillance d'élèves et gestion de l'internat",
+          "Organisation d'activités sportives"
+        ]
+      }
+    },
+    "educations": {
+      "crossfit-l2": {
+        "title": "CrossFit Level 2 Trainer",
+        "institution": "CrossFit Inc."
+      },
+      "crossfit-l1": {
+        "title": "CrossFit Level 1 Trainer",
+        "institution": "CrossFit Inc."
+      },
+      "bpjeps": {
+        "title": "BPJEPS AF - Option Haltérophilie/Musculation",
+        "institution": "Centre de formation BPJEPS"
+      },
+      "pilates": {
+        "title": "Certification Pilates",
+        "institution": "Formation Pilates"
+      },
+      "sf-training": {
+        "title": "Formation Forces Spéciales & Parachutiste",
+        "institution": "Armée de Terre - 13ème RDP"
+      },
+      "psc-pse": {
+        "title": "PSC1 / PSE1 / PSE2 / AFGSU 1 & 2",
+        "institution": "Armée de Terre"
+      },
+      "sc-combat": {
+        "title": "SC Combat Niveau 1 & 2",
+        "institution": "Armée de Terre - Forces Spéciales"
+      },
+      "staps": {
+        "title": "Première année STAPS",
+        "institution": "STAPS Font-Romeu"
+      },
+      "bac": {
+        "title": "Baccalauréat Scientifique - Option Biologie",
+        "institution": "Lycée Pablo Picasso, Perpignan"
+      }
     }
   },
   "diplomas": {
@@ -272,5 +369,52 @@
     "retry": "Réessayer",
     "close": "Fermer",
     "back": "Retour"
+  },
+  "admin": {
+    "login": {
+      "title": "Accès Admin",
+      "subtitle": "Entrez le mot de passe pour gérer les diplômes",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez le mot de passe admin",
+      "button": "Connexion",
+      "verifying": "Vérification...",
+      "error": "Mot de passe invalide",
+      "protected": "Zone protégée. Accès non autorisé interdit."
+    },
+    "diplomas": {
+      "title": "Gestionnaire de Diplômes",
+      "subtitle": "Uploadez et gérez vos certifications",
+      "uploadTitle": "Uploader un nouveau diplôme",
+      "existingTitle": "Diplômes existants",
+      "titleEn": "Titre (EN)",
+      "titleFr": "Titre (FR)",
+      "institutionEn": "Institution (EN)",
+      "institutionFr": "Institution (FR)",
+      "year": "Année",
+      "category": "Catégorie",
+      "uploadButton": "Uploader le diplôme",
+      "uploading": "Upload en cours...",
+      "dragDrop": "Glissez-déposez un PDF ici, ou cliquez pour sélectionner",
+      "maxSize": "Maximum 10Mo",
+      "dropHere": "Déposez le PDF ici...",
+      "deleteConfirm": "Cliquez à nouveau pour confirmer",
+      "delete": "Supprimer",
+      "viewPdf": "Voir le PDF",
+      "noDiplomas": "Aucun diplôme uploadé",
+      "success": {
+        "upload": "Diplôme uploadé avec succès !",
+        "delete": "Diplôme supprimé avec succès !"
+      },
+      "error": {
+        "upload": "Échec de l'upload du diplôme",
+        "delete": "Échec de la suppression du diplôme",
+        "load": "Échec du chargement des diplômes",
+        "required": "Veuillez remplir tous les champs obligatoires",
+        "pdfOnly": "Seuls les fichiers PDF sont autorisés",
+        "maxSize": "La taille du fichier doit être inférieure à 10Mo"
+      }
+    },
+    "logout": "Déconnexion",
+    "refresh": "Actualiser"
   }
 }

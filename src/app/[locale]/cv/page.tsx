@@ -123,54 +123,60 @@ export default function CVPage() {
                   {t('experience.title')}
                 </h2>
                 <StaggerContainer className="space-y-8" staggerDelay={0.1}>
-                  {experiences.map((exp) => (
-                    <StaggerItem key={exp.id}>
-                      <div className="relative pl-6 border-l-2 border-surface-200 dark:border-surface-700">
-                        {/* Timeline dot */}
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-500 border-4 border-surface-50 dark:border-surface-900" />
+                  {experiences.map((exp) => {
+                    const expTitle = t(`experiences.${exp.id}.title`)
+                    const expCompany = t(`experiences.${exp.id}.company`)
+                    const expDescription = t.raw(`experiences.${exp.id}.description`) as string[]
 
-                        <div className="mb-2">
-                          <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100">
-                            {exp.title}
-                          </h3>
-                          <div className="flex flex-wrap items-center gap-3 text-sm text-surface-500 dark:text-surface-500">
-                            <span className="flex items-center gap-1">
-                              <Building2 className="w-4 h-4" />
-                              {exp.company}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <MapPin className="w-4 h-4" />
-                              {exp.location}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4" />
-                              {exp.period}
-                            </span>
+                    return (
+                      <StaggerItem key={exp.id}>
+                        <div className="relative pl-6 border-l-2 border-surface-200 dark:border-surface-700">
+                          {/* Timeline dot */}
+                          <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-500 border-4 border-surface-50 dark:border-surface-900" />
+
+                          <div className="mb-2">
+                            <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100">
+                              {expTitle}
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-3 text-sm text-surface-500 dark:text-surface-500">
+                              <span className="flex items-center gap-1">
+                                <Building2 className="w-4 h-4" />
+                                {expCompany}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <MapPin className="w-4 h-4" />
+                                {exp.location}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <Calendar className="w-4 h-4" />
+                                {exp.period}
+                              </span>
+                            </div>
+                          </div>
+
+                          <ul className="space-y-2 mb-4">
+                            {expDescription.map((item, index) => (
+                              <li key={index} className="flex items-start gap-2 text-surface-600 dark:text-surface-400">
+                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent-500 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="flex flex-wrap gap-2">
+                            {exp.skills.map((skill) => (
+                              <span
+                                key={skill}
+                                className="px-2 py-1 text-xs font-medium rounded-md bg-accent-500/10 text-accent-700 dark:text-accent-300"
+                              >
+                                {skill}
+                              </span>
+                            ))}
                           </div>
                         </div>
-
-                        <ul className="space-y-2 mb-4">
-                          {exp.description.map((item, index) => (
-                            <li key={index} className="flex items-start gap-2 text-surface-600 dark:text-surface-400">
-                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent-500 shrink-0" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="flex flex-wrap gap-2">
-                          {exp.skills.map((skill) => (
-                            <span
-                              key={skill}
-                              className="px-2 py-1 text-xs font-medium rounded-md bg-accent-500/10 text-accent-700 dark:text-accent-300"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </StaggerItem>
-                  ))}
+                      </StaggerItem>
+                    )
+                  })}
                 </StaggerContainer>
               </section>
             </FadeIn>
@@ -205,32 +211,37 @@ export default function CVPage() {
                   {t('education.title')}
                 </h2>
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.1}>
-                  {education.map((edu) => (
-                    <StaggerItem key={edu.id}>
-                      <div className="p-4 rounded-xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
-                        <div className="flex items-start gap-3">
-                          <div className={cn(
-                            "p-2 rounded-lg",
-                            edu.category === 'military' && "bg-red-500/10 text-red-600 dark:text-red-400",
-                            edu.category === 'medical' && "bg-blue-500/10 text-blue-600 dark:text-blue-400",
-                            edu.category === 'fitness' && "bg-green-500/10 text-green-600 dark:text-green-400",
-                            edu.category === 'tech' && "bg-purple-500/10 text-purple-600 dark:text-purple-400",
-                            edu.category === 'business' && "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
-                          )}>
-                            <GraduationCap className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h3 className="font-medium text-surface-900 dark:text-surface-100">
-                              {edu.title}
-                            </h3>
-                            <p className="text-sm text-surface-500 dark:text-surface-500">
-                              {edu.institution} • {edu.year}
-                            </p>
+                  {education.map((edu) => {
+                    const eduTitle = t(`educations.${edu.id}.title`)
+                    const eduInstitution = t(`educations.${edu.id}.institution`)
+
+                    return (
+                      <StaggerItem key={edu.id}>
+                        <div className="p-4 rounded-xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
+                          <div className="flex items-start gap-3">
+                            <div className={cn(
+                              "p-2 rounded-lg",
+                              edu.category === 'military' && "bg-red-500/10 text-red-600 dark:text-red-400",
+                              edu.category === 'medical' && "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+                              edu.category === 'fitness' && "bg-green-500/10 text-green-600 dark:text-green-400",
+                              edu.category === 'tech' && "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+                              edu.category === 'business' && "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
+                            )}>
+                              <GraduationCap className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <h3 className="font-medium text-surface-900 dark:text-surface-100">
+                                {eduTitle}
+                              </h3>
+                              <p className="text-sm text-surface-500 dark:text-surface-500">
+                                {eduInstitution} • {edu.year}
+                              </p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </StaggerItem>
-                  ))}
+                      </StaggerItem>
+                    )
+                  })}
                 </StaggerContainer>
               </section>
             </FadeIn>

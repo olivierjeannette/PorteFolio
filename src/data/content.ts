@@ -346,6 +346,9 @@ export interface Experience {
   skills: string[]
 }
 
+// Experience IDs for i18n lookup
+export const experienceIds = ['laskali', 'coach-auto', 'coach-stagiaire', 'coach-benevole', 'military', 'surveillant'] as const
+
 export const experiences: Experience[] = [
   {
     id: 'laskali',
@@ -353,29 +356,53 @@ export const experiences: Experience[] = [
     company: 'La Skàli - CrossFit/HYROX Gym',
     location: 'Laval, France',
     period: '2021 - 2026',
-    description: [
-      'Built and scaled a CrossFit/HYROX gym from ground up to €120K annual revenue',
-      'Managed full P&L, operations, marketing, and team of 5 coaches',
-      'Developed custom management software replacing €3K/year SaaS solutions',
-      'Achieved top 3 Google ranking for local CrossFit searches through SEO optimization',
-      'Established partnerships with Gymlib, Wellpass, and HYROX affiliation',
-      'Preparing business for turnkey sale with fully documented operations',
-    ],
+    description: [],
     skills: ['P&L Management', 'Team Leadership', 'Digital Marketing', 'Software Development', 'Sales'],
   },
   {
+    id: 'coach-auto',
+    title: 'Sports Coach - Self-Employed',
+    company: 'Auto-entrepreneur',
+    location: 'Laval, France',
+    period: '2020 - 2021',
+    description: [],
+    skills: ['Personal Training', 'Client Management', 'Business Development'],
+  },
+  {
+    id: 'coach-stagiaire',
+    title: 'Sports Coach Intern - BPJEPS AF',
+    company: 'Wakeup Form Laval',
+    location: 'Laval, France',
+    period: '2019 - 2020',
+    description: [],
+    skills: ['Coaching', 'Fitness Training', 'Client Relations'],
+  },
+  {
+    id: 'coach-benevole',
+    title: 'Volunteer Cross-Training Coach',
+    company: 'Wakeup Form Laval',
+    location: 'Laval, France',
+    period: '2018',
+    description: [],
+    skills: ['Cross-Training', 'Group Coaching', 'Program Design'],
+  },
+  {
     id: 'military',
-    title: 'Combat Paramedic',
-    company: 'French Special Forces - Army',
+    title: 'Special Forces Operator - Combat Paramedic',
+    company: '13ème RDP - French Army',
     location: 'France',
-    period: 'Classified',
-    description: [
-      'Provided tactical medical care in high-stress combat environments',
-      'Made critical life-or-death decisions under extreme pressure',
-      'Operated as part of elite teams in hostile conditions',
-      'Trained in advanced trauma care and emergency response protocols',
-    ],
+    period: '2011 - 2018',
+    description: [],
     skills: ['Combat Medical Care', 'Leadership Under Fire', 'Crisis Management', 'Team Coordination'],
+  },
+  {
+    id: 'surveillant',
+    title: 'School Supervisor',
+    company: 'Lycée/Collège Font-Romeu',
+    location: 'Font-Romeu, France',
+    period: '2009 - 2011',
+    description: [],
+    skills: ['Supervision', 'Youth Management', 'Sports Activities'],
   },
 ]
 
@@ -392,6 +419,9 @@ export interface Education {
   pdfUrl?: string
   category: 'fitness' | 'medical' | 'tech' | 'business' | 'military'
 }
+
+// Education IDs for i18n lookup
+export const educationIds = ['crossfit-l2', 'crossfit-l1', 'bpjeps', 'pilates', 'sf-training', 'psc-pse', 'sc-combat', 'staps', 'bac'] as const
 
 export const education: Education[] = [
   {
@@ -411,25 +441,53 @@ export const education: Education[] = [
     category: 'fitness',
   },
   {
-    id: 'combat-medic',
-    title: 'Combat Paramedic Certification',
-    institution: 'French Army - Special Forces',
-    year: 'Classified',
+    id: 'bpjeps',
+    title: 'BPJEPS AF - Weightlifting/Bodybuilding',
+    institution: 'Formation BPJEPS',
+    year: '2019 - 2020',
+    category: 'fitness',
+  },
+  {
+    id: 'pilates',
+    title: 'Pilates Certification',
+    institution: 'Pilates Training',
+    year: '2019',
+    category: 'fitness',
+  },
+  {
+    id: 'sf-training',
+    title: 'Special Forces & Paratrooper Training',
+    institution: 'French Army - 13ème RDP',
+    year: '2011 - 2018',
     category: 'military',
   },
   {
-    id: 'tccc',
-    title: 'Tactical Combat Casualty Care (TCCC)',
+    id: 'psc-pse',
+    title: 'PSC1 / PSE1 / PSE2 / AFGSU 1 & 2',
     institution: 'French Army',
-    year: 'Classified',
+    year: '2011 - 2018',
     category: 'medical',
   },
   {
-    id: 'civilian-first-aid',
-    title: 'Civilian First Responder',
-    institution: 'French Red Cross',
-    year: '2019',
-    category: 'medical',
+    id: 'sc-combat',
+    title: 'Combat First Aid Level 1 & 2',
+    institution: 'French Army - Special Forces',
+    year: '2011 - 2018',
+    category: 'military',
+  },
+  {
+    id: 'staps',
+    title: 'First Year STAPS (Sports Science)',
+    institution: 'STAPS Font-Romeu',
+    year: '2009 - 2010',
+    category: 'fitness',
+  },
+  {
+    id: 'bac',
+    title: 'Scientific Baccalaureate - Biology',
+    institution: 'Lycée Pablo Picasso, Perpignan',
+    year: '2009',
+    category: 'fitness',
   },
 ]
 

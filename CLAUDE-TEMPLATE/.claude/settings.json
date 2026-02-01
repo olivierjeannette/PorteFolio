@@ -1,0 +1,89 @@
+{
+  "projectName": "Mon Projet",
+  "description": "Description du projet",
+
+  "devMode": {
+    "enabled": true,
+    "stateFile": "docs/PAUSE-STATE.md",
+    "architectureFile": "docs/ARCHITECTURE.md",
+    "decisionsFile": "docs/DECISIONS-LOG.md"
+  },
+
+  "commands": {
+    "___DEVELOPMENT___": "---",
+    "continue-dev": "Continue le développement là où il s'est arrêté",
+    "dev-status": "Affiche l'état actuel du développement",
+    "pause-dev": "Sauvegarde l'état avant de quitter",
+
+    "___CREATION___": "---",
+    "create-component": "Génère un composant React/Next.js avec les patterns du projet",
+    "create-page": "Génère une page dashboard Next.js complète",
+    "create-action": "Génère un Server Action avec validation Zod",
+    "create-form": "Génère un formulaire React Hook Form + Zod",
+    "create-hook": "Génère un custom React hook",
+    "create-store": "Génère un store Zustand",
+    "create-animation": "Génère des animations GSAP professionnelles",
+    "create-migration": "Génère une migration SQL avec RLS",
+    "create-api-route": "Génère une route API Next.js (webhooks, exports, cron)",
+    "create-test": "Génère des tests Vitest pour composant/action/hook",
+
+    "___AUDIT___": "---",
+    "security-audit": "Audit complet de sécurité (OWASP, auth, RLS)",
+    "perf-audit": "Audit de performance (bundle, Core Web Vitals)",
+    "arch-review": "Review d'architecture et recommandations",
+
+    "___UTILITIES___": "---",
+    "debug-issue": "Debugging systématique d'un problème"
+  },
+
+  "conventions": {
+    "maxFileLines": 200,
+    "language": "typescript",
+    "framework": "nextjs-14",
+    "styling": "tailwind",
+    "stateManagement": "zustand",
+    "database": "supabase",
+    "validation": "zod",
+    "forms": "react-hook-form",
+    "testing": "vitest"
+  },
+
+  "triggers": {
+    "onMessage": {
+      "continue le dev": "/continue-dev",
+      "continue dev": "/continue-dev",
+      "reprends le dev": "/continue-dev",
+      "status dev": "/dev-status",
+      "pause": "/pause-dev",
+      "audit sécu": "/security-audit",
+      "audit perf": "/perf-audit",
+      "review archi": "/arch-review",
+      "debug": "/debug-issue"
+    }
+  },
+
+  "patterns": {
+    "components": {
+      "ui": "src/components/ui/",
+      "features": "src/components/features/",
+      "layout": "src/components/layout/"
+    },
+    "pages": "src/app/(dashboard)/",
+    "actions": "src/actions/",
+    "hooks": "src/hooks/",
+    "stores": "src/stores/",
+    "types": "src/types/",
+    "lib": "src/lib/",
+    "migrations": "supabase/migrations/"
+  },
+
+  "quality": {
+    "minCoverage": 80,
+    "maxBundleSize": "200kb",
+    "requiredChecks": [
+      "typescript",
+      "eslint",
+      "tests"
+    ]
+  }
+}

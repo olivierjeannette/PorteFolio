@@ -1,15 +1,27 @@
 'use client'
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FileText, Download, Eye, GraduationCap, Award, Calendar, Shield, Heart, Code2, TrendingUp, Upload } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { FileText, Download, Eye, GraduationCap, Calendar, Shield, Heart, Code2, TrendingUp, Upload, Loader2 } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from '@/components/animations'
 import { PDFModal } from '@/components/pdf-modal'
-import { education } from '@/data/content'
+import { education as staticEducation } from '@/data/content'
 import { cn } from '@/lib/utils'
 
 type Category = 'all' | 'fitness' | 'medical' | 'military' | 'tech' | 'business'
+
+// Unified education item type (works for both static and API data)
+interface EducationItem {
+  id: string | number
+  title: string
+  title_fr?: string | null
+  institution: string
+  institution_fr?: string | null
+  year: string
+  category: 'fitness' | 'medical' | 'military' | 'tech' | 'business'
+  pdfUrl?: string | null
+  pdf_url?: string | null // API uses snake_case
+}
 
 const categoryIcons = {
   fitness: GraduationCap,
@@ -30,8 +42,43 @@ const categoryColors = {
 export default function DiplomasPage() {
   const [selectedPdf, setSelectedPdf] = useState<{ url: string; title: string } | null>(null)
   const [activeCategory, setActiveCategory] = useState<Category>('all')
+  const [diplomas, setDiplomas] = useState<EducationItem[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [useStaticData, setUseStaticData] = useState(false)
   const locale = useLocale()
   const t = useTranslations('diplomas')
+
+  // Fetch diplomas from API
+  useEffect(() => {
+    const fetchDiplomas = async () => {
+      try {
+        const response = await fetch('/api/diplomas')
+        if (!response.ok) throw new Error('API error')
+        const data = await response.json()
+
+        if (data.length > 0) {
+          // Normalize API data to match our interface
+          const normalizedData = data.map((item: EducationItem) => ({
+            ...item,
+            pdfUrl: item.pdf_url || item.pdfUrl,
+          }))
+          setDiplomas(normalizedData)
+        } else {
+          // If no data from API, use static data
+          setDiplomas(staticEducation)
+          setUseStaticData(true)
+        }
+      } catch {
+        // Fallback to static data if API fails
+        setDiplomas(staticEducation)
+        setUseStaticData(true)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchDiplomas()
+  }, [])
 
   const categories: { key: Category; label: string }[] = [
     { key: 'all', label: t('categories.all') },
@@ -42,8 +89,25 @@ export default function DiplomasPage() {
   ]
 
   const filteredEducation = activeCategory === 'all'
-    ? education
-    : education.filter((e) => e.category === activeCategory)
+    ? diplomas
+    : diplomas.filter((e) => e.category === activeCategory)
+
+  // Get display title based on locale
+  const getTitle = (item: EducationItem) => {
+    if (locale === 'fr' && item.title_fr) return item.title_fr
+    return item.title
+  }
+
+  // Get display institution based on locale
+  const getInstitution = (item: EducationItem) => {
+    if (locale === 'fr' && item.institution_fr) return item.institution_fr
+    return item.institution
+  }
+
+  // Get PDF URL (handles both formats)
+  const getPdfUrl = (item: EducationItem) => {
+    return item.pdfUrl || item.pdf_url || null
+  }
 
   return (
     <div className="min-h-screen pt-32 pb-20">
@@ -87,90 +151,109 @@ export default function DiplomasPage() {
           </div>
         </FadeIn>
 
-        {/* Diplomas Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
-          {filteredEducation.map((edu) => {
-            const Icon = categoryIcons[edu.category] || GraduationCap
-            const colorClass = categoryColors[edu.category] || 'bg-accent-500/10 text-accent-600 dark:text-accent-400'
+        {/* Loading State */}
+        {isLoading ? (
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-accent-500" />
+          </div>
+        ) : (
+          <>
+            {/* Diplomas Grid */}
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
+              {filteredEducation.map((edu) => {
+                const Icon = categoryIcons[edu.category] || GraduationCap
+                const colorClass = categoryColors[edu.category] || 'bg-accent-500/10 text-accent-600 dark:text-accent-400'
+                const pdfUrl = getPdfUrl(edu)
 
-            return (
-              <StaggerItem key={edu.id}>
-                <HoverCard>
-                  <article className="group h-full p-6 rounded-2xl bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 card-hover">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={cn("p-3 rounded-xl", colorClass)}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <span className="flex items-center gap-1 text-sm text-surface-500 dark:text-surface-500">
-                        <Calendar className="w-4 h-4" />
-                        {edu.year}
-                      </span>
-                    </div>
+                return (
+                  <StaggerItem key={edu.id}>
+                    <HoverCard>
+                      <article className="group h-full p-6 rounded-2xl bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 card-hover">
+                        {/* Header */}
+                        <div className="flex items-start justify-between mb-4">
+                          <div className={cn("p-3 rounded-xl", colorClass)}>
+                            <Icon className="w-6 h-6" />
+                          </div>
+                          <span className="flex items-center gap-1 text-sm text-surface-500 dark:text-surface-500">
+                            <Calendar className="w-4 h-4" />
+                            {edu.year}
+                          </span>
+                        </div>
 
-                    {/* Content */}
-                    <h2 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-2 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
-                      {edu.title}
-                    </h2>
-                    <p className="text-surface-600 dark:text-surface-400 mb-4">
-                      {edu.institution}
-                    </p>
-
-                    {/* Category badge */}
-                    <span className={cn(
-                      "inline-block px-2 py-1 text-xs font-medium rounded-md mb-4",
-                      colorClass
-                    )}>
-                      {categories.find(c => c.key === edu.category)?.label || edu.category}
-                    </span>
-
-                    {/* Actions */}
-                    {edu.pdfUrl ? (
-                      <div className="flex gap-2 pt-4 border-t border-surface-200 dark:border-surface-700">
-                        <button
-                          onClick={() => setSelectedPdf({ url: edu.pdfUrl!, title: edu.title })}
-                          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-surface-100 hover:bg-surface-200 dark:bg-surface-700 dark:hover:bg-surface-600 text-surface-700 dark:text-surface-300 text-sm font-medium transition-colors"
-                        >
-                          <Eye className="w-4 h-4" />
-                          {t('view')}
-                        </button>
-                        <a
-                          href={edu.pdfUrl}
-                          download
-                          className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-accent-500/10 hover:bg-accent-500/20 text-accent-700 dark:text-accent-300 text-sm font-medium transition-colors"
-                        >
-                          <Download className="w-4 h-4" />
-                          {t('download')}
-                        </a>
-                      </div>
-                    ) : (
-                      <div className="pt-4 border-t border-surface-200 dark:border-surface-700">
-                        <p className="text-xs text-surface-400 dark:text-surface-500 text-center">
-                          {t('pdfPlaceholder')}
+                        {/* Content */}
+                        <h2 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-2 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
+                          {getTitle(edu)}
+                        </h2>
+                        <p className="text-surface-600 dark:text-surface-400 mb-4">
+                          {getInstitution(edu)}
                         </p>
-                      </div>
-                    )}
-                  </article>
-                </HoverCard>
-              </StaggerItem>
-            )
-          })}
 
-          {/* Placeholder for more diplomas */}
-          <StaggerItem>
-            <div className="h-full p-6 rounded-2xl border-2 border-dashed border-surface-200 dark:border-surface-700 flex flex-col items-center justify-center text-center min-h-[250px]">
-              <div className="p-3 rounded-xl bg-surface-100 dark:bg-surface-800 mb-4">
-                <Upload className="w-6 h-6 text-surface-400" />
+                        {/* Category badge */}
+                        <span className={cn(
+                          "inline-block px-2 py-1 text-xs font-medium rounded-md mb-4",
+                          colorClass
+                        )}>
+                          {categories.find(c => c.key === edu.category)?.label || edu.category}
+                        </span>
+
+                        {/* Actions */}
+                        {pdfUrl ? (
+                          <div className="flex gap-2 pt-4 border-t border-surface-200 dark:border-surface-700">
+                            <button
+                              onClick={() => setSelectedPdf({ url: pdfUrl, title: getTitle(edu) })}
+                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-surface-100 hover:bg-surface-200 dark:bg-surface-700 dark:hover:bg-surface-600 text-surface-700 dark:text-surface-300 text-sm font-medium transition-colors"
+                            >
+                              <Eye className="w-4 h-4" />
+                              {t('view')}
+                            </button>
+                            <a
+                              href={pdfUrl}
+                              download
+                              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-accent-500/10 hover:bg-accent-500/20 text-accent-700 dark:text-accent-300 text-sm font-medium transition-colors"
+                            >
+                              <Download className="w-4 h-4" />
+                              {t('download')}
+                            </a>
+                          </div>
+                        ) : (
+                          <div className="pt-4 border-t border-surface-200 dark:border-surface-700">
+                            <p className="text-xs text-surface-400 dark:text-surface-500 text-center">
+                              {t('pdfPlaceholder')}
+                            </p>
+                          </div>
+                        )}
+                      </article>
+                    </HoverCard>
+                  </StaggerItem>
+                )
+              })}
+
+              {/* Placeholder for more diplomas - only show if using static data */}
+              {useStaticData && (
+                <StaggerItem>
+                  <div className="h-full p-6 rounded-2xl border-2 border-dashed border-surface-200 dark:border-surface-700 flex flex-col items-center justify-center text-center min-h-[250px]">
+                    <div className="p-3 rounded-xl bg-surface-100 dark:bg-surface-800 mb-4">
+                      <Upload className="w-6 h-6 text-surface-400" />
+                    </div>
+                    <p className="text-surface-500 dark:text-surface-500 text-sm mb-2">
+                      {t('addPlaceholder')}
+                    </p>
+                    <p className="text-xs text-surface-400">
+                      {t('addPdfs')}
+                    </p>
+                  </div>
+                </StaggerItem>
+              )}
+            </StaggerContainer>
+
+            {/* Empty state */}
+            {filteredEducation.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-surface-500">{t('noProjects') || 'No diplomas in this category'}</p>
               </div>
-              <p className="text-surface-500 dark:text-surface-500 text-sm mb-2">
-                {t('addPlaceholder')}
-              </p>
-              <p className="text-xs text-surface-400">
-                {t('addPdfs')}
-              </p>
-            </div>
-          </StaggerItem>
-        </StaggerContainer>
+            )}
+          </>
+        )}
 
         {/* Info box */}
         <FadeIn delay={0.5}>

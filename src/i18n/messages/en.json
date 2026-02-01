@@ -148,6 +148,103 @@
     "interested": {
       "title": "Interested?",
       "description": "Download my complete resume in PDF format or contact me directly."
+    },
+    "experiences": {
+      "laskali": {
+        "title": "Founder & General Manager",
+        "company": "La Skàli - CrossFit/HYROX Gym",
+        "description": [
+          "Built and scaled a CrossFit/HYROX gym from zero to €120K annual revenue",
+          "Full P&L management: budgeting, pricing strategy, cost optimization",
+          "Developed custom software solutions replacing €3K/year in SaaS tools",
+          "Team management: hiring, training, scheduling of coaches",
+          "Digital marketing: SEO, Meta Ads, content strategy - achieved Top 3 Google ranking for 'CrossFit Laval'",
+          "Event organization: competitions, workshops, community events"
+        ]
+      },
+      "coach-auto": {
+        "title": "Sports Coach - Self-Employed",
+        "company": "Auto-entrepreneur",
+        "description": [
+          "Personal training and small group coaching",
+          "Client acquisition and retention strategies",
+          "Custom training program design"
+        ]
+      },
+      "coach-stagiaire": {
+        "title": "Sports Coach Intern - BPJEPS AF",
+        "company": "Wakeup Form Laval",
+        "description": [
+          "BPJEPS AF work-study program (Weightlifting/Bodybuilding option)",
+          "Group fitness classes and personal training",
+          "Member follow-up and program design"
+        ]
+      },
+      "coach-benevole": {
+        "title": "Volunteer Cross-Training Coach",
+        "company": "Wakeup Form Laval",
+        "description": [
+          "Volunteer cross-training coach while discovering the fitness industry",
+          "Group class management and exercise technique coaching"
+        ]
+      },
+      "military": {
+        "title": "Special Forces Operator - Combat Paramedic",
+        "company": "13ème RDP - French Army",
+        "description": [
+          "Combat Paramedic in French Special Forces unit",
+          "Multiple deployments to Africa and Middle East",
+          "Team pharmacy manager and medical supplies logistics",
+          "Tactical Combat Casualty Care (TCCC) specialist",
+          "High-stress decision making in hostile environments"
+        ]
+      },
+      "surveillant": {
+        "title": "School Supervisor",
+        "company": "Lycée/Collège Font-Romeu",
+        "description": [
+          "Student supervision and boarding school management",
+          "Sports activities organization"
+        ]
+      }
+    },
+    "educations": {
+      "crossfit-l2": {
+        "title": "CrossFit Level 2 Trainer",
+        "institution": "CrossFit Inc."
+      },
+      "crossfit-l1": {
+        "title": "CrossFit Level 1 Trainer",
+        "institution": "CrossFit Inc."
+      },
+      "bpjeps": {
+        "title": "BPJEPS AF - Weightlifting/Bodybuilding Option",
+        "institution": "BPJEPS Training Center"
+      },
+      "pilates": {
+        "title": "Pilates Certification",
+        "institution": "Pilates Training"
+      },
+      "sf-training": {
+        "title": "Special Forces & Paratrooper Training",
+        "institution": "French Army - 13ème RDP"
+      },
+      "psc-pse": {
+        "title": "PSC1 / PSE1 / PSE2 / AFGSU 1 & 2",
+        "institution": "French Army"
+      },
+      "sc-combat": {
+        "title": "Combat First Aid Level 1 & 2 (SC Combat)",
+        "institution": "French Army - Special Forces"
+      },
+      "staps": {
+        "title": "First Year STAPS (Sports Science)",
+        "institution": "STAPS Font-Romeu"
+      },
+      "bac": {
+        "title": "Scientific Baccalaureate - Biology Option",
+        "institution": "Lycée Pablo Picasso, Perpignan"
+      }
     }
   },
   "diplomas": {
@@ -272,5 +369,52 @@
     "retry": "Retry",
     "close": "Close",
     "back": "Back"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Access",
+      "subtitle": "Enter password to manage diplomas",
+      "password": "Password",
+      "passwordPlaceholder": "Enter admin password",
+      "button": "Login",
+      "verifying": "Verifying...",
+      "error": "Invalid password",
+      "protected": "Protected area. Unauthorized access prohibited."
+    },
+    "diplomas": {
+      "title": "Diploma Manager",
+      "subtitle": "Upload and manage your certifications",
+      "uploadTitle": "Upload New Diploma",
+      "existingTitle": "Existing Diplomas",
+      "titleEn": "Title (EN)",
+      "titleFr": "Title (FR)",
+      "institutionEn": "Institution (EN)",
+      "institutionFr": "Institution (FR)",
+      "year": "Year",
+      "category": "Category",
+      "uploadButton": "Upload Diploma",
+      "uploading": "Uploading...",
+      "dragDrop": "Drag & drop a PDF here, or click to select",
+      "maxSize": "Maximum 10MB",
+      "dropHere": "Drop the PDF here...",
+      "deleteConfirm": "Click again to confirm",
+      "delete": "Delete",
+      "viewPdf": "View PDF",
+      "noDiplomas": "No diplomas uploaded yet",
+      "success": {
+        "upload": "Diploma uploaded successfully!",
+        "delete": "Diploma deleted successfully!"
+      },
+      "error": {
+        "upload": "Failed to upload diploma",
+        "delete": "Failed to delete diploma",
+        "load": "Failed to load diplomas",
+        "required": "Please fill in all required fields",
+        "pdfOnly": "Only PDF files are allowed",
+        "maxSize": "File size must be less than 10MB"
+      }
+    },
+    "logout": "Logout",
+    "refresh": "Refresh"
   }
 }
