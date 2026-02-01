@@ -306,7 +306,21 @@
     },
     "medals": {
       "title": "Décorations & Distinctions",
-      "placeholder": "Décorations à ajouter"
+      "placeholder": "Décorations à ajouter",
+      "items": {
+        "outre-mer-afrique": {
+          "title": "Médaille d'Outre-Mer - Afrique",
+          "description": "Décoration pour service en opérations extérieures sur le théâtre africain"
+        },
+        "outre-mer-moyen-orient": {
+          "title": "Médaille d'Outre-Mer - Moyen-Orient",
+          "description": "Décoration pour service en opérations extérieures sur le théâtre moyen-oriental"
+        },
+        "defense-nationale-argent": {
+          "title": "Médaille de la Défense Nationale - Échelon Argent",
+          "description": "Agrafe \"Service de Santé\" & \"Missions d'Opérations Extérieures\""
+        }
+      }
     },
     "diplomas": {
       "title": "Certifications Militaires",

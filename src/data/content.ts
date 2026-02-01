@@ -492,6 +492,25 @@ export const militaryRecord: MilitaryItem[] = [
     title: 'Combat Paramedic',
     description: 'Primary role as tactical medical specialist, responsible for team health and emergency care in hostile environments',
   },
+  // Décorations françaises
+  {
+    id: 'medal-outre-mer-afrique',
+    type: 'medal',
+    title: "Médaille d'Outre-Mer - Afrique",
+    description: 'Décoration pour service en opérations extérieures sur le théâtre africain',
+  },
+  {
+    id: 'medal-outre-mer-moyen-orient',
+    type: 'medal',
+    title: "Médaille d'Outre-Mer - Moyen-Orient",
+    description: 'Décoration pour service en opérations extérieures sur le théâtre moyen-oriental',
+  },
+  {
+    id: 'medal-defense-nationale-argent',
+    type: 'medal',
+    title: 'Médaille de la Défense Nationale - Échelon Argent',
+    description: 'Agrafe "Service de Santé" & "Missions d\'Opérations Extérieures"',
+  },
 ]
 
 // Skills acquired in military - for display

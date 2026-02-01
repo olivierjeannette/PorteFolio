@@ -306,7 +306,21 @@
     },
     "medals": {
       "title": "Decorations & Awards",
-      "placeholder": "Decorations to be added"
+      "placeholder": "Decorations to be added",
+      "items": {
+        "outre-mer-afrique": {
+          "title": "Overseas Medal - Africa",
+          "description": "Decoration for service in external operations on the African theater"
+        },
+        "outre-mer-moyen-orient": {
+          "title": "Overseas Medal - Middle East",
+          "description": "Decoration for service in external operations on the Middle Eastern theater"
+        },
+        "defense-nationale-argent": {
+          "title": "National Defense Medal - Silver",
+          "description": "Clasps: \"Medical Service\" & \"External Operations Missions\""
+        }
+      }
     },
     "diplomas": {
       "title": "Military Certifications",
