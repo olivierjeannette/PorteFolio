@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, ArrowDown, Code2, TrendingUp, Users, Heart, MapPin, Download, Shield } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, Counter, Magnetic, HoverCard } from '@/components/animations'
-import { personalInfo, skills, projects } from '@/data/content'
+import { personalInfo, projects } from '@/data/content'
 import { cn } from '@/lib/utils'
 
 // Icon map
@@ -269,12 +269,19 @@ export default function HomePage() {
             </FadeIn>
           </div>
 
-          {/* Skill Categories - 3 columns using simplified skills data */}
+          {/* Skill Categories - 3 columns using i18n translations */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {Object.entries(skills).map(([key, category]) => {
-              const Icon = iconMap[category.icon as keyof typeof iconMap] || Code2
+            {(['dev', 'business', 'leadership'] as const).map((categoryKey) => {
+              const categoryConfig = {
+                dev: { icon: Code2, items: ['aiCoding', 'frontend', 'backend', 'deployment'] as const, levels: [95, 85, 85, 90] },
+                business: { icon: TrendingUp, items: ['marketing', 'sales', 'processOpt', 'audit'] as const, levels: [85, 90, 95, 90] },
+                leadership: { icon: Users, items: ['autonomy', 'adaptability', 'stress', 'problemSolving'] as const, levels: [95, 95, 95, 95] },
+              }
+              const config = categoryConfig[categoryKey]
+              const Icon = config.icon
+
               return (
-                <StaggerItem key={key}>
+                <StaggerItem key={categoryKey}>
                   <HoverCard>
                     <div className="h-full p-6 rounded-2xl bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 card-hover">
                       <div className="flex items-center gap-3 mb-6">
@@ -282,26 +289,26 @@ export default function HomePage() {
                           <Icon className="w-5 h-5" />
                         </div>
                         <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100">
-                          {category.title}
+                          {t(`skills.categories.${categoryKey}.title`)}
                         </h3>
                       </div>
 
                       {/* Show top skills with progress bars */}
                       <div className="space-y-4">
-                        {category.items.slice(0, 4).map((skill) => (
-                          <div key={skill.name}>
+                        {config.items.map((itemKey, index) => (
+                          <div key={itemKey}>
                             <div className="flex justify-between items-center mb-1">
                               <span className="text-sm text-surface-700 dark:text-surface-300">
-                                {skill.name}
+                                {t(`skills.categories.${categoryKey}.items.${itemKey}`)}
                               </span>
                               <span className="text-xs font-mono text-surface-500">
-                                {skill.level}%
+                                {config.levels[index]}%
                               </span>
                             </div>
                             <div className="skill-bar">
                               <motion.div
                                 initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
+                                whileInView={{ width: `${config.levels[index]}%` }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
                                 className="skill-bar-fill"
@@ -315,7 +322,7 @@ export default function HomePage() {
                         href={`/${locale}/cv#skills`}
                         className="mt-6 inline-flex items-center gap-1 text-sm text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300"
                       >
-                        {locale === 'en' ? 'View all' : 'Voir tout'}
+                        {t('skills.viewAll')}
                         <ArrowRight className="w-3 h-3" />
                       </Link>
                     </div>

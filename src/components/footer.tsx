@@ -97,7 +97,7 @@ export function Footer() {
               href={`/${locale}/contact`}
               className="inline-flex items-center gap-2 mt-6 text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300 font-medium transition-colors duration-200"
             >
-              {locale === 'en' ? "Let's talk" : 'Discutons ensemble'}
+              {t('letsTalk')}
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>

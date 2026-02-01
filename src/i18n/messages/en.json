@@ -40,6 +40,7 @@
     "label": "Skills",
     "title": "What I",
     "titleAccent": "bring to the table",
+    "viewAll": "View all",
     "categories": {
       "dev": {
         "title": "Development & Tech",
@@ -92,11 +93,24 @@
     "label": "Projects",
     "title": "Recent",
     "titleAccent": "Work",
+    "headerTitle": "My",
+    "headerTitleAccent": "Projects",
     "viewAll": "View all projects",
     "viewLive": "View Live",
     "viewCode": "View Code",
+    "viewDetails": "View details",
     "stack": "Stack",
-    "metrics": "Results"
+    "metrics": "Results",
+    "description": "Description",
+    "noProjects": "No projects in this category yet.",
+    "categories": {
+      "all": "All",
+      "web": "Websites",
+      "app": "Applications",
+      "automation": "Automation"
+    },
+    "subtitle": "A selection of projects showcasing my approach: solving real problems with elegant, effective technical solutions.",
+    "featured": "Featured"
   },
   "cta": {
     "title": "Ready to work together?",
@@ -127,24 +141,40 @@
       "frenchLevel": "Native",
       "english": "English",
       "englishLevel": "Professional (B2/C1)"
+    },
+    "militarySkills": {
+      "title": "Military Training & Skills"
+    },
+    "interested": {
+      "title": "Interested?",
+      "description": "Download my complete resume in PDF format or contact me directly."
     }
   },
   "diplomas": {
     "title": "Certifications & Diplomas",
     "subtitle": "Professional certifications and training credentials",
+    "headerTitle": "Education",
     "view": "View",
     "download": "Download",
     "addPlaceholder": "More certifications coming soon...",
+    "pdfPlaceholder": "PDF to be uploaded",
+    "verifiable": "Verifiable Documents",
+    "verifiableDesc": "All diplomas and certifications presented here are authentic and verifiable. Feel free to contact me for additional information.",
+    "addPdfs": "Add PDFs to /public/diplomes/",
     "categories": {
+      "all": "All",
       "fitness": "Fitness & Coaching",
       "medical": "Medical & First Aid",
       "tech": "Technical",
-      "business": "Business"
+      "business": "Business",
+      "military": "Military"
     }
   },
   "military": {
     "title": "Military Service",
     "subtitle": "French Army - Special Forces",
+    "headerTitle": "Military",
+    "headerTitleAccent": "Service",
     "service": {
       "title": "Service Record",
       "unit": "Unit",
@@ -153,7 +183,13 @@
       "roleValue": "Combat Paramedic",
       "rank": "Rank",
       "rankValue": "Enlisted",
-      "period": "Period"
+      "period": "Period",
+      "periodValue": "Classified"
+    },
+    "combatParamedic": {
+      "title": "Combat Paramedic",
+      "subtitle": "Tactical Medical Specialist",
+      "description": "Responsible for providing emergency medical care in combat situations. Trained in Tactical Combat Casualty Care (TCCC), trauma management, and emergency response under fire."
     },
     "skills": {
       "title": "Skills Acquired",
@@ -186,10 +222,13 @@
       }
     },
     "medals": {
-      "title": "Decorations & Awards"
+      "title": "Decorations & Awards",
+      "placeholder": "Decorations to be added"
     },
     "diplomas": {
-      "title": "Military Certifications"
+      "title": "Military Certifications",
+      "placeholder": "Military certifications and diplomas will be uploaded here.",
+      "instructions": "Upload your diploma PDFs to /public/diplomes/ and add them to content.ts"
     }
   },
   "contact": {
@@ -211,14 +250,20 @@
     },
     "or": "Or reach me directly",
     "whatsapp": "WhatsApp",
+    "whatsappDesc": "Quick response",
     "email": "Email",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Professional network",
+    "location": "Location",
+    "locationAvailable": "Available for remote work and relocation to Calgary, Alberta",
+    "responseTime": "I typically respond within 24 hours. For urgent matters, use WhatsApp."
   },
   "footer": {
     "tagline": "Building systems that run themselves.",
     "navigation": "Navigation",
     "connect": "Connect",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "letsTalk": "Let's talk"
   },
   "common": {
     "present": "Present",

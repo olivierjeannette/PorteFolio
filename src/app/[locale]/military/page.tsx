@@ -6,7 +6,7 @@ import { Shield, Medal, Award, FileText, Download, Eye, Calendar, Heart, Target,
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from '@/components/animations'
 import { PDFModal } from '@/components/pdf-modal'
-import { militaryRecord, militarySkills } from '@/data/content'
+import { militaryRecord } from '@/data/content'
 import { cn } from '@/lib/utils'
 
 // Group items by type
@@ -54,7 +54,7 @@ export default function MilitaryPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-display font-bold text-display-sm md:text-display-md text-surface-900 dark:text-surface-50 mb-6">
-              {locale === 'en' ? 'Military' : 'Parcours'} <span className="text-gradient">{locale === 'en' ? 'Service' : 'Militaire'}</span>
+              {t('headerTitle')} <span className="text-gradient">{t('headerTitleAccent')}</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -98,7 +98,7 @@ export default function MilitaryPage() {
                     </div>
                     <div className="flex items-center justify-between py-3">
                       <span className="text-surface-400">{t('service.period')}</span>
-                      <span className="font-medium text-surface-300">Classified</span>
+                      <span className="font-medium text-surface-300">{t('service.periodValue')}</span>
                     </div>
                   </div>
                 </div>
@@ -113,18 +113,16 @@ export default function MilitaryPage() {
                     </div>
                     <div>
                       <h3 className="font-display font-bold text-xl text-surface-900 dark:text-surface-100">
-                        Combat Paramedic
+                        {t('combatParamedic.title')}
                       </h3>
                       <p className="text-surface-500">
-                        {locale === 'en' ? 'Tactical Medical Specialist' : 'Spécialiste Médical Tactique'}
+                        {t('combatParamedic.subtitle')}
                       </p>
                     </div>
                   </div>
 
                   <p className="text-surface-600 dark:text-surface-400 leading-relaxed">
-                    {locale === 'en'
-                      ? 'Responsible for providing emergency medical care in combat situations. Trained in Tactical Combat Casualty Care (TCCC), trauma management, and emergency response under fire.'
-                      : 'Responsable des soins médicaux d\'urgence en situation de combat. Formé au TCCC (Tactical Combat Casualty Care), gestion des traumatismes et intervention d\'urgence sous le feu.'}
+                    {t('combatParamedic.description')}
                   </p>
                 </div>
               </HoverCard>
@@ -141,7 +139,7 @@ export default function MilitaryPage() {
             </h2>
 
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.1}>
-              {militarySkills.map((skill, index) => (
+              {(t.raw('skills.items') as string[]).map((skill: string, index: number) => (
                 <StaggerItem key={index}>
                   <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
                     <span className="w-2 h-2 rounded-full bg-red-500" />
@@ -183,7 +181,7 @@ export default function MilitaryPage() {
               <div className="p-8 rounded-2xl border-2 border-dashed border-surface-200 dark:border-surface-700 text-center">
                 <Medal className="w-12 h-12 text-surface-300 dark:text-surface-600 mx-auto mb-4" />
                 <p className="text-surface-500 dark:text-surface-500">
-                  {locale === 'en' ? 'Decorations to be added' : 'Décorations à ajouter'}
+                  {t('medals.placeholder')}
                 </p>
               </div>
             )}
@@ -201,14 +199,10 @@ export default function MilitaryPage() {
             <div className="p-8 rounded-2xl border-2 border-dashed border-surface-200 dark:border-surface-700 text-center">
               <FileText className="w-12 h-12 text-surface-300 dark:text-surface-600 mx-auto mb-4" />
               <p className="text-surface-500 dark:text-surface-500 mb-4">
-                {locale === 'en'
-                  ? 'Military certifications and diplomas will be uploaded here.'
-                  : 'Les certifications et diplômes militaires seront ajoutés ici.'}
+                {t('diplomas.placeholder')}
               </p>
               <p className="text-xs text-surface-400">
-                {locale === 'en'
-                  ? 'Upload your diploma PDFs to /public/diplomes/ and add them to content.ts'
-                  : 'Uploadez vos PDFs dans /public/diplomes/ et ajoutez-les dans content.ts'}
+                {t('diplomas.instructions')}
               </p>
             </div>
           </div>

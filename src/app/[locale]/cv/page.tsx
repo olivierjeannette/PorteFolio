@@ -5,12 +5,14 @@ import { motion } from 'framer-motion'
 import { Download, Printer, MapPin, Mail, Linkedin, Github, Calendar, Building2, GraduationCap, Shield, MessageCircle } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, Magnetic } from '@/components/animations'
-import { personalInfo, experiences, education, skills, militarySkills } from '@/data/content'
+import { personalInfo, experiences, education } from '@/data/content'
 import { cn } from '@/lib/utils'
 
 export default function CVPage() {
   const locale = useLocale()
   const t = useTranslations('cv')
+  const tMilitary = useTranslations('military')
+  const tSkills = useTranslations('skills')
   const cvRef = useRef<HTMLDivElement>(null)
 
   const handlePrint = () => {
@@ -179,10 +181,10 @@ export default function CVPage() {
                 <h2 className="font-display font-semibold text-xl text-surface-900 dark:text-surface-100 mb-6 flex items-center gap-2">
                   <span className="w-8 h-0.5 bg-accent-500" />
                   <Shield className="w-5 h-5" />
-                  {locale === 'en' ? 'Military Training & Skills' : 'Formation & Compétences Militaires'}
+                  {t('militarySkills.title')}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {militarySkills.map((skill, index) => (
+                  {(tMilitary.raw('skills.items') as string[]).map((skill: string, index: number) => (
                     <div
                       key={index}
                       className="flex items-center gap-2 p-3 rounded-lg bg-surface-100 dark:bg-surface-800/50"
@@ -244,32 +246,43 @@ export default function CVPage() {
                 </h2>
 
                 <div className="space-y-6">
-                  {Object.entries(skills).map(([key, category]) => (
-                    <div key={key}>
-                      <h3 className="text-sm font-medium text-accent-600 dark:text-accent-400 uppercase tracking-wider mb-3">
-                        {category.title}
-                      </h3>
-                      <div className="space-y-3">
-                        {category.items.slice(0, 5).map((skill) => (
-                          <div key={skill.name}>
-                            <div className="flex justify-between text-sm mb-1">
-                              <span className="text-surface-700 dark:text-surface-300">{skill.name}</span>
-                              <span className="text-surface-500 font-mono text-xs">{skill.level}%</span>
+                  {(['dev', 'business', 'leadership'] as const).map((categoryKey) => {
+                    const skillsConfig = {
+                      dev: { items: ['aiCoding', 'frontend', 'backend', 'deployment', 'automation'] as const, levels: [95, 85, 85, 90, 85] },
+                      business: { items: ['marketing', 'sales', 'processOpt', 'audit', 'funnels'] as const, levels: [85, 90, 95, 90, 85] },
+                      leadership: { items: ['autonomy', 'adaptability', 'stress', 'problemSolving', 'decision'] as const, levels: [95, 95, 95, 95, 90] },
+                    }
+                    const config = skillsConfig[categoryKey]
+
+                    return (
+                      <div key={categoryKey}>
+                        <h3 className="text-sm font-medium text-accent-600 dark:text-accent-400 uppercase tracking-wider mb-3">
+                          {tSkills(`categories.${categoryKey}.title`)}
+                        </h3>
+                        <div className="space-y-3">
+                          {config.items.map((itemKey, index) => (
+                            <div key={itemKey}>
+                              <div className="flex justify-between text-sm mb-1">
+                                <span className="text-surface-700 dark:text-surface-300">
+                                  {tSkills(`categories.${categoryKey}.items.${itemKey}`)}
+                                </span>
+                                <span className="text-surface-500 font-mono text-xs">{config.levels[index]}%</span>
+                              </div>
+                              <div className="h-1.5 rounded-full bg-surface-200 dark:bg-surface-700 overflow-hidden">
+                                <motion.div
+                                  initial={{ width: 0 }}
+                                  whileInView={{ width: `${config.levels[index]}%` }}
+                                  viewport={{ once: true }}
+                                  transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+                                  className="h-full rounded-full bg-gradient-to-r from-accent-500 to-accent-400"
+                                />
+                              </div>
                             </div>
-                            <div className="h-1.5 rounded-full bg-surface-200 dark:bg-surface-700 overflow-hidden">
-                              <motion.div
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-                                className="h-full rounded-full bg-gradient-to-r from-accent-500 to-accent-400"
-                              />
-                            </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             </FadeIn>
@@ -297,12 +310,10 @@ export default function CVPage() {
             <FadeIn delay={0.7}>
               <div className="p-6 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white print:hidden">
                 <h3 className="font-display font-semibold text-lg mb-2">
-                  {locale === 'en' ? 'Interested?' : 'Intéressé ?'}
+                  {t('interested.title')}
                 </h3>
                 <p className="text-white/80 text-sm mb-4">
-                  {locale === 'en'
-                    ? 'Download my complete resume in PDF format or contact me directly.'
-                    : 'Téléchargez mon CV complet en PDF ou contactez-moi directement.'}
+                  {t('interested.description')}
                 </p>
                 <div className="flex gap-2">
                   <a

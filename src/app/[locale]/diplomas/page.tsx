@@ -34,10 +34,10 @@ export default function DiplomasPage() {
   const t = useTranslations('diplomas')
 
   const categories: { key: Category; label: string }[] = [
-    { key: 'all', label: locale === 'en' ? 'All' : 'Tous' },
+    { key: 'all', label: t('categories.all') },
     { key: 'fitness', label: t('categories.fitness') },
     { key: 'medical', label: t('categories.medical') },
-    { key: 'military', label: locale === 'en' ? 'Military' : 'Militaire' },
+    { key: 'military', label: t('categories.military') },
     { key: 'tech', label: t('categories.tech') },
   ]
 
@@ -52,7 +52,7 @@ export default function DiplomasPage() {
         <div className="max-w-3xl mb-12">
           <FadeIn>
             <span className="inline-block text-sm font-medium text-accent-600 dark:text-accent-400 uppercase tracking-wider mb-4">
-              {locale === 'en' ? 'Education' : 'Formation'}
+              {t('headerTitle')}
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -146,7 +146,7 @@ export default function DiplomasPage() {
                     ) : (
                       <div className="pt-4 border-t border-surface-200 dark:border-surface-700">
                         <p className="text-xs text-surface-400 dark:text-surface-500 text-center">
-                          {locale === 'en' ? 'PDF to be uploaded' : 'PDF à uploader'}
+                          {t('pdfPlaceholder')}
                         </p>
                       </div>
                     )}
@@ -166,9 +166,7 @@ export default function DiplomasPage() {
                 {t('addPlaceholder')}
               </p>
               <p className="text-xs text-surface-400">
-                {locale === 'en'
-                  ? 'Add PDFs to /public/diplomes/'
-                  : 'Ajoutez les PDFs dans /public/diplomes/'}
+                {t('addPdfs')}
               </p>
             </div>
           </StaggerItem>
@@ -183,12 +181,10 @@ export default function DiplomasPage() {
               </div>
               <div>
                 <h3 className="font-display font-semibold text-surface-900 dark:text-surface-100 mb-2">
-                  {locale === 'en' ? 'Verifiable Documents' : 'Documents vérifiables'}
+                  {t('verifiable')}
                 </h3>
                 <p className="text-surface-600 dark:text-surface-400 text-sm">
-                  {locale === 'en'
-                    ? 'All diplomas and certifications presented here are authentic and verifiable. Feel free to contact me for additional information.'
-                    : 'Tous les diplômes et certifications présentés ici sont authentiques et vérifiables. N\'hésitez pas à me contacter pour des informations supplémentaires.'}
+                  {t('verifiableDesc')}
                 </p>
               </div>
             </div>

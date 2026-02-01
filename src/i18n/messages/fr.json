@@ -40,6 +40,7 @@
     "label": "Compétences",
     "title": "Ce que",
     "titleAccent": "j'apporte",
+    "viewAll": "Voir tout",
     "categories": {
       "dev": {
         "title": "Développement & Tech",
@@ -92,11 +93,24 @@
     "label": "Projets",
     "title": "Travaux",
     "titleAccent": "récents",
+    "headerTitle": "Mes",
+    "headerTitleAccent": "Projets",
     "viewAll": "Voir tous les projets",
     "viewLive": "Voir le site",
     "viewCode": "Voir le code",
+    "viewDetails": "Voir les détails",
     "stack": "Technologies",
-    "metrics": "Résultats"
+    "metrics": "Résultats",
+    "description": "Description",
+    "noProjects": "Pas de projets dans cette catégorie pour le moment.",
+    "categories": {
+      "all": "Tous",
+      "web": "Sites Web",
+      "app": "Applications",
+      "automation": "Automation"
+    },
+    "subtitle": "Une sélection de projets qui illustrent mon approche : résoudre des problèmes réels avec des solutions techniques élégantes et efficaces.",
+    "featured": "Featured"
   },
   "cta": {
     "title": "Prêt à travailler ensemble ?",
@@ -127,24 +141,40 @@
       "frenchLevel": "Natif",
       "english": "Anglais",
       "englishLevel": "Professionnel (B2/C1)"
+    },
+    "militarySkills": {
+      "title": "Formation & Compétences Militaires"
+    },
+    "interested": {
+      "title": "Intéressé ?",
+      "description": "Téléchargez mon CV complet en PDF ou contactez-moi directement."
     }
   },
   "diplomas": {
     "title": "Certifications & Diplômes",
     "subtitle": "Certifications professionnelles et formations",
+    "headerTitle": "Formation",
     "view": "Voir",
     "download": "Télécharger",
     "addPlaceholder": "Plus de certifications à venir...",
+    "pdfPlaceholder": "PDF à uploader",
+    "verifiable": "Documents vérifiables",
+    "verifiableDesc": "Tous les diplômes et certifications présentés ici sont authentiques et vérifiables. N'hésitez pas à me contacter pour des informations supplémentaires.",
+    "addPdfs": "Ajoutez les PDFs dans /public/diplomes/",
     "categories": {
+      "all": "Tous",
       "fitness": "Fitness & Coaching",
       "medical": "Médical & Secourisme",
       "tech": "Technique",
-      "business": "Business"
+      "business": "Business",
+      "military": "Militaire"
     }
   },
   "military": {
     "title": "Service Militaire",
     "subtitle": "Armée de Terre - Forces Spéciales",
+    "headerTitle": "Parcours",
+    "headerTitleAccent": "Militaire",
     "service": {
       "title": "État de Service",
       "unit": "Unité",
@@ -153,7 +183,13 @@
       "roleValue": "Paramedic Combat",
       "rank": "Grade",
       "rankValue": "Militaire du Rang",
-      "period": "Période"
+      "period": "Période",
+      "periodValue": "Classifié"
+    },
+    "combatParamedic": {
+      "title": "Paramedic Combat",
+      "subtitle": "Spécialiste Médical Tactique",
+      "description": "Responsable des soins médicaux d'urgence en situation de combat. Formé au TCCC (Tactical Combat Casualty Care), gestion des traumatismes et intervention d'urgence sous le feu."
     },
     "skills": {
       "title": "Compétences Acquises",
@@ -186,10 +222,13 @@
       }
     },
     "medals": {
-      "title": "Décorations & Distinctions"
+      "title": "Décorations & Distinctions",
+      "placeholder": "Décorations à ajouter"
     },
     "diplomas": {
-      "title": "Certifications Militaires"
+      "title": "Certifications Militaires",
+      "placeholder": "Les certifications et diplômes militaires seront ajoutés ici.",
+      "instructions": "Uploadez vos PDFs dans /public/diplomes/ et ajoutez-les dans content.ts"
     }
   },
   "contact": {
@@ -211,14 +250,20 @@
     },
     "or": "Ou contactez-moi directement",
     "whatsapp": "WhatsApp",
+    "whatsappDesc": "Réponse rapide",
     "email": "Email",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Réseau pro",
+    "location": "Localisation",
+    "locationAvailable": "Disponible en télétravail et relocalisation à Calgary, Alberta",
+    "responseTime": "Je réponds généralement sous 24h. Pour les urgences, utilisez WhatsApp."
   },
   "footer": {
     "tagline": "Je construis des systèmes qui tournent seuls.",
     "navigation": "Navigation",
     "connect": "Contact",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "letsTalk": "Discutons ensemble"
   },
   "common": {
     "present": "Présent",

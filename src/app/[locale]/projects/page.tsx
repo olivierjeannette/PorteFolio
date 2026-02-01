@@ -17,10 +17,10 @@ export default function ProjectsPage() {
   const t = useTranslations('projects')
 
   const categories: { key: Category; label: string }[] = [
-    { key: 'all', label: locale === 'en' ? 'All' : 'Tous' },
-    { key: 'web', label: locale === 'en' ? 'Websites' : 'Sites Web' },
-    { key: 'app', label: locale === 'en' ? 'Applications' : 'Applications' },
-    { key: 'automation', label: 'Automation' },
+    { key: 'all', label: t('categories.all') },
+    { key: 'web', label: t('categories.web') },
+    { key: 'app', label: t('categories.app') },
+    { key: 'automation', label: t('categories.automation') },
   ]
 
   const filteredProjects = activeCategory === 'all'
@@ -39,14 +39,12 @@ export default function ProjectsPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-display font-bold text-display-sm md:text-display-md text-surface-900 dark:text-surface-50 mb-6">
-              {locale === 'en' ? 'My' : 'Mes'} <span className="text-gradient">{locale === 'en' ? 'Projects' : 'Projets'}</span>
+              {t('headerTitle')} <span className="text-gradient">{t('headerTitleAccent')}</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-lg text-surface-600 dark:text-surface-400">
-              {locale === 'en'
-                ? 'A selection of projects showcasing my approach: solving real problems with elegant, effective technical solutions.'
-                : 'Une sélection de projets qui illustrent mon approche : résoudre des problèmes réels avec des solutions techniques élégantes et efficaces.'}
+              {t('subtitle')}
             </p>
           </FadeIn>
         </div>
@@ -92,7 +90,7 @@ export default function ProjectsPage() {
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-accent-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="px-4 py-2 rounded-lg bg-white/90 dark:bg-surface-900/90 text-sm font-medium text-surface-900 dark:text-surface-100">
-                        {locale === 'en' ? 'View details' : 'Voir les détails'}
+                        {t('viewDetails')}
                       </span>
                     </div>
                   </div>
@@ -150,7 +148,7 @@ export default function ProjectsPage() {
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-surface-500 dark:text-surface-500">
-              {locale === 'en' ? 'No projects in this category yet.' : 'Pas de projets dans cette catégorie pour le moment.'}
+              {t('noProjects')}
             </p>
           </div>
         )}
@@ -251,7 +249,7 @@ export default function ProjectsPage() {
                   {/* Description */}
                   <div className="mb-8">
                     <h3 className="font-display font-semibold text-lg text-surface-900 dark:text-surface-100 mb-4">
-                      {locale === 'en' ? 'Description' : 'Description'}
+                      {t('description')}
                     </h3>
                     <p className="text-surface-600 dark:text-surface-400 leading-relaxed">
                       {selectedProject.longDescription}

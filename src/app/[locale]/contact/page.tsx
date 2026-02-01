@@ -60,7 +60,7 @@ export default function ContactPage() {
       href: `https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`,
       icon: MessageCircle,
       color: 'bg-green-500/10 text-green-600 dark:text-green-400 hover:bg-green-500/20',
-      description: locale === 'en' ? 'Quick response' : 'Réponse rapide',
+      description: t('whatsappDesc'),
     },
     {
       name: t('email'),
@@ -74,7 +74,7 @@ export default function ContactPage() {
       href: personalInfo.linkedin,
       icon: Linkedin,
       color: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 hover:bg-sky-500/20',
-      description: locale === 'en' ? 'Professional network' : 'Réseau pro',
+      description: t('linkedinDesc'),
     },
   ]
 
@@ -271,15 +271,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-display font-semibold text-surface-900 dark:text-surface-100 mb-1">
-                      {locale === 'en' ? 'Location' : 'Localisation'}
+                      {t('location')}
                     </h3>
                     <p className="text-surface-600 dark:text-surface-400">
                       {personalInfo.location}
                     </p>
                     <p className="text-sm text-surface-500 dark:text-surface-500 mt-2">
-                      {locale === 'en'
-                        ? 'Available for remote work and relocation to Calgary, Alberta'
-                        : 'Disponible en télétravail et relocalisation à Calgary, Alberta'}
+                      {t('locationAvailable')}
                     </p>
                   </div>
                 </div>
@@ -289,9 +287,7 @@ export default function ContactPage() {
             {/* Response time */}
             <FadeIn delay={0.6}>
               <p className="text-sm text-surface-500 dark:text-surface-500 text-center">
-                {locale === 'en'
-                  ? 'I typically respond within 24 hours. For urgent matters, use WhatsApp.'
-                  : 'Je réponds généralement sous 24h. Pour les urgences, utilisez WhatsApp.'}
+                {t('responseTime')}
               </p>
             </FadeIn>
           </div>
