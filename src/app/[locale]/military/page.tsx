@@ -6,18 +6,24 @@ import { Shield, Medal, Award, FileText, Download, Eye, Calendar, Heart, Target,
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from '@/components/animations'
 import { PDFModal } from '@/components/pdf-modal'
-import { militaryRecord } from '@/data/content'
+import { militaryRecord, education } from '@/data/content'
 import { cn } from '@/lib/utils'
 
 // Group items by type
 const serviceItems = militaryRecord.filter((item) => item.type === 'service')
 const medals = militaryRecord.filter((item) => item.type === 'medal')
-const diplomas = militaryRecord.filter((item) => item.type === 'diploma')
+const diplomasFromRecord = militaryRecord.filter((item) => item.type === 'diploma')
+
+// Get military and medical certifications from education
+const militaryCertifications = education.filter(
+  (item) => item.category === 'military' || item.category === 'medical'
+)
 
 export default function MilitaryPage() {
   const [selectedPdf, setSelectedPdf] = useState<{ url: string; title: string } | null>(null)
   const locale = useLocale()
   const t = useTranslations('military')
+  const tEdu = useTranslations('cv.educations')
 
   const values = [
     {
@@ -196,15 +202,42 @@ export default function MilitaryPage() {
               {t('diplomas.title')}
             </h2>
 
-            <div className="p-8 rounded-2xl border-2 border-dashed border-surface-200 dark:border-surface-700 text-center">
-              <FileText className="w-12 h-12 text-surface-300 dark:text-surface-600 mx-auto mb-4" />
-              <p className="text-surface-500 dark:text-surface-500 mb-4">
-                {t('diplomas.placeholder')}
-              </p>
-              <p className="text-xs text-surface-400">
-                {t('diplomas.instructions')}
-              </p>
-            </div>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.05}>
+              {militaryCertifications.map((cert) => (
+                <StaggerItem key={cert.id}>
+                  <HoverCard>
+                    <div className="p-5 rounded-xl bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 h-full">
+                      <div className="flex items-start gap-4">
+                        <div className={cn(
+                          "p-3 rounded-lg flex-shrink-0",
+                          cert.category === 'military'
+                            ? "bg-red-500/10"
+                            : "bg-green-500/10"
+                        )}>
+                          {cert.category === 'military' ? (
+                            <Shield className="w-5 h-5 text-red-600 dark:text-red-400" />
+                          ) : (
+                            <Heart className="w-5 h-5 text-green-600 dark:text-green-400" />
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-semibold text-surface-900 dark:text-surface-100 mb-1">
+                            {tEdu(`${cert.id}.title`)}
+                          </h3>
+                          <p className="text-sm text-surface-500 mb-2">
+                            {tEdu(`${cert.id}.institution`)}
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-surface-400">
+                            <Calendar className="w-3 h-3" />
+                            <span>{cert.year}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </HoverCard>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
         </FadeIn>
 
