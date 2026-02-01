@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Olivier Jeannette | Ops Architect & AI-Augmented Builder",
-    "description": "Ancien Paramedic des Forces Spéciales devenu entrepreneur tech. Je construis des systèmes qui tournent seuls. Disponible pour des opportunités à Calgary, Alberta."
+    "title": "Olivier Jeannette | Développeur Web & Spécialiste IA/Automatisation",
+    "description": "Développeur Web spécialisé en développement augmenté par IA, automatisation des process et scaling business. Ancien Paramedic FS. Disponible pour Calgary, Alberta."
   },
   "nav": {
     "home": "Accueil",
@@ -12,8 +12,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Disponible pour opportunités en Alberta, Canada",
-    "tagline": "Je construis des systèmes qui tournent seuls.",
+    "badge": "Recherche : Dev Web • IA/Automatisation • Consulting Process",
+    "tagline": "Je construis des systèmes qui font scaler les business.",
     "cta": {
       "projects": "Voir mes projets",
       "cv": "Télécharger CV"
@@ -21,17 +21,17 @@
     "scroll": "Défiler"
   },
   "about": {
-    "label": "À propos",
-    "title": "Builder par nature,",
-    "titleAccent": "entrepreneur par choix",
+    "label": "Ce que je recherche",
+    "title": "Développement Web,",
+    "titleAccent": "IA & Automatisation",
     "bio": [
-      "Ancien Paramedic des Forces Spéciales avec expérience médicale de combat, j'ai transitionné vers l'entrepreneuriat en fondant et développant une salle CrossFit/HYROX en France jusqu'à 120K€ de CA annuel. Je n'ai pas juste géré—j'ai construit chaque système from scratch.",
-      "Ma force : connecter les pièces. Backend, frontend, infrastructure, IA—je ne code pas \"pur\", je construis des systèmes qui fonctionnent. Chaque projet est une opportunité d'éliminer la friction et de créer de la valeur durable. J'ai remplacé 3K€/an de SaaS par des solutions custom que j'ai construites moi-même.",
-      "Actuellement en relocalisation vers Calgary, Alberta. Je cherche des opportunités où mon profil hybride tech/business/opérations peut avoir un impact réel. Les environnements haute intensité sont là où j'excelle."
+      "Je recherche des postes en Développement Web, Intégration IA, ou Consulting en Automatisation des Process. Ma force : je comprends le côté technique ET business, donc je construis des solutions qui marchent dans le monde réel.",
+      "La preuve ? J'ai construit La Skàli from scratch—une salle de CrossFit dans un marché ultra concurrentiel. Tout en coachant 72h/semaine (9h-21h, Lun-Sam, 6 ans, 3 semaines de vacances tous les 2 ans), j'ai aussi géré TOUTE la tech : site web, système de réservation, appli de gestion custom, Meta Ads, SEO, tunnels de vente, et workflows d'automatisation. J'ai remplacé 3K€/an de SaaS par des outils que j'ai construits moi-même.",
+      "J'excelle dans les environnements haute intensité où je dois apprendre vite, optimiser constamment, et délivrer des résultats. Que ce soit pour aider des entreprises à automatiser leurs process, construire des applications web, ou intégrer l'IA dans des workflows—je suis prêt."
     ],
     "stats": {
       "revenue": "CA Annuel",
-      "years": "Années GM",
+      "years": "Années Solo",
       "saved": "SaaS Remplacé"
     },
     "yearsExp": "ans d'expérience"
@@ -122,9 +122,10 @@
     "title": "CV",
     "download": "Télécharger PDF",
     "print": "Imprimer",
+    "exportPdf": "Exporter en PDF",
     "summary": {
       "title": "Résumé Professionnel",
-      "content": "Architecte opérationnel avec un parcours unique combinant formation médicale des Forces Spéciales, entrepreneuriat et expertise technique. J'ai construit et développé une salle CrossFit/HYROX de zéro à 120K€ de CA annuel tout en développant des solutions logicielles sur mesure. Je cherche des opportunités en Alberta où je peux mettre à profit mon profil hybride tech/business pour optimiser l'excellence opérationnelle."
+      "content": "Développeur Web et spécialiste en Automatisation des Process avec un parcours unique : Paramedic Forces Spéciales devenu entrepreneur. J'ai construit et scalé une salle de sport de 0 à 120K€/an tout en développant toute l'infrastructure digitale en solo. Recherche des postes en Développement Web, Intégration IA, ou Consulting Process en Alberta."
     },
     "experience": {
       "title": "Expérience Professionnelle"
@@ -149,62 +150,47 @@
       "title": "Intéressé ?",
       "description": "Téléchargez mon CV complet en PDF ou contactez-moi directement."
     },
+    "targetRoles": {
+      "title": "Postes Recherchés",
+      "roles": ["Développeur Web", "Spécialiste IA/Automatisation", "Consultant Process", "Chef de Projet Technique"]
+    },
     "experiences": {
       "laskali": {
-        "title": "Fondateur & Gérant",
+        "title": "Fondateur & Gérant (Entrepreneur Solo)",
         "company": "La Skàli - CrossFit/HYROX",
         "description": [
-          "Création et développement d'une salle CrossFit/HYROX de 0 à 120K€ de CA annuel",
-          "Gestion complète du P&L : budgétisation, stratégie tarifaire, optimisation des coûts",
-          "Développement de solutions logicielles sur mesure remplaçant 3K€/an de SaaS",
-          "Management d'équipe : recrutement, formation, planning des coachs",
-          "Marketing digital : SEO, Meta Ads, stratégie de contenu - Top 3 Google \"CrossFit Laval\"",
-          "Organisation d'événements : compétitions, workshops, événements communautaires"
+          "Création et scaling d'une salle de sport de 0 à 120K€/an dans un marché ultra concurrentiel (5+ concurrents directs à Laval)",
+          "CHARGE DE TRAVAIL : 72h/semaine (9h-21h, Lun-Sam), 6 ans, seulement 3 semaines de vacances tous les 2 ans",
+          "DÉVELOPPEMENT WEB : Site complet avec système de réservation, portail membres et dashboard admin (Next.js, Supabase)",
+          "LOGICIEL CUSTOM : Appli de gestion remplaçant 3K€/an de SaaS (suivi membres, facturation, programmation WOD)",
+          "MARKETING DIGITAL : Stratégie SEO Top 3 Google 'CrossFit Laval', campagnes Meta Ads, création de contenu",
+          "AUTOMATISATION : Workflows N8N/Make pour facturation, relances, reporting et synchronisation données",
+          "VENTE & TUNNELS : Construction de tunnels de conversion, gestion de tous les appels commerciaux, négociation partenariats B2B (Gymlib, Wellpass, HYROX)",
+          "GESTION P&L : Responsabilité financière complète - budget, pricing, optimisation coûts, conformité fiscale",
+          "Préparation de la vente clé en main avec process et systèmes entièrement documentés"
         ]
       },
-      "coach-auto": {
-        "title": "Coach Sportif - Auto-entrepreneur",
-        "company": "Auto-entrepreneur",
+      "coaching-career": {
+        "title": "Coach Sportif & Professionnel Fitness",
+        "company": "Auto-entrepreneur & Wakeup Form Laval",
         "description": [
-          "Coaching personnel et petits groupes",
-          "Stratégies d'acquisition et fidélisation clients",
-          "Conception de programmes d'entraînement personnalisés"
-        ]
-      },
-      "coach-stagiaire": {
-        "title": "Coach Sportif Stagiaire - BPJEPS AF",
-        "company": "Wakeup Form Laval",
-        "description": [
-          "Formation BPJEPS AF en alternance (option Haltérophilie/Musculation)",
-          "Cours collectifs et coaching individuel",
-          "Suivi des adhérents et conception de programmes"
-        ]
-      },
-      "coach-benevole": {
-        "title": "Coach Cross-Training Bénévole",
-        "company": "Wakeup Form Laval",
-        "description": [
-          "Coach cross-training bénévole pendant la découverte du milieu du fitness",
-          "Animation de cours collectifs et coaching technique"
+          "Progression sur 3 ans de bénévole à coach professionnel certifié",
+          "Certification BPJEPS AF (option Haltérophilie/Musculation) - diplôme d'État",
+          "Coaching personnel, cours collectifs et conception de programmes",
+          "Acquisition clients, stratégies de fidélisation et développement business en auto-entrepreneur",
+          "Compétences fondatrices qui ont mené à la création de La Skàli"
         ]
       },
       "military": {
         "title": "Opérateur Forces Spéciales - Paramedic Combat",
         "company": "13ème RDP - Armée de Terre",
         "description": [
-          "Paramedic Combat au sein d'une unité des Forces Spéciales françaises",
+          "7 ans dans une unité des Forces Spéciales françaises (13ème Régiment de Dragons Parachutistes)",
+          "Paramedic Combat : soins médicaux tactiques en environnement haute pression",
           "Multiples déploiements en Afrique et Moyen-Orient",
           "Responsable pharmacie d'équipe et logistique médicale",
           "Spécialiste TCCC (Tactical Combat Casualty Care)",
-          "Prise de décision sous stress intense en environnement hostile"
-        ]
-      },
-      "surveillant": {
-        "title": "Surveillant Scolaire",
-        "company": "Lycée/Collège Font-Romeu",
-        "description": [
-          "Surveillance d'élèves et gestion de l'internat",
-          "Organisation d'activités sportives"
+          "Compétences clés développées : prise de décision sous pression, autonomie, adaptabilité, résilience"
         ]
       }
     },

@@ -6,7 +6,7 @@ export const personalInfo = {
   name: 'Olivier',
   surname: 'Jeannette',
   alias: 'Jackson',
-  title: 'Ops Architect • AI-Augmented Builder • Former SF Paramedic',
+  title: 'Web Developer • AI & Automation Specialist • Process Architect',
   location: 'France → Calgary, Alberta, Canada',
   email: 'olive.jackson22@gmail.com',
   whatsapp: '+33616875437',
@@ -252,6 +252,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'laskali-eu',
+    title: 'La Skàli - CrossFit/HYROX Gym',
+    description: 'Full business I built from scratch: website, booking system, marketing, and custom software',
+    longDescription: 'Complete gym business I founded and scaled to €120K/year. Built the entire digital infrastructure: SEO-optimized website (Top 3 Google), booking system, member management app, Meta Ads campaigns, sales funnels, and automation workflows. All while coaching 72h/week for 6 years.',
+    stack: ['Next.js', 'Supabase', 'Tailwind CSS', 'Meta Ads', 'Make/N8N', 'SEO'],
+    image: '/projects/laskali.jpg',
+    liveUrl: 'https://laskali.eu',
+    metrics: ['€120K/year revenue', 'Top 3 Google "CrossFit Laval"', '€3K/year SaaS replaced', '6 years solo operation'],
+    featured: true,
+    category: 'web',
+  },
+  {
     id: 'portfolio-v2',
     title: 'Portfolio - Olivier Jeannette',
     description: 'Modern bilingual portfolio with i18n, dark mode, and professional design',
@@ -297,18 +309,6 @@ export const projects: Project[] = [
     category: 'app',
   },
   {
-    id: 'laskali-website',
-    title: 'La Skàli - Website & Booking System',
-    description: 'Full website with integrated booking system for CrossFit/HYROX gym',
-    longDescription: 'Complete website overhaul with real-time booking system, subscription management, and SEO optimization. Performance-focused for local conversion.',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Vercel'],
-    image: '/projects/laskali.jpg',
-    liveUrl: 'https://laskali.fr',
-    metrics: ['Top 3 Google "CrossFit Laval"', '+40% conversion', '< 1s load time'],
-    featured: true,
-    category: 'web',
-  },
-  {
     id: 'scally-prog',
     title: 'Scally Prog - Gym Management App',
     description: 'Custom gym management software with member tracking and billing',
@@ -346,8 +346,8 @@ export interface Experience {
   skills: string[]
 }
 
-// Experience IDs for i18n lookup
-export const experienceIds = ['laskali', 'coach-auto', 'coach-stagiaire', 'coach-benevole', 'military', 'surveillant'] as const
+// Experience IDs for i18n lookup - 3 main blocks: La Skàli, Coaching Career, Military
+export const experienceIds = ['laskali', 'coaching-career', 'military'] as const
 
 export const experiences: Experience[] = [
   {
@@ -357,34 +357,16 @@ export const experiences: Experience[] = [
     location: 'Laval, France',
     period: '2021 - 2026',
     description: [],
-    skills: ['P&L Management', 'Team Leadership', 'Digital Marketing', 'Software Development', 'Sales'],
+    skills: ['Web Development', 'AI & Automation', 'Digital Marketing', 'Meta Ads', 'SEO', 'Sales Funnels', 'P&L Management', 'Process Optimization'],
   },
   {
-    id: 'coach-auto',
-    title: 'Sports Coach - Self-Employed',
-    company: 'Auto-entrepreneur',
+    id: 'coaching-career',
+    title: 'Sports Coach & Fitness Professional',
+    company: 'Auto-entrepreneur & Wakeup Form Laval',
     location: 'Laval, France',
-    period: '2020 - 2021',
+    period: '2018 - 2021',
     description: [],
-    skills: ['Personal Training', 'Client Management', 'Business Development'],
-  },
-  {
-    id: 'coach-stagiaire',
-    title: 'Sports Coach Intern - BPJEPS AF',
-    company: 'Wakeup Form Laval',
-    location: 'Laval, France',
-    period: '2019 - 2020',
-    description: [],
-    skills: ['Coaching', 'Fitness Training', 'Client Relations'],
-  },
-  {
-    id: 'coach-benevole',
-    title: 'Volunteer Cross-Training Coach',
-    company: 'Wakeup Form Laval',
-    location: 'Laval, France',
-    period: '2018',
-    description: [],
-    skills: ['Cross-Training', 'Group Coaching', 'Program Design'],
+    skills: ['Personal Training', 'Client Management', 'Program Design', 'BPJEPS Certification'],
   },
   {
     id: 'military',
@@ -393,16 +375,7 @@ export const experiences: Experience[] = [
     location: 'France',
     period: '2011 - 2018',
     description: [],
-    skills: ['Combat Medical Care', 'Leadership Under Fire', 'Crisis Management', 'Team Coordination'],
-  },
-  {
-    id: 'surveillant',
-    title: 'School Supervisor',
-    company: 'Lycée/Collège Font-Romeu',
-    location: 'Font-Romeu, France',
-    period: '2009 - 2011',
-    description: [],
-    skills: ['Supervision', 'Youth Management', 'Sports Activities'],
+    skills: ['Combat Medical Care', 'Leadership Under Fire', 'Crisis Management', 'High-Stress Decision Making'],
   },
 ]
 

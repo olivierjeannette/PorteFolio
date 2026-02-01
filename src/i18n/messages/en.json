@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Olivier Jeannette | Ops Architect & AI-Augmented Builder",
-    "description": "Former Special Forces Paramedic turned Tech Entrepreneur. I build systems that run themselves. Available for opportunities in Calgary, Alberta."
+    "title": "Olivier Jeannette | Web Developer & AI/Automation Specialist",
+    "description": "Web Developer specializing in AI-augmented development, process automation, and business scaling. Former SF Paramedic. Available for opportunities in Calgary, Alberta."
   },
   "nav": {
     "home": "Home",
@@ -12,8 +12,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Open to opportunities in Alberta, Canada",
-    "tagline": "I build systems that run themselves.",
+    "badge": "Open to: Web Dev • AI/Automation • Process Consulting",
+    "tagline": "I build systems that scale businesses and run themselves.",
     "cta": {
       "projects": "View My Work",
       "cv": "Download Resume"
@@ -21,17 +21,17 @@
     "scroll": "Scroll"
   },
   "about": {
-    "label": "About",
-    "title": "Builder by nature,",
-    "titleAccent": "entrepreneur by choice",
+    "label": "What I'm Looking For",
+    "title": "Web Development,",
+    "titleAccent": "AI & Process Automation",
     "bio": [
-      "Former Special Forces Paramedic with combat medical experience, I transitioned to entrepreneurship by founding and scaling a CrossFit/HYROX gym in France to €120K annual revenue. I didn't just manage—I built every system from scratch.",
-      "My superpower: connecting the dots. Backend, frontend, infrastructure, AI—I don't code \"pure\", I build systems that work. Every project is an opportunity to eliminate friction and create lasting value. I replaced €3K/year in SaaS tools with custom solutions I built myself.",
-      "Currently relocating to Calgary, Alberta. I'm looking for opportunities where my hybrid tech/business/operations profile can make a real impact. High-intensity environments are where I thrive."
+      "I'm looking for roles in Web Development, AI Integration, or Process Automation Consulting. My strength: I understand both the technical and business sides, so I build solutions that actually work in the real world.",
+      "Proof? I built La Skàli from scratch—a CrossFit gym in a highly competitive market. While coaching 72h/week (9am-9pm, Mon-Sat, 6 years, 3 weeks vacation every 2 years), I also handled ALL the tech: website, booking system, custom management app, Meta Ads, SEO, sales funnels, and automation workflows. I replaced €3K/year in SaaS with tools I built myself.",
+      "I thrive in high-intensity environments where I need to learn fast, optimize constantly, and deliver results. Whether it's helping companies automate their processes, building web applications, or integrating AI into workflows—I'm ready."
     ],
     "stats": {
       "revenue": "Annual Revenue",
-      "years": "Years as GM",
+      "years": "Years Solo",
       "saved": "SaaS Replaced"
     },
     "yearsExp": "years experience"
@@ -122,9 +122,10 @@
     "title": "Resume",
     "download": "Download PDF",
     "print": "Print",
+    "exportPdf": "Export as PDF",
     "summary": {
       "title": "Professional Summary",
-      "content": "Operations architect with a unique background combining Special Forces medical training, entrepreneurship, and technical expertise. Built and scaled a CrossFit/HYROX gym from zero to €120K annual revenue while developing custom software solutions. Seeking opportunities in Alberta where I can leverage my hybrid tech/business profile to drive operational excellence."
+      "content": "Web Developer and Process Automation specialist with a unique background: Special Forces Paramedic turned entrepreneur. Built and scaled a gym from zero to €120K/year while developing all digital infrastructure solo. Looking for roles in Web Development, AI Integration, or Business Process Consulting in Alberta."
     },
     "experience": {
       "title": "Professional Experience"
@@ -149,62 +150,47 @@
       "title": "Interested?",
       "description": "Download my complete resume in PDF format or contact me directly."
     },
+    "targetRoles": {
+      "title": "Target Roles",
+      "roles": ["Web Developer", "AI/Automation Specialist", "Process Consultant", "Technical Project Manager"]
+    },
     "experiences": {
       "laskali": {
-        "title": "Founder & General Manager",
+        "title": "Founder & General Manager (Solo Entrepreneur)",
         "company": "La Skàli - CrossFit/HYROX Gym",
         "description": [
-          "Built and scaled a CrossFit/HYROX gym from zero to €120K annual revenue",
-          "Full P&L management: budgeting, pricing strategy, cost optimization",
-          "Developed custom software solutions replacing €3K/year in SaaS tools",
-          "Team management: hiring, training, scheduling of coaches",
-          "Digital marketing: SEO, Meta Ads, content strategy - achieved Top 3 Google ranking for 'CrossFit Laval'",
-          "Event organization: competitions, workshops, community events"
+          "Built and scaled a gym from zero to €120K/year in a highly competitive market (5+ direct competitors in Laval)",
+          "WORKLOAD: 72h/week (9am-9pm, Mon-Sat), 6 years, only 3 weeks vacation every 2 years",
+          "WEB DEVELOPMENT: Built complete website with booking system, member portal, and admin dashboard (Next.js, Supabase)",
+          "CUSTOM SOFTWARE: Developed gym management app replacing €3K/year in SaaS (member tracking, billing, WOD programming)",
+          "DIGITAL MARKETING: SEO strategy achieving Top 3 Google for 'CrossFit Laval', Meta Ads campaigns, content creation",
+          "AUTOMATION: Implemented N8N/Make workflows for invoicing, follow-ups, reporting, and data sync",
+          "SALES & FUNNELS: Built conversion funnels, handled all sales calls, negotiated B2B partnerships (Gymlib, Wellpass, HYROX)",
+          "P&L MANAGEMENT: Full financial responsibility - budgeting, pricing, cost optimization, tax compliance",
+          "Preparing business for turnkey sale with fully documented processes and systems"
         ]
       },
-      "coach-auto": {
-        "title": "Sports Coach - Self-Employed",
-        "company": "Auto-entrepreneur",
+      "coaching-career": {
+        "title": "Sports Coach & Fitness Professional",
+        "company": "Auto-entrepreneur & Wakeup Form Laval",
         "description": [
-          "Personal training and small group coaching",
-          "Client acquisition and retention strategies",
-          "Custom training program design"
-        ]
-      },
-      "coach-stagiaire": {
-        "title": "Sports Coach Intern - BPJEPS AF",
-        "company": "Wakeup Form Laval",
-        "description": [
-          "BPJEPS AF work-study program (Weightlifting/Bodybuilding option)",
-          "Group fitness classes and personal training",
-          "Member follow-up and program design"
-        ]
-      },
-      "coach-benevole": {
-        "title": "Volunteer Cross-Training Coach",
-        "company": "Wakeup Form Laval",
-        "description": [
-          "Volunteer cross-training coach while discovering the fitness industry",
-          "Group class management and exercise technique coaching"
+          "3-year progression from volunteer to certified professional coach",
+          "BPJEPS AF certification (Weightlifting/Bodybuilding option) - French state diploma",
+          "Personal training, group classes, and program design",
+          "Client acquisition, retention strategies, and business development as self-employed",
+          "Foundation skills that led to founding La Skàli"
         ]
       },
       "military": {
         "title": "Special Forces Operator - Combat Paramedic",
         "company": "13ème RDP - French Army",
         "description": [
-          "Combat Paramedic in French Special Forces unit",
+          "7 years in French Special Forces unit (13ème Régiment de Dragons Parachutistes)",
+          "Combat Paramedic: tactical medical care in high-stress environments",
           "Multiple deployments to Africa and Middle East",
-          "Team pharmacy manager and medical supplies logistics",
-          "Tactical Combat Casualty Care (TCCC) specialist",
-          "High-stress decision making in hostile environments"
-        ]
-      },
-      "surveillant": {
-        "title": "School Supervisor",
-        "company": "Lycée/Collège Font-Romeu",
-        "description": [
-          "Student supervision and boarding school management",
-          "Sports activities organization"
+          "Team pharmacy manager and medical logistics",
+          "TCCC specialist (Tactical Combat Casualty Care)",
+          "Key skills developed: decision-making under pressure, autonomy, adaptability, resilience"
         ]
       }
     },

@@ -1,12 +1,13 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Download, Printer, MapPin, Mail, Linkedin, Github, Calendar, Building2, GraduationCap, Shield, MessageCircle } from 'lucide-react'
+import { Download, Printer, MapPin, Mail, Linkedin, Calendar, Building2, GraduationCap, Shield, MessageCircle, FileDown, Loader2 } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { FadeIn, StaggerContainer, StaggerItem, Magnetic } from '@/components/animations'
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations'
 import { personalInfo, experiences, education } from '@/data/content'
 import { cn } from '@/lib/utils'
+import { CVPrintable } from '@/components/cv-printable'
 
 export default function CVPage() {
   const locale = useLocale()
@@ -14,9 +15,132 @@ export default function CVPage() {
   const tMilitary = useTranslations('military')
   const tSkills = useTranslations('skills')
   const cvRef = useRef<HTMLDivElement>(null)
+  const printableRef = useRef<HTMLDivElement>(null)
+  const [isExporting, setIsExporting] = useState(false)
 
   const handlePrint = () => {
     window.print()
+  }
+
+  const handleExportPDF = async () => {
+    if (!printableRef.current || isExporting) return
+
+    setIsExporting(true)
+
+    try {
+      const html2canvas = (await import('html2canvas-pro')).default
+      const { jsPDF } = await import('jspdf')
+
+      const canvas = await html2canvas(printableRef.current, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff',
+      })
+
+      // Letter size dimensions in mm
+      const imgWidth = 215.9
+      const pageHeight = 279.4
+      const imgHeight = (canvas.height * imgWidth) / canvas.width
+
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'letter',
+      })
+
+      let heightLeft = imgHeight
+      let position = 0
+      const imgData = canvas.toDataURL('image/jpeg', 0.95)
+
+      pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight)
+      heightLeft -= pageHeight
+
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight
+        pdf.addPage()
+        pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight)
+        heightLeft -= pageHeight
+      }
+
+      pdf.save(`CV-Olivier-Jeannette-${locale.toUpperCase()}.pdf`)
+    } catch (error) {
+      console.error('Error exporting PDF:', error)
+    } finally {
+      setIsExporting(false)
+    }
+  }
+
+  // Prepare translations for printable component
+  const cvTranslations = {
+    summary: { title: t('summary.title'), content: t('summary.content') },
+    experience: { title: t('experience.title') },
+    education: { title: t('education.title') },
+    skills: { title: t('skills.title') },
+    languages: {
+      title: t('languages.title'),
+      french: t('languages.french'),
+      frenchLevel: t('languages.frenchLevel'),
+      english: t('languages.english'),
+      englishLevel: t('languages.englishLevel'),
+    },
+    targetRoles: t.raw('targetRoles') as { title: string; roles: string[] } | undefined,
+    experiences: experiences.reduce((acc, exp) => {
+      try {
+        acc[exp.id] = {
+          title: t(`experiences.${exp.id}.title`),
+          company: t(`experiences.${exp.id}.company`),
+          description: t.raw(`experiences.${exp.id}.description`) as string[],
+        }
+      } catch {
+        // Skip if translation not found
+      }
+      return acc
+    }, {} as Record<string, { title: string; company: string; description: string[] }>),
+    educations: education.reduce((acc, edu) => {
+      try {
+        acc[edu.id] = {
+          title: t(`educations.${edu.id}.title`),
+          institution: t(`educations.${edu.id}.institution`),
+        }
+      } catch {
+        // Skip if translation not found
+      }
+      return acc
+    }, {} as Record<string, { title: string; institution: string }>),
+  }
+
+  const skillsTranslations = {
+    categories: {
+      dev: {
+        title: tSkills('categories.dev.title'),
+        items: {
+          aiCoding: tSkills('categories.dev.items.aiCoding'),
+          frontend: tSkills('categories.dev.items.frontend'),
+          backend: tSkills('categories.dev.items.backend'),
+          deployment: tSkills('categories.dev.items.deployment'),
+          automation: tSkills('categories.dev.items.automation'),
+        },
+      },
+      business: {
+        title: tSkills('categories.business.title'),
+        items: {
+          marketing: tSkills('categories.business.items.marketing'),
+          sales: tSkills('categories.business.items.sales'),
+          processOpt: tSkills('categories.business.items.processOpt'),
+          funnels: tSkills('categories.business.items.funnels'),
+        },
+      },
+      leadership: {
+        title: tSkills('categories.leadership.title'),
+        items: {
+          autonomy: tSkills('categories.leadership.items.autonomy'),
+          adaptability: tSkills('categories.leadership.items.adaptability'),
+          stress: tSkills('categories.leadership.items.stress'),
+          problemSolving: tSkills('categories.leadership.items.problemSolving'),
+        },
+      },
+    },
   }
 
   return (
@@ -54,11 +178,19 @@ export default function CVPage() {
                 {t('print')}
               </button>
 
-              {/* Download button */}
-              <a href="/cv.pdf" download className="btn-primary print:hidden">
-                <Download className="w-4 h-4" />
-                {t('download')}
-              </a>
+              {/* Export PDF button */}
+              <button
+                onClick={handleExportPDF}
+                disabled={isExporting}
+                className="btn-primary print:hidden disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isExporting ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <FileDown className="w-4 h-4" />
+                )}
+                {t('exportPdf')}
+              </button>
             </div>
           </FadeIn>
         </div>
@@ -327,14 +459,18 @@ export default function CVPage() {
                   {t('interested.description')}
                 </p>
                 <div className="flex gap-2">
-                  <a
-                    href="/cv.pdf"
-                    download
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white text-accent-700 font-medium text-sm hover:bg-white/90 transition-colors"
+                  <button
+                    onClick={handleExportPDF}
+                    disabled={isExporting}
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white text-accent-700 font-medium text-sm hover:bg-white/90 transition-colors disabled:opacity-50"
                   >
-                    <Download className="w-4 h-4" />
+                    {isExporting ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Download className="w-4 h-4" />
+                    )}
                     PDF
-                  </a>
+                  </button>
                   <a
                     href={`https://wa.me/${personalInfo.whatsapp.replace(/\+/g, '')}`}
                     target="_blank"
@@ -348,6 +484,16 @@ export default function CVPage() {
               </div>
             </FadeIn>
           </div>
+        </div>
+
+        {/* Hidden printable CV for PDF export - Canadian format */}
+        <div className="fixed left-[-9999px] top-0">
+          <CVPrintable
+            ref={printableRef}
+            locale={locale}
+            translations={cvTranslations}
+            skillsTranslations={skillsTranslations}
+          />
         </div>
       </div>
     </div>
