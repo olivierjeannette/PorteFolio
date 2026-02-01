@@ -485,9 +485,15 @@ export const militaryRecord: MilitaryItem[] = [
   },
   // Décorations françaises
   {
-    id: 'medal-outre-mer-afrique',
+    id: 'medal-outre-mer-afrique-1',
     type: 'medal',
-    title: "Médaille d'Outre-Mer - Afrique",
+    title: "Médaille d'Outre-Mer - Afrique (1)",
+    description: 'Décoration pour service en opérations extérieures sur le théâtre africain',
+  },
+  {
+    id: 'medal-outre-mer-afrique-2',
+    type: 'medal',
+    title: "Médaille d'Outre-Mer - Afrique (2)",
     description: 'Décoration pour service en opérations extérieures sur le théâtre africain',
   },
   {

@@ -303,7 +303,11 @@
       "title": "Decorations & Awards",
       "placeholder": "Decorations to be added",
       "items": {
-        "outre-mer-afrique": {
+        "outre-mer-afrique-1": {
+          "title": "Overseas Medal - Africa",
+          "description": "Decoration for service in external operations on the African theater"
+        },
+        "outre-mer-afrique-2": {
           "title": "Overseas Medal - Africa",
           "description": "Decoration for service in external operations on the African theater"
         },

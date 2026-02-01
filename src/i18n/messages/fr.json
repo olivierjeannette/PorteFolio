@@ -303,7 +303,11 @@
       "title": "Décorations & Distinctions",
       "placeholder": "Décorations à ajouter",
       "items": {
-        "outre-mer-afrique": {
+        "outre-mer-afrique-1": {
+          "title": "Médaille d'Outre-Mer - Afrique",
+          "description": "Décoration pour service en opérations extérieures sur le théâtre africain"
+        },
+        "outre-mer-afrique-2": {
           "title": "Médaille d'Outre-Mer - Afrique",
           "description": "Décoration pour service en opérations extérieures sur le théâtre africain"
         },
