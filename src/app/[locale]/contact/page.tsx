@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Send, MessageCircle, Mail, Instagram, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Send, MessageCircle, Mail, Instagram, MapPin, CheckCircle, AlertCircle, Loader2, Linkedin } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, Magnetic } from '@/components/animations'
 import { personalInfo } from '@/data/content'
@@ -68,6 +68,13 @@ export default function ContactPage() {
       icon: Mail,
       color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-500/20',
       description: personalInfo.email,
+    },
+    {
+      name: t('linkedin'),
+      href: personalInfo.linkedin,
+      icon: Linkedin,
+      color: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 hover:bg-sky-500/20',
+      description: 'LinkedIn',
     },
     {
       name: t('instagram'),

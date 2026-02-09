@@ -68,6 +68,11 @@ export default function MilitaryPage() {
               {t('subtitle')}
             </p>
           </FadeIn>
+          <FadeIn delay={0.25}>
+            <p className="text-surface-600 dark:text-surface-400 mt-4 leading-relaxed">
+              {t('intro')}
+            </p>
+          </FadeIn>
         </div>
 
         {/* Service Overview */}

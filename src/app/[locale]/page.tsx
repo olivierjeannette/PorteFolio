@@ -3,18 +3,16 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, ArrowDown, Code2, TrendingUp, Users, Heart, MapPin, Download, Shield } from 'lucide-react'
+import { ArrowRight, ArrowDown, Settings, TrendingUp, Users, MapPin, Download, BarChart3, CheckCircle2 } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, Counter, Magnetic, HoverCard } from '@/components/animations'
 import { personalInfo, projects } from '@/data/content'
-import { cn } from '@/lib/utils'
 
-// Icon map
+// Icon map for skill categories
 const iconMap = {
-  Code2,
+  Settings,
   TrendingUp,
   Users,
-  Heart,
 }
 
 export default function HomePage() {
@@ -93,34 +91,26 @@ export default function HomePage() {
               </h1>
             </FadeIn>
 
-            {/* Title */}
-            <FadeIn delay={0.3}>
-              <p className="font-display text-xl md:text-2xl text-surface-600 dark:text-surface-400 mb-4">
-                {personalInfo.title}
-              </p>
-            </FadeIn>
-
-            {/* Location */}
-            <FadeIn delay={0.4}>
-              <div className="flex items-center justify-center gap-2 text-surface-500 dark:text-surface-500 mb-8">
-                <MapPin className="w-4 h-4" />
-                <span>{personalInfo.location}</span>
-              </div>
-            </FadeIn>
-
             {/* Tagline */}
-            <FadeIn delay={0.5}>
-              <p className="text-2xl md:text-3xl font-light text-surface-700 dark:text-surface-300 max-w-2xl mx-auto mb-12">
+            <FadeIn delay={0.3}>
+              <p className="text-2xl md:text-3xl font-light text-surface-700 dark:text-surface-300 max-w-2xl mx-auto mb-4">
                 {t('hero.tagline')}
               </p>
             </FadeIn>
 
+            {/* Subtitle - AAIP value proposition */}
+            <FadeIn delay={0.4}>
+              <p className="text-lg text-surface-500 dark:text-surface-500 max-w-3xl mx-auto mb-12">
+                {t('hero.subtitle')}
+              </p>
+            </FadeIn>
+
             {/* CTAs */}
-            <FadeIn delay={0.6}>
+            <FadeIn delay={0.5}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Magnetic>
-                  <Link href={`/${locale}/projects`} className="btn-primary">
-                    {t('hero.cta.projects')}
+                  <Link href={`/${locale}/case-studies`} className="btn-primary">
+                    {t('hero.cta.caseStudies')}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Magnetic>
@@ -154,23 +144,42 @@ export default function HomePage() {
       </section>
 
       {/* ============================================ */}
-      {/* BIO SECTION */}
+      {/* ECONOMIC IMPACT SECTION */}
       {/* ============================================ */}
       <section className="section relative">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Photo */}
+            {/* Impact Visual */}
             <FadeIn className="lg:col-span-5" direction="right">
               <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0">
                 {/* Decorative frame */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-accent-500/20 to-accent-500/5 rounded-3xl -rotate-3" />
                 <div className="absolute -inset-4 bg-gradient-to-tr from-accent-500/10 to-transparent rounded-3xl rotate-3" />
 
-                {/* Image placeholder */}
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-surface-200 dark:bg-surface-800">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-surface-400 dark:text-surface-600 p-6">
-                    <Shield className="w-16 h-16 mb-4 opacity-50" />
-                    <span className="text-sm text-center">Photo coming soon</span>
+                {/* Impact summary card */}
+                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-surface-100 to-surface-200 dark:from-surface-800 dark:to-surface-900 flex flex-col items-center justify-center p-8">
+                  <BarChart3 className="w-16 h-16 mb-6 text-accent-500 opacity-80" />
+                  <p className="font-display font-bold text-xl text-surface-900 dark:text-surface-100 text-center mb-2">
+                    Commercially Validated
+                  </p>
+                  <p className="text-sm text-surface-500 text-center mb-8">
+                    Real systems. Real businesses. Measurable results.
+                  </p>
+
+                  {/* Mini stats inside the card */}
+                  <div className="w-full space-y-3">
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-white/50 dark:bg-surface-700/50">
+                      <span className="text-sm text-surface-600 dark:text-surface-400">Revenue Generated</span>
+                      <span className="font-display font-bold text-accent-600 dark:text-accent-400">€120K</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-white/50 dark:bg-surface-700/50">
+                      <span className="text-sm text-surface-600 dark:text-surface-400">Costs Eliminated</span>
+                      <span className="font-display font-bold text-accent-600 dark:text-accent-400">€3K/yr</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-white/50 dark:bg-surface-700/50">
+                      <span className="text-sm text-surface-600 dark:text-surface-400">Hours Automated</span>
+                      <span className="font-display font-bold text-accent-600 dark:text-accent-400">10h/wk</span>
+                    </div>
                   </div>
                 </div>
 
@@ -183,7 +192,7 @@ export default function HomePage() {
                   className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl glass shadow-lg"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-display font-bold text-gradient">5+</span>
+                    <span className="text-2xl font-display font-bold text-gradient">6+</span>
                     <span className="text-xs text-surface-600 dark:text-surface-400">
                       {t('about.yearsExp')}
                     </span>
@@ -217,9 +226,9 @@ export default function HomePage() {
                 ))}
               </StaggerContainer>
 
-              {/* Quick stats */}
+              {/* 4-stat grid */}
               <FadeIn delay={0.4}>
-                <div className="grid grid-cols-3 gap-6 p-6 rounded-2xl bg-surface-100 dark:bg-surface-800/50">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-surface-100 dark:bg-surface-800/50">
                   <div className="text-center">
                     <div className="font-display font-bold text-2xl md:text-3xl text-gradient">
                       <Counter to={120} suffix="K€" />
@@ -228,20 +237,28 @@ export default function HomePage() {
                       {t('about.stats.revenue')}
                     </p>
                   </div>
-                  <div className="text-center border-x border-surface-200 dark:border-surface-700">
-                    <div className="font-display font-bold text-2xl md:text-3xl text-gradient">
-                      <Counter to={5} />
-                    </div>
-                    <p className="text-xs md:text-sm text-surface-500 dark:text-surface-500 mt-1">
-                      {t('about.stats.years')}
-                    </p>
-                  </div>
-                  <div className="text-center">
+                  <div className="text-center border-l border-surface-200 dark:border-surface-700">
                     <div className="font-display font-bold text-2xl md:text-3xl text-gradient">
                       <Counter to={3} suffix="K€" />
                     </div>
                     <p className="text-xs md:text-sm text-surface-500 dark:text-surface-500 mt-1">
-                      {t('about.stats.saved')}
+                      {t('about.stats.costSaved')}
+                    </p>
+                  </div>
+                  <div className="text-center border-l border-surface-200 dark:border-surface-700">
+                    <div className="font-display font-bold text-2xl md:text-3xl text-gradient">
+                      <Counter to={10} suffix="h" />
+                    </div>
+                    <p className="text-xs md:text-sm text-surface-500 dark:text-surface-500 mt-1">
+                      {t('about.stats.timeSaved')}
+                    </p>
+                  </div>
+                  <div className="text-center border-l border-surface-200 dark:border-surface-700">
+                    <div className="font-display font-bold text-2xl md:text-3xl text-gradient">
+                      Top <Counter to={3} />
+                    </div>
+                    <p className="text-xs md:text-sm text-surface-500 dark:text-surface-500 mt-1">
+                      {t('about.stats.searchRanking')}
                     </p>
                   </div>
                 </div>
@@ -252,7 +269,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================ */}
-      {/* SKILLS SECTION */}
+      {/* CORE CAPABILITIES SECTION */}
       {/* ============================================ */}
       <section className="section relative bg-surface-100/50 dark:bg-surface-900/50">
         <div className="container-custom">
@@ -269,13 +286,13 @@ export default function HomePage() {
             </FadeIn>
           </div>
 
-          {/* Skill Categories - 3 columns using i18n translations */}
+          {/* Skill Categories */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {(['dev', 'business', 'leadership'] as const).map((categoryKey) => {
+            {(['digitalOperations', 'businessAutomation', 'leadership'] as const).map((categoryKey) => {
               const categoryConfig = {
-                dev: { icon: Code2, items: ['aiCoding', 'frontend', 'backend', 'deployment'] as const, levels: [95, 85, 85, 90] },
-                business: { icon: TrendingUp, items: ['marketing', 'sales', 'processOpt', 'audit'] as const, levels: [85, 90, 95, 90] },
-                leadership: { icon: Users, items: ['autonomy', 'adaptability', 'stress', 'problemSolving'] as const, levels: [95, 95, 95, 95] },
+                digitalOperations: { icon: Settings, items: ['customSoftware', 'processAutomation', 'dataInfra', 'cloudDeployment'] as const, levels: [90, 85, 85, 90] },
+                businessAutomation: { icon: TrendingUp, items: ['digitalMarketing', 'crmAutomation', 'revenueOpt', 'processAudit'] as const, levels: [85, 85, 90, 90] },
+                leadership: { icon: Users, items: ['autonomousExecution', 'crisisManagement', 'systemsThinking', 'crossFunctional'] as const, levels: [95, 95, 90, 90] },
               }
               const config = categoryConfig[categoryKey]
               const Icon = config.icon
@@ -335,9 +352,42 @@ export default function HomePage() {
       </section>
 
       {/* ============================================ */}
+      {/* ALBERTA RELEVANCE SECTION */}
+      {/* ============================================ */}
+      <section className="section relative">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <FadeIn>
+                <span className="inline-block text-sm font-medium text-accent-600 dark:text-accent-400 uppercase tracking-wider mb-4">
+                  {t('alberta.label')}
+                </span>
+              </FadeIn>
+              <FadeIn delay={0.1}>
+                <h2 className="font-display font-bold text-display-sm md:text-display-md text-surface-900 dark:text-surface-50">
+                  {t('alberta.title')} <span className="text-gradient">{t('alberta.titleAccent')}</span>
+                </h2>
+              </FadeIn>
+            </div>
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.1}>
+              {(t.raw('alberta.points') as string[]).map((point: string, index: number) => (
+                <StaggerItem key={index}>
+                  <div className="flex items-start gap-3 p-5 rounded-xl bg-surface-100 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700">
+                    <CheckCircle2 className="w-5 h-5 text-accent-500 shrink-0 mt-0.5" />
+                    <p className="text-surface-600 dark:text-surface-400">{point}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* FEATURED PROJECTS */}
       {/* ============================================ */}
-      <section className="section">
+      <section className="section bg-surface-100/50 dark:bg-surface-900/50">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div>
@@ -372,7 +422,6 @@ export default function HomePage() {
                     <div className="absolute inset-0 flex items-center justify-center text-surface-400 dark:text-surface-500">
                       <span className="text-sm font-medium">{project.title}</span>
                     </div>
-                    {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
@@ -384,6 +433,20 @@ export default function HomePage() {
                     <p className="text-sm text-surface-600 dark:text-surface-400 mb-4 line-clamp-2">
                       {project.description}
                     </p>
+
+                    {/* Metrics */}
+                    {project.metrics && project.metrics.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.metrics.slice(0, 2).map((metric) => (
+                          <span
+                            key={metric}
+                            className="px-2 py-1 text-xs rounded-md bg-green-500/10 text-green-700 dark:text-green-400 font-medium"
+                          >
+                            {metric}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     {/* Stack */}
                     <div className="flex flex-wrap gap-2 mb-4">

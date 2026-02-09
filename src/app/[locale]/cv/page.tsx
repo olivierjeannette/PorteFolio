@@ -2,7 +2,8 @@
 
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Download, Printer, MapPin, Mail, Linkedin, Calendar, Building2, GraduationCap, Shield, MessageCircle, FileDown, Loader2 } from 'lucide-react'
+import Link from 'next/link'
+import { Download, Printer, MapPin, Mail, Linkedin, Calendar, Building2, GraduationCap, Shield, MessageCircle, FileDown, Loader2, ArrowRight } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations'
 import { personalInfo, experiences, education } from '@/data/content'
@@ -112,32 +113,32 @@ export default function CVPage() {
 
   const skillsTranslations = {
     categories: {
-      dev: {
-        title: tSkills('categories.dev.title'),
+      digitalOperations: {
+        title: tSkills('categories.digitalOperations.title'),
         items: {
-          aiCoding: tSkills('categories.dev.items.aiCoding'),
-          frontend: tSkills('categories.dev.items.frontend'),
-          backend: tSkills('categories.dev.items.backend'),
-          deployment: tSkills('categories.dev.items.deployment'),
-          automation: tSkills('categories.dev.items.automation'),
+          customSoftware: tSkills('categories.digitalOperations.items.customSoftware'),
+          processAutomation: tSkills('categories.digitalOperations.items.processAutomation'),
+          dataInfra: tSkills('categories.digitalOperations.items.dataInfra'),
+          cloudDeployment: tSkills('categories.digitalOperations.items.cloudDeployment'),
+          aiIntegration: tSkills('categories.digitalOperations.items.aiIntegration'),
         },
       },
-      business: {
-        title: tSkills('categories.business.title'),
+      businessAutomation: {
+        title: tSkills('categories.businessAutomation.title'),
         items: {
-          marketing: tSkills('categories.business.items.marketing'),
-          sales: tSkills('categories.business.items.sales'),
-          processOpt: tSkills('categories.business.items.processOpt'),
-          funnels: tSkills('categories.business.items.funnels'),
+          digitalMarketing: tSkills('categories.businessAutomation.items.digitalMarketing'),
+          crmAutomation: tSkills('categories.businessAutomation.items.crmAutomation'),
+          revenueOpt: tSkills('categories.businessAutomation.items.revenueOpt'),
+          processAudit: tSkills('categories.businessAutomation.items.processAudit'),
         },
       },
       leadership: {
         title: tSkills('categories.leadership.title'),
         items: {
-          autonomy: tSkills('categories.leadership.items.autonomy'),
-          adaptability: tSkills('categories.leadership.items.adaptability'),
-          stress: tSkills('categories.leadership.items.stress'),
-          problemSolving: tSkills('categories.leadership.items.problemSolving'),
+          autonomousExecution: tSkills('categories.leadership.items.autonomousExecution'),
+          crisisManagement: tSkills('categories.leadership.items.crisisManagement'),
+          systemsThinking: tSkills('categories.leadership.items.systemsThinking'),
+          crossFunctional: tSkills('categories.leadership.items.crossFunctional'),
         },
       },
     },
@@ -375,6 +376,14 @@ export default function CVPage() {
                     )
                   })}
                 </StaggerContainer>
+
+                <Link
+                  href={`/${locale}/diplomas`}
+                  className="mt-4 inline-flex items-center gap-1 text-sm text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300"
+                >
+                  {t('education.viewAll')}
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
               </section>
             </FadeIn>
           </div>
@@ -389,11 +398,11 @@ export default function CVPage() {
                 </h2>
 
                 <div className="space-y-6">
-                  {(['dev', 'business', 'leadership'] as const).map((categoryKey) => {
+                  {(['digitalOperations', 'businessAutomation', 'leadership'] as const).map((categoryKey) => {
                     const skillsConfig = {
-                      dev: { items: ['aiCoding', 'frontend', 'backend', 'deployment', 'automation'] as const, levels: [95, 85, 85, 90, 85] },
-                      business: { items: ['marketing', 'sales', 'processOpt', 'audit', 'funnels'] as const, levels: [85, 90, 95, 90, 85] },
-                      leadership: { items: ['autonomy', 'adaptability', 'stress', 'problemSolving', 'decision'] as const, levels: [95, 95, 95, 95, 90] },
+                      digitalOperations: { items: ['customSoftware', 'processAutomation', 'dataInfra', 'cloudDeployment', 'aiIntegration'] as const, levels: [90, 85, 85, 90, 95] },
+                      businessAutomation: { items: ['digitalMarketing', 'crmAutomation', 'revenueOpt', 'processAudit'] as const, levels: [85, 85, 90, 90] },
+                      leadership: { items: ['autonomousExecution', 'crisisManagement', 'systemsThinking', 'crossFunctional'] as const, levels: [95, 95, 90, 90] },
                     }
                     const config = skillsConfig[categoryKey]
 

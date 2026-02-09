@@ -1,136 +1,205 @@
 {
   "meta": {
-    "title": "Olivier Jeannette | Développeur Web & Spécialiste IA/Automatisation",
-    "description": "Développeur Web spécialisé en développement augmenté par IA, automatisation des process et scaling business. Ancien Paramedic FS. Disponible pour Calgary, Alberta."
+    "title": "Olivier Jeannette | Spécialiste en Opérations Digitales & Automatisation",
+    "description": "Spécialiste en Opérations Digitales & Automatisation avec une expertise commercialement validée en optimisation de processus, développement logiciel sur mesure et intelligence d'affaires. Disponible à Calgary, Alberta."
   },
   "nav": {
     "home": "Accueil",
+    "caseStudies": "Études de Cas",
     "projects": "Projets",
     "cv": "CV",
-    "diplomas": "Diplômes",
-    "military": "Armée",
+    "military": "Parcours Militaire",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Recherche : Dev Web • IA/Automatisation • Consulting Process",
-    "tagline": "Je construis des systèmes qui font scaler les business.",
+    "badge": "Spécialiste en Opérations Digitales & Automatisation",
+    "tagline": "Je construis des systèmes digitaux qui génèrent une croissance mesurable.",
+    "subtitle": "Expertise commercialement validée en automatisation de processus, logiciels sur mesure et marketing data-driven. J'aide les PME à éliminer les pertes opérationnelles et à se développer efficacement.",
     "cta": {
-      "projects": "Voir mes projets",
-      "cv": "Télécharger CV"
+      "caseStudies": "Voir les Études de Cas",
+      "cv": "Télécharger le CV"
     },
     "scroll": "Défiler"
   },
   "about": {
-    "label": "Ce que je recherche",
-    "title": "Développement Web,",
-    "titleAccent": "IA & Automatisation",
+    "label": "Impact Économique",
+    "title": "Résultats Business",
+    "titleAccent": "Prouvés",
     "bio": [
-      "Je recherche des postes en Développement Web, Intégration IA, ou Consulting en Automatisation des Process. Ma force : je comprends le côté technique ET business, donc je construis des solutions qui marchent dans le monde réel.",
-      "La preuve ? J'ai construit La Skàli from scratch—une salle de CrossFit dans un marché ultra concurrentiel. Tout en coachant 72h/semaine (9h-21h, Lun-Sam, 6 ans, 3 semaines de vacances tous les 2 ans), j'ai aussi géré TOUTE la tech : site web, système de réservation, appli de gestion custom, Meta Ads, SEO, tunnels de vente, et workflows d'automatisation. J'ai remplacé 3K€/an de SaaS par des outils que j'ai construits moi-même.",
-      "J'excelle dans les environnements haute intensité où je dois apprendre vite, optimiser constamment, et délivrer des résultats. Que ce soit pour aider des entreprises à automatiser leurs process, construire des applications web, ou intégrer l'IA dans des workflows—je suis prêt."
+      "Je suis spécialisé dans la transformation d'opérations manuelles en systèmes digitaux automatisés et scalables. Mon approche combine développement logiciel sur mesure, automatisation de processus et marketing data-driven pour délivrer un ROI mesurable.",
+      "Ce n'est pas de la théorie. J'ai créé, développé et géré une PME de services générant 120 000 € de chiffre d'affaires annuel tout en développant l'intégralité de son infrastructure digitale en solo — logiciel de gestion sur mesure (remplaçant 3 000 €/an d'abonnements SaaS), workflows automatisés de facturation et CRM, et stratégies SEO atteignant le Top 3 des résultats organiques Google.",
+      "Mon parcours transversal — de la gestion d'opérations tactiques au développement logiciel terrain — me permet de comprendre à la fois la logique métier et l'implémentation technique. Je construis des solutions qui fonctionnent dans le monde réel, pas uniquement en démonstration."
     ],
     "stats": {
-      "revenue": "CA Annuel",
-      "years": "Années Solo",
-      "saved": "SaaS Remplacé"
+      "revenue": "Chiffre d'Affaires Généré",
+      "costSaved": "Coûts Annuels Éliminés",
+      "timeSaved": "Heures Hebdomadaires Récupérées",
+      "searchRanking": "Classement Google"
     },
-    "yearsExp": "ans d'expérience"
+    "yearsExp": "ans à construire des systèmes digitaux"
   },
   "skills": {
-    "label": "Compétences",
-    "title": "Ce que",
-    "titleAccent": "j'apporte",
+    "label": "Compétences Clés",
+    "title": "Ce que je",
+    "titleAccent": "délivre",
     "viewAll": "Voir tout",
     "categories": {
-      "dev": {
-        "title": "Développement & Tech",
+      "digitalOperations": {
+        "title": "Opérations Digitales & Développement",
         "items": {
-          "aiCoding": "Dev Augmenté par IA (Claude Code)",
-          "apiMcp": "Intégration API & Serveurs MCP",
-          "frontend": "Frontend (React, Next.js, HTML/CSS)",
-          "backend": "Backend (Supabase, Neon, PostgreSQL)",
-          "deployment": "Déploiement (Vercel, Netlify, VPS)",
-          "automation": "Automatisation (Make, N8N, Zapier)",
-          "tools": "Outils Dev (VS Code, GitHub, Discord, Notion)"
+          "customSoftware": "Développement Logiciel Sur Mesure (Next.js, React, Supabase)",
+          "processAutomation": "Automatisation de Processus (Make, N8N, Intégration API)",
+          "dataInfra": "Infrastructure de Données & Intelligence d'Affaires",
+          "cloudDeployment": "Déploiement Cloud & DevOps (Vercel, Netlify)",
+          "aiIntegration": "Intégration IA & Développement Augmenté"
         }
       },
-      "business": {
-        "title": "Business & Stratégie",
+      "businessAutomation": {
+        "title": "Opérations Revenus & Croissance",
         "items": {
-          "marketing": "Marketing Digital & SEO",
-          "ads": "Publicité Payante (Meta, Google Ads)",
-          "sales": "Vente & Négociation",
-          "funnels": "Tunnels de Vente & Conversion",
-          "processOpt": "Optimisation des Process",
-          "audit": "Audit & Analyse Business",
-          "events": "Événementiel & Team Building"
+          "digitalMarketing": "SEO & Stratégie de Marketing Digital",
+          "crmAutomation": "CRM & Automatisation du Pipeline Commercial",
+          "revenueOpt": "Optimisation du Chiffre d'Affaires & Gestion P&L",
+          "processAudit": "Audit de Processus & Conseil en Efficience"
         }
       },
       "leadership": {
-        "title": "Leadership & Soft Skills",
+        "title": "Leadership Opérationnel",
         "items": {
-          "autonomy": "Autonomie Totale & Initiative",
-          "adaptability": "Adaptabilité & Débrouillardise",
-          "stress": "Gestion du Stress (Testé au combat)",
-          "problemSolving": "Résolution de Problèmes",
-          "decision": "Prise de Décision Sous Pression",
-          "systems": "Pensée Systémique"
-        }
-      },
-      "health": {
-        "title": "Santé & Urgences",
-        "items": {
-          "paramedic": "Paramedic Combat (Forces Spéciales)",
-          "civilFirst": "Secouriste Civil",
-          "militaryFirst": "Instructeur Secourisme Militaire",
-          "crossfitL1": "CrossFit Level 1 Trainer"
+          "autonomousExecution": "Exécution Autonome de Projets",
+          "crisisManagement": "Gestion de Crise & Prise de Décision à Haut Enjeu",
+          "systemsThinking": "Pensée Systémique & Planification Stratégique",
+          "crossFunctional": "Coordination d'Équipes Transversales"
         }
       }
     }
   },
+  "alberta": {
+    "label": "Pertinence pour l'Alberta",
+    "title": "Pourquoi l'Alberta a besoin de",
+    "titleAccent": "Spécialistes en Opérations Digitales",
+    "points": [
+      "L'écosystème PME de l'Alberta représente plus de 95 % des entreprises — la plupart nécessitent une modernisation digitale mais manquent de ressources techniques internes.",
+      "L'automatisation de processus et les logiciels sur mesure réduisent directement les coûts opérationnels, aidant les entreprises albertaines à rester compétitives dans une économie en diversification.",
+      "L'expertise transversale en opérations digitales est immédiatement transférable — des services énergétiques à l'agriculture, du commerce de détail aux services professionnels.",
+      "Des compétences commercialement validées avec un impact économique mesurable : chaque projet que je réalise génère des revenus ou des économies traçables."
+    ]
+  },
+  "caseStudies": {
+    "label": "Études de Cas",
+    "title": "Résultats",
+    "titleAccent": "Prouvés",
+    "subtitle": "Analyses détaillées de projets réels avec des résultats business mesurables.",
+    "problem": "Défi",
+    "solution": "Solution",
+    "result": "Résultats",
+    "impact": "Impact Business",
+    "techStack": "Stack Technique",
+    "timeline": "Délai",
+    "industry": "Secteur",
+    "viewDetails": "Lire l'Étude de Cas Complète",
+    "albertaCta": {
+      "title": "Comment ces compétences bénéficient aux entreprises albertaines",
+      "description": "Chaque système que je construis est conçu pour être transférable et scalable. Les mêmes stratégies d'automatisation de processus, de logiciels sur mesure et de marketing data-driven qui ont généré 120 000 € de chiffre d'affaires annuel pour une PME française sont directement applicables à l'écosystème d'affaires de l'Alberta.",
+      "cta": "Discuter de vos besoins"
+    },
+    "items": {
+      "smeTransformation": {
+        "title": "Transformation Digitale d'une PME",
+        "subtitle": "Digitalisation de bout en bout d'une entreprise de services",
+        "industry": "Secteur des Services",
+        "problem": "Une PME de services fonctionnant avec des processus entièrement manuels : gestion client sur papier, aucune présence en ligne, pas de facturation automatisée et aucune analyse de performance. L'entreprise perdait du chiffre d'affaires face à des concurrents dotés d'infrastructures digitales modernes.",
+        "solution": [
+          "Développement d'une application de gestion sur mesure (Next.js + Supabase) remplaçant 3 000 €/an d'abonnements SaaS",
+          "Mise en place de workflows automatisés de facturation, CRM et relance via Make et N8N",
+          "Développement d'un site web optimisé SEO atteignant le Top 3 Google sur les mots-clés ciblés",
+          "Création de tableaux de bord pour l'intelligence d'affaires et la prise de décision en temps réel",
+          "Conception et exécution de campagnes Meta Ads et d'entonnoirs de conversion"
+        ],
+        "results": [
+          "120 000 € de chiffre d'affaires annuel généré",
+          "3 000 €/an de coûts SaaS éliminés",
+          "Plus de 10 heures/semaine récupérées grâce à l'automatisation",
+          "Classement Top 3 en recherche organique Google atteint",
+          "Entreprise préparée pour une vente clé en main avec des systèmes entièrement documentés"
+        ],
+        "stack": ["Next.js", "Supabase", "Tailwind CSS", "Make", "N8N", "Meta Ads", "SEO"],
+        "revenue": "Chiffre d'Affaires Annuel",
+        "costSaved": "Coûts Annuels Éliminés",
+        "timeSaved": "Heures/Semaine Récupérées",
+        "searchRanking": "Classement Google"
+      },
+      "automationSuite": {
+        "title": "Suite d'Automatisation des Processus Métier",
+        "subtitle": "Automatisation transversale des workflows avec intégration IA",
+        "industry": "Multi-sectoriel",
+        "problem": "Les opérations quotidiennes consommaient un temps manuel excessif : erreurs de facturation, relances manquées, reporting incohérent et sources de données déconnectées entre plusieurs plateformes.",
+        "solution": [
+          "Conception et déploiement de workflows d'automatisation intégrés (Make + N8N)",
+          "Facturation automatisée avec un pipeline zéro erreur",
+          "Mise en place d'un traitement de tâches alimenté par l'IA via l'intégration de l'API Claude",
+          "Création de rapports automatisés et synchronisation des données entre plateformes",
+          "Implémentation de systèmes événementiels par webhooks pour des déclencheurs de processus en temps réel"
+        ],
+        "results": [
+          "10 heures/semaine économisées sur les tâches opérationnelles",
+          "Zéro erreur de facturation atteint",
+          "Retour sur investissement en 6 mois",
+          "Bibliothèque d'automatisation entièrement documentée et transférable"
+        ],
+        "stack": ["Make", "N8N", "Claude API", "Google Sheets API", "Webhooks"],
+        "timeSaved": "Heures/Semaine Économisées",
+        "errorRate": "Taux d'Erreur de Facturation",
+        "roi": "ROI Atteint En"
+      }
+    }
+  },
   "projects": {
-    "label": "Projets",
-    "title": "Travaux",
-    "titleAccent": "récents",
-    "headerTitle": "Mes",
+    "label": "Portfolio",
+    "title": "Projets",
+    "titleAccent": "Sélectionnés",
+    "headerTitle": "Tous les",
     "headerTitleAccent": "Projets",
     "viewAll": "Voir tous les projets",
-    "viewLive": "Voir le site",
+    "viewLive": "Voir en ligne",
     "viewCode": "Voir le code",
     "viewDetails": "Voir les détails",
-    "stack": "Technologies",
-    "metrics": "Résultats",
+    "stack": "Stack",
+    "metrics": "Impact Business",
     "description": "Description",
-    "noProjects": "Pas de projets dans cette catégorie pour le moment.",
+    "noProjects": "Aucun projet dans cette catégorie pour le moment.",
     "categories": {
       "all": "Tous",
       "web": "Sites Web",
       "app": "Applications",
-      "automation": "Automation"
+      "automation": "Automatisation"
     },
-    "subtitle": "Une sélection de projets qui illustrent mon approche : résoudre des problèmes réels avec des solutions techniques élégantes et efficaces.",
-    "featured": "Featured"
+    "subtitle": "Une sélection de projets démontrant un impact business mesurable à travers les opérations digitales, l'automatisation de processus et le développement logiciel sur mesure.",
+    "featured": "En vedette",
+    "caseStudiesBanner": "Pour des analyses détaillées Problème / Solution / Résultat, visitez la",
+    "caseStudiesLink": "page Études de Cas"
   },
   "cta": {
-    "title": "Prêt à travailler ensemble ?",
-    "description": "Je suis actuellement disponible pour des opportunités à Calgary, Alberta. Discutons de comment je peux apporter de la valeur à votre équipe.",
-    "contact": "Me contacter",
-    "viewCv": "Voir mon CV"
+    "title": "Prêt à discuter de comment les opérations digitales peuvent bénéficier à votre organisation ?",
+    "description": "Je suis disponible à Calgary, Alberta pour des postes en opérations digitales, automatisation de processus et gestion de projets techniques. Discutons de comment je peux apporter une valeur mesurable à votre équipe.",
+    "contact": "Me Contacter",
+    "viewCv": "Voir Mon CV"
   },
   "cv": {
     "title": "CV",
-    "download": "Télécharger PDF",
+    "download": "Télécharger le PDF",
     "print": "Imprimer",
     "exportPdf": "Exporter en PDF",
     "summary": {
       "title": "Résumé Professionnel",
-      "content": "Développeur Web et spécialiste en Automatisation des Process avec un parcours unique : Paramedic Forces Spéciales devenu entrepreneur. J'ai construit et scalé une salle de sport de 0 à 120K€/an tout en développant toute l'infrastructure digitale en solo. Recherche des postes en Développement Web, Intégration IA, ou Consulting Process en Alberta."
+      "content": "Spécialiste en Opérations Digitales & Automatisation au parcours unique : Auxiliaire Sanitaire de Combat en Forces Spéciales devenu entrepreneur et développeur autodidacte. J'ai créé et géré une PME de services générant 120 000 €/an tout en développant l'intégralité de son infrastructure digitale en solo — logiciel de gestion sur mesure, workflows automatisés, stratégie SEO et marketing data-driven. Je recherche des postes en Opérations Digitales, Automatisation de Processus ou Gestion de Projets Techniques en Alberta."
     },
     "experience": {
       "title": "Expérience Professionnelle"
     },
     "education": {
-      "title": "Formation & Certifications"
+      "title": "Formation & Certifications",
+      "viewAll": "Voir toutes les certifications"
     },
     "skills": {
       "title": "Compétences Clés"
@@ -138,7 +207,7 @@
     "languages": {
       "title": "Langues",
       "french": "Français",
-      "frenchLevel": "Natif",
+      "frenchLevel": "Langue maternelle",
       "english": "Anglais",
       "englishLevel": "Professionnel (B2/C1)"
     },
@@ -147,49 +216,49 @@
     },
     "interested": {
       "title": "Intéressé ?",
-      "description": "Téléchargez mon CV complet en PDF ou contactez-moi directement."
+      "description": "Téléchargez mon CV complet au format PDF ou contactez-moi directement."
     },
     "targetRoles": {
       "title": "Postes Recherchés",
-      "roles": ["Développeur Web", "Spécialiste IA/Automatisation", "Consultant Process", "Chef de Projet Technique"]
+      "roles": ["Spécialiste en Opérations Digitales", "Consultant en Automatisation de Processus", "Chef de Projets Techniques", "Développeur de Systèmes d'Entreprise"]
     },
     "experiences": {
       "laskali": {
-        "title": "Fondateur & Gérant (Entrepreneur Solo)",
-        "company": "La Skàli - CrossFit/HYROX",
+        "title": "Responsable des Opérations Digitales & Fondateur",
+        "company": "La Skàli (PME de Services)",
         "description": [
-          "Création et scaling d'une salle de sport de 0 à 120K€/an dans un marché ultra concurrentiel (5+ concurrents directs à Laval)",
-          "CHARGE DE TRAVAIL : 72h/semaine (9h-21h, Lun-Sam), 6 ans, seulement 3 semaines de vacances tous les 2 ans",
-          "DÉVELOPPEMENT WEB : Site complet avec système de réservation, portail membres et dashboard admin (Next.js, Supabase)",
-          "LOGICIEL CUSTOM : Appli de gestion remplaçant 3K€/an de SaaS (suivi membres, facturation, programmation WOD)",
-          "MARKETING DIGITAL : Stratégie SEO Top 3 Google 'CrossFit Laval', campagnes Meta Ads, création de contenu",
-          "AUTOMATISATION : Workflows N8N/Make pour facturation, relances, reporting et synchronisation données",
-          "VENTE & TUNNELS : Construction de tunnels de conversion, gestion de tous les appels commerciaux, négociation partenariats B2B (Gymlib, Wellpass, HYROX)",
-          "GESTION P&L : Responsabilité financière complète - budget, pricing, optimisation coûts, conformité fiscale",
-          "Préparation de la vente clé en main avec process et systèmes entièrement documentés"
+          "Création et développement d'une entreprise de services de zéro à 120 000 €/an sur un marché comptant 5+ concurrents directs",
+          "CHARGE DE TRAVAIL : 72h/semaine (9h-21h, lun-sam), 6 ans — démontrant une capacité exceptionnelle d'exécution soutenue à haut rendement",
+          "LOGICIEL SUR MESURE : Développement d'une application de gestion remplaçant 3 000 €/an d'abonnements SaaS (Next.js, Supabase, Stripe)",
+          "AUTOMATISATION DE PROCESSUS : Mise en place de workflows Make/N8N pour la facturation, les relances CRM, le reporting et la synchronisation de données multi-plateformes",
+          "MARKETING DIGITAL : Stratégie SEO atteignant le Top 3 Google, campagnes Meta Ads, optimisation des entonnoirs de conversion",
+          "DÉVELOPPEMENT WEB : Création complète de la présence web avec système de réservation, portail client et tableau de bord administratif",
+          "GESTION P&L : Supervision financière complète — budgétisation, stratégie de tarification, optimisation des coûts, conformité fiscale",
+          "OPÉRATIONS COMMERCIALES : Conception d'entonnoirs de vente, négociations de partenariats B2B (Gymlib, Wellpass, HYROX)",
+          "Préparation de l'entreprise pour une vente clé en main avec des processus entièrement documentés et des systèmes digitaux transférables"
         ]
       },
       "coaching-career": {
-        "title": "Coach Sportif & Professionnel Fitness",
-        "company": "Auto-entrepreneur & Wakeup Form Laval",
+        "title": "Services Client & Développement Commercial",
+        "company": "Indépendant & Wakeup Form",
         "description": [
-          "Progression sur 3 ans de bénévole à coach professionnel certifié",
-          "Certification BPJEPS AF (option Haltérophilie/Musculation) - diplôme d'État",
-          "Coaching personnel, cours collectifs et conception de programmes",
-          "Acquisition clients, stratégies de fidélisation et développement business en auto-entrepreneur",
-          "Compétences fondatrices qui ont mené à la création de La Skàli"
+          "Progression sur 3 ans de débutant à professionnel certifié, démontrant une acquisition rapide de compétences",
+          "Obtention du BPJEPS AF — diplôme professionnel d'État français nécessitant un programme intensif de 12 mois",
+          "Constitution d'un portefeuille client indépendant par acquisition directe, stratégies de fidélisation et systèmes de parrainage",
+          "Développement de processus de prestation de services et de cadres de gestion client",
+          "Expérience fondatrice ayant conduit à la création et au développement d'une PME de services"
         ]
       },
       "military": {
-        "title": "Opérateur Forces Spéciales - Paramedic Combat",
-        "company": "13ème RDP - Armée de Terre",
+        "title": "Opérateur Forces Spéciales - Auxiliaire Sanitaire de Combat",
+        "company": "13ème RDP - Armée Française",
         "description": [
-          "7 ans dans une unité des Forces Spéciales françaises (13ème Régiment de Dragons Parachutistes)",
-          "Paramedic Combat : soins médicaux tactiques en environnement haute pression",
-          "Multiples déploiements en Afrique et Moyen-Orient",
-          "Responsable pharmacie d'équipe et logistique médicale",
-          "Spécialiste TCCC (Tactical Combat Casualty Care)",
-          "Compétences clés développées : prise de décision sous pression, autonomie, adaptabilité, résilience"
+          "7 ans au sein d'une unité des Forces Spéciales françaises (13ème Régiment de Dragons Parachutistes)",
+          "Auxiliaire Sanitaire de Combat : soins médicaux tactiques et intervention d'urgence en environnements à haut risque",
+          "Multiples déploiements opérationnels en Afrique et au Moyen-Orient",
+          "Responsable de la pharmacie d'équipe et coordinateur logistique médical",
+          "Spécialiste TCCC (Tactical Combat Casualty Care) — gestion avancée des traumatismes sous le feu",
+          "Compétences fondamentales développées : prise de décision autonome, gestion de crise, résolution systématique de problèmes, résilience opérationnelle"
         ]
       }
     },
@@ -199,49 +268,49 @@
         "institution": "CrossFit Inc."
       },
       "bpjeps": {
-        "title": "BPJEPS AF - Option Haltérophilie/Musculation",
-        "institution": "Centre de formation BPJEPS"
+        "title": "BPJEPS AF - Diplôme Professionnel d'Éducateur Sportif",
+        "institution": "Centre de Formation BPJEPS"
       },
       "pilates": {
         "title": "Certification Pilates",
         "institution": "Formation Pilates"
       },
       "sc-combat-2": {
-        "title": "Sauvetage au Combat Niveau 2 (SC2)",
-        "institution": "Armée de Terre - Forces Spéciales"
+        "title": "Sauveteur au Combat Niveau 2 (SC2)",
+        "institution": "Armée Française - Forces Spéciales"
       },
       "afgsu": {
         "title": "AFGSU Niveau 1 & 2",
-        "institution": "Armée de Terre",
+        "institution": "Armée Française",
         "description": "Attestation de Formation aux Gestes et Soins d'Urgence"
       },
       "pse": {
         "title": "PSE Niveau 1 & 2",
-        "institution": "Armée de Terre",
+        "institution": "Armée Française",
         "description": "Premiers Secours en Équipe"
       },
       "auxiliaire-ambulancier": {
         "title": "Auxiliaire Ambulancier",
-        "institution": "Armée de Terre"
+        "institution": "Armée Française"
       },
       "cte-auxiliaire-sanitaire": {
         "title": "Certificat Technique Élémentaire - Auxiliaire Sanitaire Spécialisé",
-        "institution": "Armée de Terre"
+        "institution": "Armée Française"
       },
       "brevet-para": {
-        "title": "Brevet Militaire de Parachutisme",
-        "institution": "Armée de Terre - Troupes Aéroportées"
+        "title": "Brevet Parachutiste Militaire",
+        "institution": "Armée Française - Troupes Aéroportées"
       },
       "sc-combat-1": {
-        "title": "Sauvetage au Combat Niveau 1 (SC1)",
-        "institution": "Armée de Terre"
+        "title": "Sauveteur au Combat Niveau 1 (SC1)",
+        "institution": "Armée Française"
       },
       "sf-training": {
         "title": "Formation Forces Spéciales & Parachutiste",
-        "institution": "Armée de Terre - 13ème RDP"
+        "institution": "Armée Française - 13ème RDP"
       },
       "staps": {
-        "title": "Première année STAPS",
+        "title": "Première année STAPS (Sciences du Sport)",
         "institution": "STAPS Font-Romeu"
       },
       "bac": {
@@ -252,15 +321,15 @@
   },
   "diplomas": {
     "title": "Certifications & Diplômes",
-    "subtitle": "Certifications professionnelles et formations",
+    "subtitle": "Certifications professionnelles et attestations de formation",
     "headerTitle": "Formation",
     "view": "Voir",
     "download": "Télécharger",
-    "addPlaceholder": "Plus de certifications à venir...",
-    "pdfPlaceholder": "PDF à uploader",
-    "verifiable": "Documents vérifiables",
-    "verifiableDesc": "Tous les diplômes et certifications présentés ici sont authentiques et vérifiables. N'hésitez pas à me contacter pour des informations supplémentaires.",
-    "addPdfs": "Ajoutez les PDFs dans /public/diplomes/",
+    "addPlaceholder": "D'autres certifications à venir...",
+    "pdfPlaceholder": "PDF à téléverser",
+    "verifiable": "Documents Vérifiables",
+    "verifiableDesc": "Tous les diplômes et certifications présentés ici sont authentiques et vérifiables. N'hésitez pas à me contacter pour plus d'informations.",
+    "addPdfs": "Ajouter les PDF dans /public/diplomes/",
     "categories": {
       "all": "Tous",
       "fitness": "Fitness & Coaching",
@@ -271,42 +340,43 @@
     }
   },
   "military": {
-    "title": "Service Militaire",
-    "subtitle": "Armée de Terre - Forces Spéciales",
+    "title": "Parcours Militaire",
+    "subtitle": "Armée Française - Forces Spéciales",
     "headerTitle": "Parcours",
     "headerTitleAccent": "Militaire",
+    "intro": "7 ans de gestion d'opérations tactiques en environnements à haut risque ont forgé les compétences en gestion de crise, exécution autonome et résolution systématique de problèmes qui sous-tendent mon approche des opérations digitales.",
     "service": {
-      "title": "État de Service",
+      "title": "Parcours Militaire",
       "unit": "Unité",
       "unitValue": "13ème Régiment de Dragons Parachutistes (13 RDP)",
       "role": "Fonction",
-      "roleValue": "Paramedic Combat",
+      "roleValue": "Auxiliaire Sanitaire de Combat",
       "rank": "Grade",
-      "rankValue": "Militaire du Rang",
+      "rankValue": "Militaire du rang",
       "period": "Période",
       "periodValue": "2011 - 2018"
     },
     "combatParamedic": {
-      "title": "Paramedic Combat",
+      "title": "Auxiliaire Sanitaire de Combat",
       "subtitle": "Spécialiste Médical Tactique",
-      "description": "Responsable des soins médicaux d'urgence en situation de combat. Formé au TCCC (Tactical Combat Casualty Care), gestion des traumatismes et intervention d'urgence sous le feu."
+      "description": "Responsable des soins médicaux d'urgence en situations de combat. Formé au Tactical Combat Casualty Care (TCCC), à la gestion des traumatismes et à l'intervention d'urgence sous le feu."
     },
     "skills": {
       "title": "Compétences Acquises",
       "items": [
-        "Soins Médicaux de Combat (TCCC)",
-        "Prise de Décision Sous Stress Intense",
-        "Opérations en Équipe en Environnement Hostile",
+        "Soins Médicaux de Combat (Tactical Combat Casualty Care)",
+        "Prise de Décision sous Haute Pression",
+        "Opérations en Équipe en Environnements Hostiles",
         "Intervention d'Urgence & Triage",
         "Résilience Physique & Mentale",
-        "Leadership Sous le Feu"
+        "Leadership sous le Feu"
       ]
     },
     "values": {
       "title": "Valeurs que j'apporte",
       "discipline": {
         "title": "Discipline",
-        "description": "Éthique de travail militaire et attention aux détails"
+        "description": "Éthique de travail et souci du détail de niveau militaire"
       },
       "resilience": {
         "title": "Résilience",
@@ -318,7 +388,7 @@
       },
       "adaptability": {
         "title": "Adaptabilité",
-        "description": "Réflexion rapide et résolution de problèmes en environnement imprévisible"
+        "description": "Réflexion rapide et résolution de problèmes en environnements imprévisibles"
       }
     },
     "medals": {
@@ -339,19 +409,19 @@
         },
         "defense-nationale-argent": {
           "title": "Médaille de la Défense Nationale - Échelon Argent",
-          "description": "Agrafe \"Service de Santé\" & \"Missions d'Opérations Extérieures\""
+          "description": "Agrafes : « Service de Santé » & « Missions d'Opérations Extérieures »"
         }
       }
     },
     "diplomas": {
       "title": "Certifications Militaires",
-      "placeholder": "Les certifications et diplômes militaires seront ajoutés ici.",
-      "instructions": "Uploadez vos PDFs dans /public/diplomes/ et ajoutez-les dans content.ts"
+      "placeholder": "Les certifications et diplômes militaires seront téléversés ici.",
+      "instructions": "Téléversez vos PDF de diplômes dans /public/diplomes/ et ajoutez-les dans content.ts"
     }
   },
   "contact": {
     "title": "Me Contacter",
-    "subtitle": "Discutons de comment je peux contribuer à votre équipe",
+    "subtitle": "Discutons de comment l'automatisation des opérations digitales peut bénéficier à votre organisation",
     "form": {
       "name": "Votre Nom",
       "namePlaceholder": "Jean Dupont",
@@ -360,27 +430,28 @@
       "company": "Entreprise (Optionnel)",
       "companyPlaceholder": "Votre Entreprise",
       "message": "Message",
-      "messagePlaceholder": "Parlez-moi de votre projet ou opportunité...",
-      "submit": "Envoyer",
+      "messagePlaceholder": "Parlez-moi des défis en opérations digitales de votre organisation...",
+      "submit": "Envoyer le Message",
       "sending": "Envoi en cours...",
-      "success": "Message envoyé ! Je vous recontacte rapidement.",
-      "error": "Une erreur est survenue. Réessayez ou contactez-moi directement."
+      "success": "Message envoyé ! Je vous répondrai rapidement.",
+      "error": "Une erreur est survenue. Veuillez réessayer ou me contacter directement."
     },
-    "or": "Ou contactez-moi directement",
+    "or": "Ou me joindre directement",
     "whatsapp": "WhatsApp",
     "whatsappDesc": "Réponse rapide",
     "email": "Email",
+    "linkedin": "LinkedIn",
     "instagram": "Instagram",
     "location": "Localisation",
-    "locationAvailable": "Disponible en télétravail et relocalisation à Calgary, Alberta",
-    "responseTime": "Je réponds généralement sous 24h. Pour les urgences, utilisez WhatsApp."
+    "locationAvailable": "Disponible pour des missions sur site, hybrides et à distance à Calgary, Alberta",
+    "responseTime": "Je réponds généralement sous 24 heures. Pour les urgences, utilisez WhatsApp."
   },
   "footer": {
-    "tagline": "Je construis des systèmes qui tournent seuls.",
+    "tagline": "Je construis des systèmes digitaux qui génèrent une croissance mesurable.",
     "navigation": "Navigation",
-    "connect": "Contact",
+    "connect": "Me Suivre",
     "rights": "Tous droits réservés.",
-    "letsTalk": "Discutons ensemble"
+    "letsTalk": "Discutons"
   },
   "common": {
     "present": "Présent",
@@ -392,46 +463,46 @@
   },
   "admin": {
     "login": {
-      "title": "Accès Admin",
+      "title": "Accès Administrateur",
       "subtitle": "Entrez le mot de passe pour gérer les diplômes",
       "password": "Mot de passe",
-      "passwordPlaceholder": "Entrez le mot de passe admin",
-      "button": "Connexion",
+      "passwordPlaceholder": "Entrez le mot de passe administrateur",
+      "button": "Se connecter",
       "verifying": "Vérification...",
       "error": "Mot de passe invalide",
       "protected": "Zone protégée. Accès non autorisé interdit."
     },
     "diplomas": {
       "title": "Gestionnaire de Diplômes",
-      "subtitle": "Uploadez et gérez vos certifications",
-      "uploadTitle": "Uploader un nouveau diplôme",
-      "existingTitle": "Diplômes existants",
+      "subtitle": "Téléversez et gérez vos certifications",
+      "uploadTitle": "Téléverser un Nouveau Diplôme",
+      "existingTitle": "Diplômes Existants",
       "titleEn": "Titre (EN)",
       "titleFr": "Titre (FR)",
-      "institutionEn": "Institution (EN)",
-      "institutionFr": "Institution (FR)",
+      "institutionEn": "Établissement (EN)",
+      "institutionFr": "Établissement (FR)",
       "year": "Année",
       "category": "Catégorie",
-      "uploadButton": "Uploader le diplôme",
-      "uploading": "Upload en cours...",
+      "uploadButton": "Téléverser le Diplôme",
+      "uploading": "Téléversement...",
       "dragDrop": "Glissez-déposez un PDF ici, ou cliquez pour sélectionner",
-      "maxSize": "Maximum 10Mo",
+      "maxSize": "Maximum 10 Mo",
       "dropHere": "Déposez le PDF ici...",
       "deleteConfirm": "Cliquez à nouveau pour confirmer",
       "delete": "Supprimer",
       "viewPdf": "Voir le PDF",
-      "noDiplomas": "Aucun diplôme uploadé",
+      "noDiplomas": "Aucun diplôme téléversé pour le moment",
       "success": {
-        "upload": "Diplôme uploadé avec succès !",
+        "upload": "Diplôme téléversé avec succès !",
         "delete": "Diplôme supprimé avec succès !"
       },
       "error": {
-        "upload": "Échec de l'upload du diplôme",
+        "upload": "Échec du téléversement du diplôme",
         "delete": "Échec de la suppression du diplôme",
         "load": "Échec du chargement des diplômes",
         "required": "Veuillez remplir tous les champs obligatoires",
-        "pdfOnly": "Seuls les fichiers PDF sont autorisés",
-        "maxSize": "La taille du fichier doit être inférieure à 10Mo"
+        "pdfOnly": "Seuls les fichiers PDF sont acceptés",
+        "maxSize": "La taille du fichier doit être inférieure à 10 Mo"
       }
     },
     "logout": "Déconnexion",

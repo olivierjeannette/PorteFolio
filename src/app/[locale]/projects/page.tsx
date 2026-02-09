@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, X, Filter } from 'lucide-react'
+import { ExternalLink, Github, X, Filter, ArrowRight } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from '@/components/animations'
 import { projects, type Project } from '@/data/content'
@@ -48,6 +49,22 @@ export default function ProjectsPage() {
             </p>
           </FadeIn>
         </div>
+
+        {/* Case Studies Banner */}
+        <FadeIn delay={0.25}>
+          <div className="mb-8 p-4 rounded-xl bg-accent-500/5 border border-accent-500/20 flex items-center justify-between flex-wrap gap-3">
+            <p className="text-sm text-surface-600 dark:text-surface-400">
+              {t('caseStudiesBanner')}{' '}
+              <Link
+                href={`/${locale}/case-studies`}
+                className="inline-flex items-center gap-1 font-medium text-accent-600 dark:text-accent-400 hover:underline"
+              >
+                {t('caseStudiesLink')}
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </p>
+          </div>
+        </FadeIn>
 
         {/* Category Filter */}
         <FadeIn delay={0.3}>
@@ -100,7 +117,7 @@ export default function ProjectsPage() {
                     {/* Featured badge */}
                     {project.featured && (
                       <span className="inline-block px-2 py-1 text-xs font-medium rounded-md bg-accent-500/10 text-accent-600 dark:text-accent-400 mb-3">
-                        Featured
+                        {t('featured')}
                       </span>
                     )}
 

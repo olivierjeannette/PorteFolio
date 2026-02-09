@@ -12,9 +12,9 @@ import { locales, localeFlags, type Locale } from '@/i18n/config'
 
 const navItems = [
   { key: 'home', href: '/' },
+  { key: 'caseStudies', href: '/case-studies' },
   { key: 'projects', href: '/projects' },
   { key: 'cv', href: '/cv' },
-  { key: 'diplomas', href: '/diplomas' },
   { key: 'military', href: '/military' },
   { key: 'contact', href: '/contact' },
 ]

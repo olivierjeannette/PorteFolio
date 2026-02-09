@@ -1,105 +1,171 @@
 {
   "meta": {
-    "title": "Olivier Jeannette | Web Developer & AI/Automation Specialist",
-    "description": "Web Developer specializing in AI-augmented development, process automation, and business scaling. Former SF Paramedic. Available for opportunities in Calgary, Alberta."
+    "title": "Olivier Jeannette | Digital Operations & Automation Specialist",
+    "description": "Digital Operations & Automation Specialist with commercially validated expertise in process optimization, custom software development, and business intelligence. Available in Calgary, Alberta."
   },
   "nav": {
     "home": "Home",
+    "caseStudies": "Case Studies",
     "projects": "Projects",
     "cv": "Resume",
-    "diplomas": "Certifications",
-    "military": "Military",
+    "military": "Service Record",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Open to: Web Dev • AI/Automation • Process Consulting",
-    "tagline": "I build systems that scale businesses and run themselves.",
+    "badge": "Digital Operations & Automation Specialist",
+    "tagline": "I build digital systems that drive measurable business growth.",
+    "subtitle": "Commercially validated expertise in process automation, custom software, and data-driven marketing. Helping SMEs eliminate operational waste and scale efficiently.",
     "cta": {
-      "projects": "View My Work",
+      "caseStudies": "View Case Studies",
       "cv": "Download Resume"
     },
     "scroll": "Scroll"
   },
   "about": {
-    "label": "What I'm Looking For",
-    "title": "Web Development,",
-    "titleAccent": "AI & Process Automation",
+    "label": "Economic Impact",
+    "title": "Proven Business",
+    "titleAccent": "Results",
     "bio": [
-      "I'm looking for roles in Web Development, AI Integration, or Process Automation Consulting. My strength: I understand both the technical and business sides, so I build solutions that actually work in the real world.",
-      "Proof? I built La Skàli from scratch—a CrossFit gym in a highly competitive market. While coaching 72h/week (9am-9pm, Mon-Sat, 6 years, 3 weeks vacation every 2 years), I also handled ALL the tech: website, booking system, custom management app, Meta Ads, SEO, sales funnels, and automation workflows. I replaced €3K/year in SaaS with tools I built myself.",
-      "I thrive in high-intensity environments where I need to learn fast, optimize constantly, and deliver results. Whether it's helping companies automate their processes, building web applications, or integrating AI into workflows—I'm ready."
+      "I specialize in transforming manual business operations into automated, scalable digital systems. My approach combines custom software development, process automation, and data-driven marketing to deliver measurable ROI.",
+      "This is not theory. I built, scaled, and operated a service-sector SME generating €120K in annual revenue while simultaneously developing its entire digital infrastructure: custom management software (replacing €3K/year in SaaS), automated billing and CRM workflows, and SEO strategies that achieved Top 3 organic search rankings.",
+      "My cross-functional background — from tactical operations management to hands-on software development — means I understand both the business logic and the technical implementation. I build solutions that work in the real world, not just in demos."
     ],
     "stats": {
-      "revenue": "Annual Revenue",
-      "years": "Years Solo",
-      "saved": "SaaS Replaced"
+      "revenue": "Revenue Generated",
+      "costSaved": "Annual Costs Eliminated",
+      "timeSaved": "Weekly Hours Recovered",
+      "searchRanking": "Google Search Ranking"
     },
-    "yearsExp": "years experience"
+    "yearsExp": "years building digital systems"
   },
   "skills": {
-    "label": "Skills",
+    "label": "Core Capabilities",
     "title": "What I",
-    "titleAccent": "bring to the table",
+    "titleAccent": "deliver",
     "viewAll": "View all",
     "categories": {
-      "dev": {
-        "title": "Development & Tech",
+      "digitalOperations": {
+        "title": "Digital Operations & Development",
         "items": {
-          "aiCoding": "AI-Augmented Development (Claude Code)",
-          "apiMcp": "API Integration & MCP Servers",
-          "frontend": "Frontend (React, Next.js, HTML/CSS)",
-          "backend": "Backend (Supabase, Neon, PostgreSQL)",
-          "deployment": "Deployment (Vercel, Netlify, VPS)",
-          "automation": "Automation (Make, N8N, Zapier)",
-          "tools": "Dev Tools (VS Code, GitHub, Discord, Notion)"
+          "customSoftware": "Custom Software Development (Next.js, React, Supabase)",
+          "processAutomation": "Process Automation (Make, N8N, API Integration)",
+          "dataInfra": "Data Infrastructure & Business Intelligence",
+          "cloudDeployment": "Cloud Deployment & DevOps (Vercel, Netlify)",
+          "aiIntegration": "AI Integration & Augmented Development"
         }
       },
-      "business": {
-        "title": "Business & Strategy",
+      "businessAutomation": {
+        "title": "Revenue & Growth Operations",
         "items": {
-          "marketing": "Digital Marketing & SEO",
-          "ads": "Paid Ads (Meta, Google Ads)",
-          "sales": "Sales & Negotiation",
-          "funnels": "Sales Funnels & Conversion",
-          "processOpt": "Process Optimization",
-          "audit": "Business Audit & Analysis",
-          "events": "Events & Team Building"
+          "digitalMarketing": "SEO & Digital Marketing Strategy",
+          "crmAutomation": "CRM & Sales Pipeline Automation",
+          "revenueOpt": "Revenue Optimization & P&L Management",
+          "processAudit": "Process Audit & Efficiency Consulting"
         }
       },
       "leadership": {
-        "title": "Leadership & Soft Skills",
+        "title": "Operational Leadership",
         "items": {
-          "autonomy": "Full Autonomy & Initiative",
-          "adaptability": "Adaptability & Resourcefulness",
-          "stress": "Stress Management (Combat-tested)",
-          "problemSolving": "Problem Solving",
-          "decision": "Decision Making Under Pressure",
-          "systems": "Systems Thinking"
-        }
-      },
-      "health": {
-        "title": "Health & Emergency",
-        "items": {
-          "paramedic": "Combat Paramedic (Special Forces)",
-          "civilFirst": "Civilian First Responder",
-          "militaryFirst": "Military First Aid Instructor",
-          "crossfitL1": "CrossFit Level 1 Trainer"
+          "autonomousExecution": "Autonomous Project Execution",
+          "crisisManagement": "Crisis & High-Stakes Decision Making",
+          "systemsThinking": "Systems Thinking & Strategic Planning",
+          "crossFunctional": "Cross-functional Team Coordination"
         }
       }
     }
   },
+  "alberta": {
+    "label": "Alberta Relevance",
+    "title": "Why Alberta Needs",
+    "titleAccent": "Digital Operations Specialists",
+    "points": [
+      "Alberta's SME ecosystem represents over 95% of businesses — most need digital modernization but lack in-house technical resources.",
+      "Process automation and custom software directly reduce operational costs, helping Alberta businesses stay competitive in a diversifying economy.",
+      "Cross-sector digital operations expertise is immediately transferable — from energy services to agriculture, retail to professional services.",
+      "Commercially validated skills with measurable economic impact: every project I deliver generates traceable revenue or cost savings."
+    ]
+  },
+  "caseStudies": {
+    "label": "Case Studies",
+    "title": "Proven",
+    "titleAccent": "Results",
+    "subtitle": "Detailed breakdowns of real projects with measurable business outcomes.",
+    "problem": "Challenge",
+    "solution": "Solution",
+    "result": "Results",
+    "impact": "Business Impact",
+    "techStack": "Technology Stack",
+    "timeline": "Timeline",
+    "industry": "Industry",
+    "viewDetails": "Read Full Case Study",
+    "albertaCta": {
+      "title": "How These Capabilities Benefit Alberta Businesses",
+      "description": "Every system I build is designed to be transferable and scalable. The same process automation, custom software, and data-driven marketing strategies that generated €120K in annual revenue for a French SME are directly applicable to Alberta's business ecosystem.",
+      "cta": "Discuss Your Requirements"
+    },
+    "items": {
+      "smeTransformation": {
+        "title": "SME Digital Transformation",
+        "subtitle": "End-to-end digitization of a service-sector business",
+        "industry": "Service Sector",
+        "problem": "A service-sector SME operating with entirely manual processes: paper-based client management, no online presence, no automated billing, and no performance analytics. The business was losing revenue to competitors with modern digital infrastructure.",
+        "solution": [
+          "Built a custom management application (Next.js + Supabase) replacing €3K/year in SaaS subscriptions",
+          "Implemented automated billing, CRM, and follow-up workflows using Make and N8N",
+          "Developed SEO-optimized website achieving Top 3 Google ranking for target keywords",
+          "Created data dashboards for real-time business intelligence and decision-making",
+          "Designed and executed Meta Ads campaigns and conversion funnels"
+        ],
+        "results": [
+          "€120K annual revenue generated",
+          "€3K/year in SaaS costs eliminated",
+          "10+ hours/week recovered through automation",
+          "Top 3 organic search ranking achieved",
+          "Business prepared for turnkey sale with fully documented systems"
+        ],
+        "stack": ["Next.js", "Supabase", "Tailwind CSS", "Make", "N8N", "Meta Ads", "SEO"],
+        "revenue": "Annual Revenue",
+        "costSaved": "Annual Costs Eliminated",
+        "timeSaved": "Hours/Week Recovered",
+        "searchRanking": "Google Ranking"
+      },
+      "automationSuite": {
+        "title": "Business Process Automation Suite",
+        "subtitle": "Cross-functional workflow automation with AI integration",
+        "industry": "Cross-sector",
+        "problem": "Daily business operations consumed excessive manual time: invoicing errors, missed follow-ups, inconsistent reporting, and disconnected data sources across multiple platforms.",
+        "solution": [
+          "Designed and deployed integrated automation workflows (Make + N8N)",
+          "Automated invoicing with zero-error billing pipeline",
+          "Built AI-powered task handling using Claude API integration",
+          "Created automated reporting and data synchronization across platforms",
+          "Implemented webhook-driven event systems for real-time process triggers"
+        ],
+        "results": [
+          "10 hours/week saved on operational tasks",
+          "Zero billing errors achieved",
+          "6-month return on investment",
+          "Fully documented and transferable automation library"
+        ],
+        "stack": ["Make", "N8N", "Claude API", "Google Sheets API", "Webhooks"],
+        "timeSaved": "Hours/Week Saved",
+        "errorRate": "Billing Error Rate",
+        "roi": "ROI Achieved In"
+      }
+    }
+  },
   "projects": {
-    "label": "Projects",
-    "title": "Recent",
-    "titleAccent": "Work",
-    "headerTitle": "My",
+    "label": "Portfolio",
+    "title": "Selected",
+    "titleAccent": "Projects",
+    "headerTitle": "All",
     "headerTitleAccent": "Projects",
     "viewAll": "View all projects",
     "viewLive": "View Live",
     "viewCode": "View Code",
     "viewDetails": "View details",
     "stack": "Stack",
-    "metrics": "Results",
+    "metrics": "Business Impact",
     "description": "Description",
     "noProjects": "No projects in this category yet.",
     "categories": {
@@ -108,12 +174,14 @@
       "app": "Applications",
       "automation": "Automation"
     },
-    "subtitle": "A selection of projects showcasing my approach: solving real problems with elegant, effective technical solutions.",
-    "featured": "Featured"
+    "subtitle": "A selection of projects demonstrating measurable business impact through digital operations, process automation, and custom software development.",
+    "featured": "Featured",
+    "caseStudiesBanner": "For detailed Problem / Solution / Result breakdowns, visit the",
+    "caseStudiesLink": "Case Studies page"
   },
   "cta": {
-    "title": "Ready to work together?",
-    "description": "I'm currently open to opportunities in Calgary, Alberta. Let's discuss how I can bring value to your team.",
+    "title": "Ready to discuss how digital operations can benefit your organization?",
+    "description": "I'm available in Calgary, Alberta for roles in digital operations, process automation, and technical project management. Let's discuss how I can deliver measurable value to your team.",
     "contact": "Contact Me",
     "viewCv": "View My Resume"
   },
@@ -124,13 +192,14 @@
     "exportPdf": "Export as PDF",
     "summary": {
       "title": "Professional Summary",
-      "content": "Web Developer and Process Automation specialist with a unique background: Special Forces Paramedic turned entrepreneur. Built and scaled a gym from zero to €120K/year while developing all digital infrastructure solo. Looking for roles in Web Development, AI Integration, or Business Process Consulting in Alberta."
+      "content": "Digital Operations & Automation Specialist with a unique trajectory: Special Forces Combat Paramedic turned entrepreneur and self-taught developer. Built and operated a service-sector SME generating €120K/year while developing its entire digital infrastructure solo — custom management software, automated workflows, SEO strategy, and data-driven marketing. Seeking roles in Digital Operations, Process Automation, or Technical Project Management in Alberta."
     },
     "experience": {
       "title": "Professional Experience"
     },
     "education": {
-      "title": "Education & Certifications"
+      "title": "Education & Certifications",
+      "viewAll": "View all certifications"
     },
     "skills": {
       "title": "Key Skills"
@@ -151,33 +220,33 @@
     },
     "targetRoles": {
       "title": "Target Roles",
-      "roles": ["Web Developer", "AI/Automation Specialist", "Process Consultant", "Technical Project Manager"]
+      "roles": ["Digital Operations Specialist", "Process Automation Consultant", "Technical Project Manager", "Business Systems Developer"]
     },
     "experiences": {
       "laskali": {
-        "title": "Founder & General Manager (Solo Entrepreneur)",
-        "company": "La Skàli - CrossFit/HYROX Gym",
+        "title": "Digital Operations Manager & Founder",
+        "company": "La Skàli (Service Sector SME)",
         "description": [
-          "Built and scaled a gym from zero to €120K/year in a highly competitive market (5+ direct competitors in Laval)",
-          "WORKLOAD: 72h/week (9am-9pm, Mon-Sat), 6 years, only 3 weeks vacation every 2 years",
-          "WEB DEVELOPMENT: Built complete website with booking system, member portal, and admin dashboard (Next.js, Supabase)",
-          "CUSTOM SOFTWARE: Developed gym management app replacing €3K/year in SaaS (member tracking, billing, WOD programming)",
-          "DIGITAL MARKETING: SEO strategy achieving Top 3 Google for 'CrossFit Laval', Meta Ads campaigns, content creation",
-          "AUTOMATION: Implemented N8N/Make workflows for invoicing, follow-ups, reporting, and data sync",
-          "SALES & FUNNELS: Built conversion funnels, handled all sales calls, negotiated B2B partnerships (Gymlib, Wellpass, HYROX)",
-          "P&L MANAGEMENT: Full financial responsibility - budgeting, pricing, cost optimization, tax compliance",
-          "Preparing business for turnkey sale with fully documented processes and systems"
+          "Built and scaled a service-sector business from zero to €120K/year in a market with 5+ direct competitors",
+          "WORKLOAD: 72h/week (9am-9pm, Mon-Sat), 6 years — demonstrating exceptional capacity for sustained high-output execution",
+          "CUSTOM SOFTWARE: Developed bespoke management application replacing €3K/year in SaaS subscriptions (Next.js, Supabase, Stripe)",
+          "PROCESS AUTOMATION: Implemented Make/N8N workflows for billing, CRM follow-ups, reporting, and cross-platform data synchronization",
+          "DIGITAL MARKETING: SEO strategy achieving Top 3 Google ranking, Meta Ads campaigns, conversion funnel optimization",
+          "WEB DEVELOPMENT: Built complete web presence with booking system, client portal, and administrative dashboard",
+          "P&L MANAGEMENT: Full financial oversight — budgeting, pricing strategy, cost optimization, tax compliance",
+          "REVENUE OPERATIONS: Sales funnel design, B2B partnership negotiations (Gymlib, Wellpass, HYROX)",
+          "Preparing business for turnkey sale with fully documented processes and transferable digital systems"
         ]
       },
       "coaching-career": {
-        "title": "Sports Coach & Fitness Professional",
-        "company": "Auto-entrepreneur & Wakeup Form Laval",
+        "title": "Client Services & Business Development",
+        "company": "Self-employed & Wakeup Form",
         "description": [
-          "3-year progression from volunteer to certified professional coach",
-          "BPJEPS AF certification (Weightlifting/Bodybuilding option) - French state diploma",
-          "Personal training, group classes, and program design",
-          "Client acquisition, retention strategies, and business development as self-employed",
-          "Foundation skills that led to founding La Skàli"
+          "3-year progression from entry-level to certified professional, demonstrating rapid skill acquisition",
+          "Obtained BPJEPS AF state certification — French professional diploma requiring 12-month intensive program",
+          "Built independent client portfolio through direct acquisition, retention strategies, and referral systems",
+          "Developed service delivery processes and client management frameworks",
+          "Foundation experience that led to founding and scaling a service-sector SME"
         ]
       },
       "military": {
@@ -185,11 +254,11 @@
         "company": "13ème RDP - French Army",
         "description": [
           "7 years in French Special Forces unit (13ème Régiment de Dragons Parachutistes)",
-          "Combat Paramedic: tactical medical care in high-stress environments",
-          "Multiple deployments to Africa and Middle East",
-          "Team pharmacy manager and medical logistics",
-          "TCCC specialist (Tactical Combat Casualty Care)",
-          "Key skills developed: decision-making under pressure, autonomy, adaptability, resilience"
+          "Combat Paramedic: tactical medical care and emergency response in high-stakes environments",
+          "Multiple operational deployments to Africa and Middle East",
+          "Team pharmacy manager and medical logistics coordinator",
+          "TCCC specialist (Tactical Combat Casualty Care) — advanced trauma management under fire",
+          "Core competencies developed: autonomous decision-making, crisis management, systematic problem-solving, operational resilience"
         ]
       }
     },
@@ -199,7 +268,7 @@
         "institution": "CrossFit Inc."
       },
       "bpjeps": {
-        "title": "BPJEPS AF - Weightlifting/Bodybuilding Option",
+        "title": "BPJEPS AF - Professional Sports Instructor Diploma",
         "institution": "BPJEPS Training Center"
       },
       "pilates": {
@@ -271,10 +340,11 @@
     }
   },
   "military": {
-    "title": "Military Service",
+    "title": "Service Record",
     "subtitle": "French Army - Special Forces",
-    "headerTitle": "Military",
-    "headerTitleAccent": "Service",
+    "headerTitle": "Service",
+    "headerTitleAccent": "Record",
+    "intro": "7 years of tactical operations management in high-stakes environments developed the crisis management, autonomous execution, and systematic problem-solving capabilities that underpin my approach to digital operations.",
     "service": {
       "title": "Service Record",
       "unit": "Unit",
@@ -351,7 +421,7 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Let's discuss how I can contribute to your team",
+    "subtitle": "Let's discuss how digital operations automation can benefit your organization",
     "form": {
       "name": "Your Name",
       "namePlaceholder": "John Doe",
@@ -360,7 +430,7 @@
       "company": "Company (Optional)",
       "companyPlaceholder": "Your Company",
       "message": "Message",
-      "messagePlaceholder": "Tell me about your project or opportunity...",
+      "messagePlaceholder": "Tell me about your organization's digital operations challenges...",
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Message sent! I'll get back to you soon.",
@@ -370,13 +440,14 @@
     "whatsapp": "WhatsApp",
     "whatsappDesc": "Quick response",
     "email": "Email",
+    "linkedin": "LinkedIn",
     "instagram": "Instagram",
     "location": "Location",
-    "locationAvailable": "Available for remote work and relocation to Calgary, Alberta",
+    "locationAvailable": "Available for on-site, hybrid, and remote engagements in Calgary, Alberta",
     "responseTime": "I typically respond within 24 hours. For urgent matters, use WhatsApp."
   },
   "footer": {
-    "tagline": "Building systems that run themselves.",
+    "tagline": "Building digital systems that drive measurable business growth.",
     "navigation": "Navigation",
     "connect": "Connect",
     "rights": "All rights reserved.",

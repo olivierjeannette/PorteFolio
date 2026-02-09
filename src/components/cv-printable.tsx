@@ -18,8 +18,8 @@ interface CVPrintableProps {
   }
   skillsTranslations: {
     categories: {
-      dev: { title: string; items: Record<string, string> }
-      business: { title: string; items: Record<string, string> }
+      digitalOperations: { title: string; items: Record<string, string> }
+      businessAutomation: { title: string; items: Record<string, string> }
       leadership: { title: string; items: Record<string, string> }
     }
   }
@@ -130,12 +130,12 @@ export const CVPrintable = forwardRef<HTMLDivElement, CVPrintableProps>(
               {t.skills.title}
             </h2>
 
-            {(['dev', 'business', 'leadership'] as const).map((categoryKey) => {
+            {(['digitalOperations', 'businessAutomation', 'leadership'] as const).map((categoryKey) => {
               const category = tSkills.categories[categoryKey]
               const skillsToShow = {
-                dev: ['aiCoding', 'frontend', 'backend', 'deployment', 'automation'],
-                business: ['marketing', 'sales', 'processOpt', 'funnels'],
-                leadership: ['autonomy', 'adaptability', 'stress', 'problemSolving'],
+                digitalOperations: ['customSoftware', 'processAutomation', 'dataInfra', 'cloudDeployment', 'aiIntegration'],
+                businessAutomation: ['digitalMarketing', 'crmAutomation', 'revenueOpt', 'processAudit'],
+                leadership: ['autonomousExecution', 'crisisManagement', 'systemsThinking', 'crossFunctional'],
               }[categoryKey]
 
               return (

@@ -24,24 +24,23 @@ export async function generateMetadata({
 
   return {
     title: {
-      default: 'Olivier Jeannette | Ops Architect & AI-Augmented Builder',
+      default: 'Olivier Jeannette | Digital Operations & Automation Specialist',
       template: '%s | Olivier Jeannette',
     },
     description: isEn
-      ? 'Former Special Forces Paramedic turned Tech Entrepreneur. I build systems that run themselves. Available for opportunities in Calgary, Alberta.'
-      : 'Ancien Paramedic des Forces Spéciales devenu entrepreneur tech. Je construis des systèmes qui tournent seuls. Disponible pour des opportunités à Calgary, Alberta.',
+      ? 'Digital Operations & Automation Specialist with commercially validated expertise in process optimization, custom software development, and business intelligence. Available in Calgary, Alberta.'
+      : 'Spécialiste en Opérations Digitales & Automatisation avec une expertise commercialement validée en optimisation de process, développement logiciel sur mesure et intelligence business. Disponible à Calgary, Alberta.',
     keywords: [
-      'developer',
-      'entrepreneur',
-      'ops architect',
-      'full-stack',
+      'digital operations',
+      'automation specialist',
+      'process optimization',
+      'custom software',
       'Calgary',
       'Alberta',
       'Canada',
-      'special forces',
-      'paramedic',
-      'AI',
-      'automation',
+      'business intelligence',
+      'web development',
+      'AI integration',
     ],
     authors: [{ name: 'Olivier Jeannette' }],
     creator: 'Olivier Jeannette',
@@ -49,18 +48,18 @@ export async function generateMetadata({
       type: 'website',
       locale: isEn ? 'en_CA' : 'fr_FR',
       alternateLocale: isEn ? 'fr_FR' : 'en_CA',
-      title: 'Olivier Jeannette | Ops Architect & AI-Augmented Builder',
+      title: 'Olivier Jeannette | Digital Operations & Automation Specialist',
       description: isEn
-        ? 'Former Special Forces Paramedic turned Tech Entrepreneur. I build systems that run themselves.'
-        : 'Ancien Paramedic des Forces Spéciales devenu entrepreneur tech. Je construis des systèmes qui tournent seuls.',
+        ? 'Digital Operations & Automation Specialist delivering measurable business results through process automation, custom software, and data-driven marketing.'
+        : 'Spécialiste en Opérations Digitales & Automatisation délivrant des résultats business mesurables via l\'automatisation, le développement logiciel et le marketing data-driven.',
       siteName: 'Olivier Jeannette Portfolio',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Olivier Jeannette | Ops Architect & AI-Augmented Builder',
+      title: 'Olivier Jeannette | Digital Operations & Automation Specialist',
       description: isEn
-        ? 'Former Special Forces Paramedic turned Tech Entrepreneur.'
-        : 'Ancien Paramedic des Forces Spéciales devenu entrepreneur tech.',
+        ? 'Digital Operations & Automation Specialist delivering measurable business results.'
+        : 'Spécialiste en Opérations Digitales & Automatisation délivrant des résultats business mesurables.',
     },
     robots: {
       index: true,
